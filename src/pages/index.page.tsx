@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Header from 'src/components/Layout/Header/Header';
 
 import styles from './Home.module.scss';
+import ActivityInformation from './sections/ActivityInformation/ActivityInformation';
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
 
       <div className={styles.container}>
         <Header />
+        <ActivityInformation />
       </div>
     </>
   );
