@@ -1,9 +1,10 @@
 .container {
+  height: 50rem;
+  padding: 11rem 0;
+
   .content {
-    max-width: 120rem;
-    height: 50rem;
+    max-width: 118rem;
     margin: auto;
-    padding: 11rem 1rem;
 
     display: flex;
     align-items: center;
