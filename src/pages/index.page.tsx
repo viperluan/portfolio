@@ -5,6 +5,7 @@ import Header from 'src/components/Layout/Header/Header';
 import styles from './Home.module.scss';
 import ActivityInformation from './sections/ActivityInformation/ActivityInformation';
 import PersonalCharacteristcs from './sections/PersonalCharacteristics/PersonalCharacteristics';
+import SocialMedia from './sections/SocialMedia/SocialMedia';
 import Technologies from './sections/Technologies/Technologies';
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
         <ActivityInformation />
         <Technologies />
         <PersonalCharacteristcs />
+        <SocialMedia />
       </div>
     </>
   );

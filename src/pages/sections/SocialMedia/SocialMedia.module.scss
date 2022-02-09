@@ -1,0 +1,53 @@
+.container {
+  height: 50rem;
+  padding: 10rem 0;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: auto;
+    max-width: 118rem;
+    height: 100%;
+    color: #000;
+
+    .social {
+      max-width: 48rem;
+      width: 100%;
+
+      .socialUp {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .socialDown {
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+
+    .text {
+      max-width: 48rem;
+
+      h1 {
+        font-weight: bold;
+        font-size: 4.8rem;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 5rem;
+          height: 0.4rem;
+          background-color: #000;
+          margin: 1rem 0 2rem;
+        }
+      }
+
+      p {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
