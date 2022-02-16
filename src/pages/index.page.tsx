@@ -19,10 +19,12 @@ const Home: NextPage = () => {
 
       <div className={styles.container}>
         <Header />
-        <ActivityInformation />
-        <Technologies />
-        <PersonalCharacteristcs />
-        <SocialMedia />
+        <main>
+          <ActivityInformation />
+          <Technologies />
+          <PersonalCharacteristcs />
+          <SocialMedia />
+        </main>
       </div>
     </>
   );
