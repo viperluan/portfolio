@@ -9,8 +9,7 @@
   .content {
     margin: auto;
     height: 100%;
-    max-width: 120rem;
-    padding: 0 2rem;
+    max-width: 118rem;
 
     display: flex;
     align-items: center;
@@ -30,15 +29,33 @@
       align-items: center;
 
       li {
-        font-size: 1.8rem;
-        transition: all 200ms ease;
-
         & + li {
           margin-left: 2rem;
         }
 
-        &:hover {
-          color: #cf8562;
+        a {
+          position: relative;
+          line-height: 2.7rem;
+          font-size: 1.8rem;
+          transition: all 200ms ease;
+
+          &:hover {
+            color: #cf8562;
+          }
+
+          &.activeLink {
+            color: #cf8562;
+
+            &::after {
+              content: "";
+              display: block;
+              bottom: -5px;
+              position: absolute;
+              background-color: #cf8562;
+              height: 0.3rem;
+              width: 100%;
+            }
+          }
         }
       }
     }

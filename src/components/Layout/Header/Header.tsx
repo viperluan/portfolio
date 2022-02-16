@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import ActiveLink from 'src/components/Utils/ActiveLink';
 import styles from './Header.module.scss';
 
 const Header = () => {
@@ -7,21 +7,31 @@ const Header = () => {
       <header className={styles.container}>
         <div className={styles.content}>
           <span>
-            <Link href={'/'}>LCS</Link>
+            <ActiveLink href="/" activeClassName={styles.activeLink}>
+              <a>LCS</a>
+            </ActiveLink>
           </span>
           <nav>
             <ul>
               <li>
-                <Link href={'/'}>Início</Link>
+                <ActiveLink href="/" activeClassName={styles.activeLink}>
+                  <a>Início</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href={'/'}>Portfólio</Link>
+                <ActiveLink href="/portfolio" activeClassName={styles.activeLink}>
+                  <a>Portfólio</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href={'/'}>Contato</Link>
+                <ActiveLink href="/contact" activeClassName={styles.activeLink}>
+                  <a>Contato</a>
+                </ActiveLink>
               </li>
               <li>
-                <Link href={'/'}>Sobre</Link>
+                <ActiveLink href="/about" activeClassName={styles.activeLink}>
+                  <a>Sobre</a>
+                </ActiveLink>
               </li>
             </ul>
           </nav>
