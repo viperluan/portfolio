@@ -179,10 +179,7 @@ const Technologies = () => {
 
           <div className={styles.text}>
             <h1>Tecnologias em destaque</h1>
-            <p>
-              As tech&apos;s que mais estou dedicando tempo para estudar e
-              evoluir
-            </p>
+            <p>As tech&apos;s que mais estou dedicando tempo para estudar e evoluir</p>
           </div>
         </div>
       </section>

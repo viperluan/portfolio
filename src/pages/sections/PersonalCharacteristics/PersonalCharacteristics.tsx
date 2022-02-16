@@ -7,10 +7,7 @@ const PersonalCharacteristcs = () => {
         <div className={styles.content}>
           <div className={styles.text}>
             <h1>Características pessoais</h1>
-            <p>
-              Algumas carcaterísticas pessoais que acho interessante que você
-              saiba.
-            </p>
+            <p>Algumas carcaterísticas pessoais que acho interessante que você saiba.</p>
           </div>
           <div className={styles.characteristics}>
             <ul>
