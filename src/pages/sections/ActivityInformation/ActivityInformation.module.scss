@@ -37,6 +37,7 @@
     .info {
       display: flex;
       align-items: center;
+      max-width: 48rem;
 
       .image {
         position: relative;
@@ -62,45 +63,21 @@
         }
       }
 
-      .repository {
-        position: relative;
-        height: 30rem;
-        width: 18rem;
-        margin-left: 2rem;
-        background-color: #cf8562;
-        border-radius: 0.8rem;
-        overflow: hidden;
-        cursor: pointer;
-
+      .github {
+        min-height: 30rem;
+        max-width: 18rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        h3 {
-          font-size: 6.4rem;
-          line-height: 9.6rem;
-        }
-
-        p {
-          font-size: 2.4rem;
-          line-height: 3.6rem;
-        }
-      }
-
-      .social {
-        height: 30rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: space-between;
         margin-left: 2rem;
 
-        .followers {
-          border-radius: 0.8rem;
-          background-color: #cf8562;
+        .repository {
+          position: relative;
+          height: 20rem;
           width: 18rem;
-          height: 14rem;
+          background-color: #cf8562;
+          border-radius: 0.8rem;
+          overflow: hidden;
           cursor: pointer;
 
           display: flex;
@@ -116,6 +93,36 @@
           p {
             font-size: 1.8rem;
             line-height: 2.7rem;
+          }
+        }
+
+        .social {
+          max-height: 8rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .followers {
+            border-radius: 0.8rem;
+            background-color: #cf8562;
+            width: 8rem;
+            height: 8rem;
+            cursor: pointer;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h3 {
+              font-size: 2.4rem;
+              line-height: 3.6rem;
+            }
+
+            p {
+              font-size: 1.1rem;
+              line-height: 1.7rem;
+            }
           }
         }
       }

@@ -18,19 +18,21 @@ const ActivityInformation = () => {
               </div>
             </div>
 
-            <div className={styles.repository}>
-              <h3>23</h3>
-              <p>Repositórios</p>
-            </div>
-
-            <div className={styles.social}>
-              <div className={styles.followers}>
-                <h3>8</h3>
-                <p>Seguidores</p>
+            <div className={styles.github}>
+              <div className={styles.repository}>
+                <h3>23</h3>
+                <p>Repositórios</p>
               </div>
-              <div className={styles.followers}>
-                <h3>13</h3>
-                <p>Seguindo</p>
+
+              <div className={styles.social}>
+                <div className={styles.followers}>
+                  <h3>8</h3>
+                  <p>Seguidores</p>
+                </div>
+                <div className={styles.followers}>
+                  <h3>13</h3>
+                  <p>Seguindo</p>
+                </div>
               </div>
             </div>
           </div>
