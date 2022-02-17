@@ -18,27 +18,29 @@ const Footer = () => {
               sociedade.
             </p>
           </div>
-          <div className={styles.links}>
-            <h3>Links úteis</h3>
-            <ul>
-              <li>Início</li>
-              <li>Contato</li>
-              <li>Portfólio</li>
-              <li>Sobre</li>
-            </ul>
-          </div>
-          <div className={styles.social}>
-            <h3>Redes sociais</h3>
-            <ul>
-              <li>Whatsapp</li>
-              <li>Linkedin</li>
-              <li>Discord</li>
-            </ul>
-            <ul>
-              <li>Instagram</li>
-              <li>Facebook</li>
-              <li>Github</li>
-            </ul>
+          <div className={styles.linksAndSocialContainer}>
+            <div className={styles.links}>
+              <h3>Links úteis</h3>
+              <ul>
+                <li>Início</li>
+                <li>Contato</li>
+                <li>Portfólio</li>
+                <li>Sobre</li>
+              </ul>
+            </div>
+            <div className={styles.social}>
+              <h3>Redes sociais</h3>
+              <ul>
+                <li>Whatsapp</li>
+                <li>Linkedin</li>
+                <li>Discord</li>
+              </ul>
+              <ul>
+                <li>Instagram</li>
+                <li>Facebook</li>
+                <li>Github</li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
