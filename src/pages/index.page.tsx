@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import Header from '@components/Layout/Header/Header';
 import Footer from '@components/Layout/Footer/Footer';
+import Header from '@components/Layout/Header/Header';
+
 import ActivityInformation from './sections/ActivityInformation/ActivityInformation';
 import PersonalCharacteristcs from './sections/PersonalCharacteristics/PersonalCharacteristics';
 import SocialMedia from './sections/SocialMedia/SocialMedia';

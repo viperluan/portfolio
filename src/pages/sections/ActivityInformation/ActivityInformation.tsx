@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import styles from './ActivityInformation.module.scss';
 
 const ActivityInformation = () => {
@@ -12,7 +13,7 @@ const ActivityInformation = () => {
           </div>
           <div className={styles.info}>
             <div className={styles.image}>
-              <Image src={'/static/images/perfil.jpeg'} alt="Foto do perfil GitHub" layout="fill" />
+              <Image src="/static/images/perfil.jpeg" alt="Foto do perfil GitHub" layout="fill" />
               <div className={styles.name}>
                 <p>Luan Conte Soares</p>
               </div>

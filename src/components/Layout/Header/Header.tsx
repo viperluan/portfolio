@@ -1,4 +1,5 @@
 import ActiveLink from 'src/components/Utils/ActiveLink';
+
 import styles from './Header.module.scss';
 
 const Header = () => {

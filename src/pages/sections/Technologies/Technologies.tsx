@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import styles from './Technologies.module.scss';
 
 const Technologies = () => {
@@ -11,7 +12,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/javascript-original.svg'}
+                  src="/static/icons/javascript-original.svg"
                   alt="Icone Javascript"
                   width={80}
                   height={80}
@@ -20,7 +21,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/typescript-original.svg'}
+                  src="/static/icons/typescript-original.svg"
                   alt="Icone Typescript"
                   width={80}
                   height={80}
@@ -29,7 +30,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/nodejs-original.svg'}
+                  src="/static/icons/nodejs-original.svg"
                   alt="Icone Node.js"
                   width={80}
                   height={80}
@@ -38,7 +39,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/express-original.svg'}
+                  src="/static/icons/express-original.svg"
                   alt="Icone Express.js"
                   width={80}
                   height={80}
@@ -47,7 +48,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/nextjs-original.svg'}
+                  src="/static/icons/nextjs-original.svg"
                   alt="Icone Next.js"
                   width={80}
                   height={80}
@@ -56,7 +57,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/react-original.svg'}
+                  src="/static/icons/react-original.svg"
                   alt="Icone React.js"
                   width={80}
                   height={80}
@@ -67,7 +68,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/html5-original.svg'}
+                  src="/static/icons/html5-original.svg"
                   alt="Icone HTML5"
                   width={80}
                   height={80}
@@ -76,7 +77,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/css3-original.svg'}
+                  src="/static/icons/css3-original.svg"
                   alt="Icone CSS3"
                   width={80}
                   height={80}
@@ -85,7 +86,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/sass-original.svg'}
+                  src="/static/icons/sass-original.svg"
                   alt="Icone Sass"
                   width={80}
                   height={80}
@@ -94,7 +95,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/vuejs-original.svg'}
+                  src="/static/icons/vuejs-original.svg"
                   alt="Icone Vue.js"
                   width={80}
                   height={80}
@@ -103,7 +104,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/nuxtjs-original.svg'}
+                  src="/static/icons/nuxtjs-original.svg"
                   alt="Icone Nuxt.js"
                   width={80}
                   height={80}
@@ -112,7 +113,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/postgresql-original.svg'}
+                  src="/static/icons/postgresql-original.svg"
                   alt="Icone PostgreSQL"
                   width={80}
                   height={80}
@@ -123,7 +124,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/materialui-original.svg'}
+                  src="/static/icons/materialui-original.svg"
                   alt="Icone Material UI"
                   width={80}
                   height={80}
@@ -132,7 +133,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/git-original.svg'}
+                  src="/static/icons/git-original.svg"
                   alt="Icone Git"
                   width={80}
                   height={80}
@@ -141,7 +142,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/yarn-original.svg'}
+                  src="/static/icons/yarn-original.svg"
                   alt="Icone Yarn"
                   width={80}
                   height={80}
@@ -150,7 +151,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/debian-original.svg'}
+                  src="/static/icons/debian-original.svg"
                   alt="Icone Debian"
                   width={80}
                   height={80}
@@ -159,7 +160,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/vscode-original.svg'}
+                  src="/static/icons/vscode-original.svg"
                   alt="Icone VSCode"
                   width={80}
                   height={80}
@@ -168,7 +169,7 @@ const Technologies = () => {
               <li>
                 <Image
                   className={styles.iconImage}
-                  src={'/static/icons/figma-original.svg'}
+                  src="/static/icons/figma-original.svg"
                   alt="Icone Figma"
                   width={80}
                   height={80}
