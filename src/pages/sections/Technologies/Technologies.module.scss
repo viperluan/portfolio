@@ -1,21 +1,19 @@
 .container {
-  height: 50rem;
-  padding: 11rem 0;
+  padding: 10rem 2rem;
 
   .content {
-    max-width: 118rem;
-    margin: auto;
-
     display: flex;
+    flex-direction: column-reverse;
     align-items: center;
-    justify-content: space-between;
 
     .text {
-      max-width: 48rem;
+      text-align: center;
+      max-width: 28rem;
+      margin-bottom: 5rem;
 
       h1 {
         font-weight: bold;
-        font-size: 4.8rem;
+        font-size: 3.6rem;
 
         &::after {
           content: "";
@@ -23,12 +21,12 @@
           width: 5rem;
           height: 0.4rem;
           background-color: #000;
-          margin: 1rem 0 2rem;
+          margin: 1rem auto 2rem;
         }
       }
 
       p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
 
@@ -37,6 +35,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      max-width: 28rem;
 
       ul {
         display: flex;
@@ -58,6 +57,55 @@
             border-radius: 0.8rem;
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    .content {
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .text {
+        max-width: 28rem;
+        margin: 0;
+      }
+
+      .techs {
+        max-width: 28rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    .content {
+      max-width: 118rem;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      .text {
+        text-align: left;
+        min-width: 52.1rem;
+
+        h1 {
+          font-size: 4.8rem;
+
+          &::after {
+            margin: 1rem 0 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+
+      .techs {
+        max-width: 48rem;
       }
     }
   }
