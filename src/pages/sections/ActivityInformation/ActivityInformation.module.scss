@@ -11,6 +11,7 @@
 
     .text {
       text-align: center;
+      max-width: 28rem;
       margin-bottom: 5rem;
 
       h1 {
@@ -100,6 +101,7 @@
           flex-direction: column;
 
           .followers {
+            min-width: 10rem;
             padding: 2rem;
             border-radius: 0.8rem;
             background-color: #cf8562;
@@ -122,6 +124,76 @@
             p {
               font-size: 1.1rem;
               line-height: 1.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    .content {
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .text {
+        max-width: 48rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    .content {
+      max-width: 118rem;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      .text {
+        text-align: left;
+
+        h1 {
+          font-size: 4.8rem;
+
+          &::after {
+            margin: 1rem 0 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+
+      .info {
+        flex-direction: row;
+
+        .image {
+          flex: 0 0 28rem;
+          margin: 0 2rem 0 0;
+        }
+
+        .github {
+          height: 30rem;
+          max-width: 48rem;
+          flex-direction: column;
+
+          .repository {
+            margin: 0 0 2rem;
+            height: 20rem;
+          }
+
+          .social {
+            flex-direction: row;
+
+            .followers {
+              & + .followers {
+                margin-top: 0;
+                margin-left: 2rem;
+              }
             }
           }
         }
