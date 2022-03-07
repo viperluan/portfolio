@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import ActiveLink from 'src/components/Utils/ActiveLink';
 
 import styles from './Header.module.scss';
@@ -8,9 +10,7 @@ const Header = () => {
       <header className={styles.container}>
         <div className={styles.content}>
           <span>
-            <ActiveLink href="/" activeClassName={styles.activeLink}>
-              <a>LCS</a>
-            </ActiveLink>
+            <Link href="/">LCS</Link>
           </span>
           <nav>
             <ul>
