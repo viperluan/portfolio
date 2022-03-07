@@ -1,8 +1,10 @@
 .container {
+  overflow: hidden;
+
   header {
+    width: 100%;
     position: fixed;
     z-index: 1;
-    width: 100%;
   }
 
   main {
