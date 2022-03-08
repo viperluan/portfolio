@@ -1,24 +1,22 @@
 .container {
+  padding: 10rem 2rem;
   background-color: #6f8e88;
-  height: 50rem;
-  padding: 10rem 0;
 
   .content {
-    max-width: 118rem;
-    height: 100%;
-    margin: auto;
+    color: #fff;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 
     .text {
-      max-width: 48rem;
-      color: #fff;
+      text-align: center;
+      max-width: 28rem;
+      margin-bottom: 5rem;
 
       h1 {
         font-weight: bold;
-        font-size: 4.8rem;
+        font-size: 3.6rem;
 
         &::after {
           content: "";
@@ -26,31 +24,32 @@
           width: 5rem;
           height: 0.4rem;
           background-color: #fff;
-          margin: 1rem 0 2rem;
+          margin: 1rem auto 2rem;
         }
       }
 
       p {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
     }
 
     .characteristics {
-      color: #fff;
       background: #cf8562;
-      width: 100%;
-      max-width: 48rem;
       border-radius: 0.8rem;
-      padding: 4rem 0;
+      padding: 4rem;
+      max-width: 28rem;
+      width: 100%;
 
       display: flex;
+      flex-direction: column;
       justify-content: center;
 
       ul {
         user-select: none;
+        margin: 0 auto;
 
         & + ul {
-          margin-left: 5rem;
+          margin-top: 2rem;
         }
 
         li {
@@ -59,6 +58,57 @@
 
           & + li {
             margin-top: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    .content {
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .text {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    .content {
+      max-width: 118rem;
+      margin: 0 auto;
+      justify-content: space-between;
+
+      .text {
+        text-align: left;
+        max-width: 48rem;
+
+        h1 {
+          font-size: 4.8rem;
+
+          &::after {
+            margin: 1rem 0 2rem;
+          }
+        }
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+
+      .characteristics {
+        max-width: 52rem;
+        flex-direction: row;
+
+        ul {
+          & + ul {
+            margin-top: 0;
           }
         }
       }
