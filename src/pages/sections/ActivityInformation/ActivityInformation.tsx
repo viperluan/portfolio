@@ -22,28 +22,48 @@ const ActivityInformation = ({ user }: IActivityInformationProps) => {
             <p>Referência resumida das atividades recentes com dados atualizados.</p>
           </div>
           <div className={styles.info}>
-            <div className={styles.image}>
+            <a
+              href="https://github.com/viperluan"
+              target="_blank"
+              className={styles.image}
+              rel="noreferrer"
+            >
               <Image src="/static/images/perfil.jpeg" alt="Foto do perfil GitHub" layout="fill" />
               <div className={styles.name}>
                 <p>Luan Conte Soares</p>
               </div>
-            </div>
+            </a>
 
             <div className={styles.github}>
-              <div className={styles.repository}>
+              <a
+                href="https://github.com/viperluan?tab=repositories"
+                target="_blank"
+                className={styles.repository}
+                rel="noreferrer"
+              >
                 <h3>{repositories}</h3>
                 <p>Repositórios</p>
-              </div>
+              </a>
 
               <div className={styles.social}>
-                <div className={styles.followers}>
+                <a
+                  href="https://github.com/viperluan?tab=following"
+                  target="_blank"
+                  className={styles.followers}
+                  rel="noreferrer"
+                >
                   <h3>{following}</h3>
                   <p>Seguidores</p>
-                </div>
-                <div className={styles.followers}>
+                </a>
+                <a
+                  href="https://github.com/viperluan?tab=followers"
+                  target="_blank"
+                  className={styles.followers}
+                  rel="noreferrer"
+                >
                   <h3>{followers}</h3>
                   <p>Seguindo</p>
-                </div>
+                </a>
               </div>
             </div>
           </div>
