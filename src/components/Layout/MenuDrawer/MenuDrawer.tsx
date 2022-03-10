@@ -39,6 +39,7 @@ const MenuDrawer = ({ isActive, handleRequestClose }: IMenuDrawerProps) => {
     if (isActive) {
       html?.addEventListener('click', handleClickOutside);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
   return (
