@@ -28,17 +28,25 @@ const MenuDrawer = ({ isActive, handleRequestClose }: IMenuDrawerProps) => {
   };
 
   useEffect(() => {
-    const htmlElement = document.documentElement;
-    const menuElement = document.getElementById('menu');
+    if (!html || !menu) {
+      const htmlElement = document.documentElement;
+      const menuElement = document.getElementById('menu');
 
-    if (htmlElement && menuElement) {
-      setHtml(htmlElement);
-      setMenu(menuElement);
+      if (htmlElement && menuElement) {
+        setHtml(htmlElement);
+        setMenu(menuElement);
+      }
     }
 
-    if (isActive) {
-      html?.addEventListener('click', handleClickOutside);
+    if (!isActive && html) {
+      html.style.overflow = 'visible';
     }
+
+    if (isActive && html) {
+      html.addEventListener('click', handleClickOutside);
+      html.style.overflow = 'hidden';
+    }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isActive]);
 
