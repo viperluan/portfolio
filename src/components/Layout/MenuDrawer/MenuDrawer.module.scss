@@ -1,0 +1,27 @@
+.container {
+  display: none;
+  visibility: hidden;
+
+  background-color: rgba($color: #fff, $alpha: 0.9);
+  height: 100vh;
+  width: min(100vw, 40rem);
+
+  position: fixed;
+  right: 0;
+  z-index: 15;
+
+  transform: translateX(100%);
+
+  transition: all ease 0.3s;
+
+  &.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    display: block;
+  }
+}
