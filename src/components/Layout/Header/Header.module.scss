@@ -9,8 +9,9 @@
   .content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 2rem;
+    justify-content: space-between;
+    max-width: 28rem;
+    margin: auto;
 
     span a {
       font-size: 3.6rem;
@@ -56,16 +57,64 @@
         }
       }
     }
+
+    button {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border: none;
+      background: none;
+      color: #fff;
+      cursor: pointer;
+      margin-right: -1rem;
+
+      span {
+        display: block;
+        border-top: 2px solid #fff;
+        width: 2rem;
+
+        &::after,
+        &::before {
+          content: "";
+          display: block;
+          width: 2rem;
+          height: 0.2rem;
+          margin-top: 0.5rem;
+          background-color: currentColor;
+          position: relative;
+          transition: all 0.3s;
+        }
+
+        &.active {
+          border-top-color: transparent;
+
+          &::before {
+            transform: rotate(135deg);
+          }
+
+          &::after {
+            transform: rotate(-135deg);
+            top: -0.7rem;
+          }
+        }
+      }
+    }
   }
 }
 
 @media screen and (min-width: 800px) {
   .container {
     .content {
-      justify-content: space-around;
+      justify-content: space-between;
+      max-width: 100%;
+      padding: 0 2rem;
 
       nav ul {
         display: flex;
+      }
+
+      button {
+        display: none;
       }
     }
   }
