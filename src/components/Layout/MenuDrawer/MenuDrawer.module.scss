@@ -1,12 +1,14 @@
 .container {
   display: none;
   visibility: hidden;
+  padding: 2rem;
 
-  background-color: rgba($color: #fff, $alpha: 0.9);
-  height: 100vh;
-  width: min(100vw, 40rem);
+  background-color: rgba($color: #485855, $alpha: 0.9);
+  height: calc(100vh - 5.6rem);
+  width: min(100vw);
 
   position: fixed;
+  top: 5.6rem;
   right: 0;
   z-index: 15;
 
@@ -17,6 +19,43 @@
   &.active {
     transform: translateX(0);
     visibility: visible;
+  }
+
+  button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    li + li {
+      margin-top: 2rem;
+    }
+
+    li a {
+      position: relative;
+      color: white;
+
+      &.activeLink {
+        color: #cf8562;
+
+        &::after {
+          content: "";
+          display: block;
+          bottom: -5px;
+          position: absolute;
+          background-color: #cf8562;
+          height: 0.3rem;
+          width: 100%;
+        }
+      }
+    }
   }
 }
 

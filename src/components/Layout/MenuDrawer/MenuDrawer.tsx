@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+import ActiveLink from '@components/Utils/ActiveLink';
 
 import styles from './MenuDrawer.module.scss';
 
@@ -8,27 +10,71 @@ interface IMenuDrawerProps {
 }
 
 const MenuDrawer = ({ isActive, handleRequestClose }: IMenuDrawerProps) => {
-  useEffect(() => {
-    if (isActive) {
-      const html = document.documentElement;
-      const menu = document.getElementById('menu');
+  const [html, setHtml] = useState<HTMLElement | null>(null);
+  const [menu, setMenu] = useState<HTMLElement | null>(null);
 
-      const handleClickOutside = (htmlEvent: MouseEvent) => {
-        if (htmlEvent) {
-          if (!menu?.contains(htmlEvent.target as Node)) {
-            handleRequestClose();
-            html.removeEventListener('click', handleClickOutside);
-          }
-        }
-      };
-
-      html.addEventListener('click', handleClickOutside);
+  const handleClickOutside = (htmlEvent: MouseEvent) => {
+    if (htmlEvent) {
+      if (!menu?.contains(htmlEvent.target as Node)) {
+        handleRequestClose();
+        html?.removeEventListener('click', handleClickOutside);
+      }
     }
-  }, [isActive, handleRequestClose]);
+  };
+
+  const handleClick = () => {
+    html?.removeEventListener('click', handleClickOutside);
+    handleRequestClose();
+  };
+
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+    const menuElement = document.getElementById('menu');
+
+    if (htmlElement && menuElement) {
+      setHtml(htmlElement);
+      setMenu(menuElement);
+    }
+
+    if (isActive) {
+      html?.addEventListener('click', handleClickOutside);
+    }
+  }, [isActive]);
 
   return (
     <div id="menu" className={`${styles.container} ${isActive && styles.active}`}>
-      <h1>teste</h1>
+      <nav>
+        <ul>
+          <li>
+            <button type="button" onClick={handleClick}>
+              <ActiveLink href="/" activeClassName={styles.activeLink}>
+                <a>Início</a>
+              </ActiveLink>
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={handleClick}>
+              <ActiveLink href="/portfolio" activeClassName={styles.activeLink}>
+                <a>Portfólio</a>
+              </ActiveLink>
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={handleClick}>
+              <ActiveLink href="/contact" activeClassName={styles.activeLink}>
+                <a>Contato</a>
+              </ActiveLink>
+            </button>
+          </li>
+          <li>
+            <button type="button" onClick={handleClick}>
+              <ActiveLink href="/about" activeClassName={styles.activeLink}>
+                <a>Sobre</a>
+              </ActiveLink>
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };
