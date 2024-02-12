@@ -13,6 +13,12 @@ const Action = () => {
             Hi I’m <span>Luan Conte Soares</span>. A UX/UI design enthusiast and versatile
             programmer, with low level knowledge, based in Brazil.
           </p>
+          <button className="button">
+            See my works
+            <a className="arrow-container" href="/">
+              <img src="arrow.svg" alt="Arrow" />
+            </a>
+          </button>
         </div>
         <div className="container-action-section">
           <img className="bg-container" src="bg-binary.jpg" alt="Binary Numbers" />
