@@ -16,12 +16,12 @@ const Action = () => {
           <button className="button">
             See my works
             <a className="arrow-container" href="/">
-              <img src="arrow.svg" alt="Arrow" />
+              <img src="/arrow.svg" alt="Arrow" />
             </a>
           </button>
         </div>
         <div className="container-action-section">
-          <img className="bg-container" src="bg-binary.jpg" alt="Binary Numbers" />
+          <img className="bg-container" src="/bg-binary.jpg" alt="Binary Numbers" />
         </div>
       </div>
     </>

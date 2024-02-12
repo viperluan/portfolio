@@ -4,7 +4,7 @@ const Logo = () => {
   return (
     <div className="logo">
       <a href="/">
-        <img src="logo.svg" alt="Logo LCS" />
+        <img src="/logo.svg" alt="Logo LCS" />
       </a>
     </div>
   );
