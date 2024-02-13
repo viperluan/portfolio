@@ -3,9 +3,9 @@ import './styles.scss';
 const Footer = () => {
   return (
     <div className="footer">
-      <p className="text-container">© LCS Soluções em Tecnologia LTDA - 2022</p>
-
       <div className="social-media-assingment-container">
+        <p className="text-assingment-container">Assignment links of icons used in this site:</p>
+
         <a
           className="media-assingment"
           href="https://www.flaticon.com/free-icons/whatsapp"
@@ -34,6 +34,11 @@ const Footer = () => {
         >
           Email icons created by Uniconlabs - Flaticon
         </a>
+      </div>
+
+      <div className="info-lcs-container">
+        <p className="text-container">© LCS Soluções em Tecnologia LTDA - 2022</p>
+        <img src="logo.svg" alt="Logo Image" />
       </div>
     </div>
   );

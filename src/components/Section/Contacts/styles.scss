@@ -1,25 +1,50 @@
+@use "/src/scss/media-query" as *;
+
 .contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include lg {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
   .help-image {
     margin-top: 30px;
     width: 100%;
+    max-width: 580px;
   }
 
-  .text-container {
-    margin-top: 60px;
-    font-weight: 100;
-    font-size: 14px;
-  }
+  .text-and-social-media-container {
+    max-width: 580px;
 
-  .social-media-container {
-    margin-top: 30px;
+    .text-container {
+      margin-top: 60px;
+      font-weight: 100;
+      font-size: 14px;
 
-    display: grid;
-    grid-template-columns: repeat(4, 60px);
-    gap: 0 20px;
-    justify-content: center;
+      @include lg {
+        margin-top: 30px;
+        font-size: 16px;
+      }
+    }
 
-    img {
-      width: 100%;
+    .social-media-container {
+      margin-top: 30px;
+
+      display: grid;
+      grid-template-columns: repeat(4, 60px);
+      gap: 0 20px;
+      justify-content: center;
+
+      @include lg {
+        margin-top: 100px;
+      }
+
+      img {
+        width: 100%;
+      }
     }
   }
 }

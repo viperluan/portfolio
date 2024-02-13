@@ -1,7 +1,8 @@
-import './App.scss';
 import '@fontsource/jetbrains-mono';
 import '@fontsource/jetbrains-mono/100.css';
 import '@fontsource/jetbrains-mono/700.css';
+import './App.scss';
+
 import { Container } from './components/Container';
 import { Header } from './components/Header';
 import { Action } from './components/Section/Action';

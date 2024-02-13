@@ -7,12 +7,14 @@ const Action = () => {
     <Section>
       <div className="container-action">
         <div className="container-action-section">
-          <Title>web, mobile & desktop developer</Title>
-
-          <p className="text-container">
-            Hi I’m <span>Luan Conte Soares</span>. A UX/UI design enthusiast and versatile
-            programmer, with low level knowledge, based in Brazil.
-          </p>
+          <div>
+            <Title>web, mobile & desktop developer</Title>
+            <p className="text-container">
+              Hi I’m <span>Luan Conte Soares</span>. A UX/UI design enthusiast and versatile
+              programmer, with low level knowledge, based in Brazil. I'm looking for new challenges,
+              opportunities that can awaken my potential to grow together with the team.
+            </p>
+          </div>
 
           <button className="button">
             See my works

@@ -1,7 +1,14 @@
+@use "/src/scss/media-query" as *;
+
 .title {
   font-size: 24px;
   font-family: "JetBrains Mono";
   width: 100%;
+
+  @include lg {
+    font-size: 40px;
+    max-width: 580px;
+  }
 
   &::after {
     content: "";
@@ -10,5 +17,10 @@
     height: 2px;
     background-color: #121212;
     margin-top: 20px;
+
+    @include lg {
+      height: 4px;
+      width: 50px;
+    }
   }
 }

@@ -1,3 +1,9 @@
+@use "/src/scss/media-query" as *;
+
 .section {
   margin-top: 40px;
+
+  @include lg {
+    margin-top: 200px;
+  }
 }

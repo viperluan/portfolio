@@ -1,0 +1,23 @@
+@use "/src/scss/media-query" as *;
+
+.nav-container {
+  display: none;
+
+  .button-navigator {
+    font-size: 24px;
+    cursor: pointer;
+
+    border: none;
+    color: #121212;
+    background-color: transparent;
+    margin-left: 30px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include md {
+    display: flex;
+  }
+}

@@ -1,6 +1,16 @@
+@use "/src/scss/media-query" as *;
+
 .container {
   width: 100%;
   padding: 0 30px;
 
   margin: 0 auto;
+
+  @include xl {
+    max-width: 1200px;
+  }
+
+  @include rwd(1300) {
+    padding: 0;
+  }
 }

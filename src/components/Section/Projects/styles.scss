@@ -1,3 +1,5 @@
+@use "/src/scss/media-query" as *;
+
 .container-projects {
   .container-title {
   }
@@ -8,5 +10,13 @@
     grid-template-columns: 1fr;
     row-gap: 20px;
     column-gap: 20px;
+
+    @include md {
+      grid-template-columns: repeat(2, 2fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(3, 3fr);
+    }
   }
 }
