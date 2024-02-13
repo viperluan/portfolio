@@ -1,6 +1,6 @@
-import { Logo } from "../Logo";
-import { Navigator } from "../Navigator";
-import "./styles.scss";
+import { Logo } from '../Logo';
+import { Navigator } from '../Navigator';
+import './styles.scss';
 
 const Header = () => {
   return (

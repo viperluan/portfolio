@@ -1,10 +1,12 @@
 .container-action {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
 
   .text-container {
+    font-size: 14px;
     font-weight: 100;
-    margin-top: 20px;
+    margin-top: 30px;
 
     span {
       font-weight: 700;
@@ -15,6 +17,8 @@
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
+    width: 100%;
+    border-radius: 8px;
 
     cursor: pointer;
     background-color: #121212;
@@ -29,6 +33,7 @@
   }
 
   .bg-container {
+    display: none;
     width: 100%;
   }
 

@@ -1,0 +1,25 @@
+.contacts-container {
+  .help-image {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .text-container {
+    margin-top: 60px;
+    font-weight: 100;
+    font-size: 14px;
+  }
+
+  .social-media-container {
+    margin-top: 30px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    gap: 0 20px;
+    justify-content: center;
+
+    img {
+      width: 100%;
+    }
+  }
+}

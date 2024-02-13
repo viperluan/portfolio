@@ -1,5 +1,5 @@
-import "./styles.scss";
-import { PropsWithChildren } from "react";
+import './styles.scss';
+import { PropsWithChildren } from 'react';
 
 const Section = ({ children }: PropsWithChildren) => {
   return <div className="section">{children}</div>;

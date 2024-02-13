@@ -1,0 +1,12 @@
+.container-projects {
+  .container-title {
+  }
+
+  .container-projects-section {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+}

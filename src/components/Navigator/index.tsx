@@ -1,7 +1,7 @@
-import { ButtonNavigator } from "./ButtonNavigator";
-import "./styles.scss";
+import { ButtonNavigator } from './ButtonNavigator';
+import './styles.scss';
 
-const buttons = ["About", "Works", "Contact"];
+const buttons = ['About', 'Works', 'Contact'];
 
 const Navigator = () => {
   return (

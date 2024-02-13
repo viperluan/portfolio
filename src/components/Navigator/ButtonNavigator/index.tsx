@@ -1,4 +1,4 @@
-import "./styles.scss";
+import './styles.scss';
 
 interface ButtonNavigatorProps {
   name: string;
