@@ -5,29 +5,16 @@ import './styles.scss';
 
 const projects = [
   {
-    name: 'Reppos - Ecommerce',
+    name: 'Reppos - Marketplace',
     link: 'https://reppos.com.br',
-    image: '/bg-binary.jpg',
+    image: '/reppos.png',
+    stylesClassName: 'reppos-project',
   },
   {
-    name: 'Test',
-    link: 'test.com.br',
-    image: '/bg-binary.jpg',
-  },
-  {
-    name: 'Test',
-    link: 'test.com.br',
-    image: '/bg-binary.jpg',
-  },
-  {
-    name: 'Test',
-    link: 'test.com.br',
-    image: '/bg-binary.jpg',
-  },
-  {
-    name: 'Test',
-    link: 'test.com.br',
-    image: '/bg-binary.jpg',
+    name: 'Econext - Sustainability Portal',
+    link: 'https://www.econext.com.br/',
+    image: '/econext.png',
+    stylesClassName: 'econext-project',
   },
 ];
 
@@ -40,8 +27,10 @@ const Projects = () => {
         </div>
 
         <div className="container-projects-section">
-          {projects.map(({ name, link, image }) => {
-            return <Project name={name} link={link} image={image} />;
+          {projects.map(({ name, link, image, stylesClassName }) => {
+            return (
+              <Project name={name} link={link} image={image} stylesClassName={stylesClassName} />
+            );
           })}
         </div>
       </div>
