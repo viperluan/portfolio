@@ -4,8 +4,9 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="social-media-assingment-container">
-        <p className="text-assingment-container">Assignment links of icons used in this site:</p>
-
+        <p className="text-assingment-container">
+          Assignment links of icons and images used in this site:
+        </p>
         <a
           className="media-assingment"
           target="_blank"
@@ -37,6 +38,14 @@ const Footer = () => {
           title="email icons"
         >
           Email icons created by Uniconlabs - Flaticon
+        </a>
+
+        <a
+          className="media-assingment"
+          target="_blank"
+          href="https://br.freepik.com/fotos-gratis/sistema-html-para-o-conceito-de-site_41740264.htm#query=plano%20de%20fundo%20desenvolvedor&position=17&from_view=search&track=ais&uuid=60073cb7-4770-4f6e-8aca-b3be90ff2257"
+        >
+          Image by Freepik
         </a>
       </div>
 

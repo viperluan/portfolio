@@ -11,8 +11,9 @@ const Action = () => {
             <Title>web, mobile & desktop developer</Title>
             <p className="text-container">
               Hi I’m <span>Luan Conte Soares</span>. A UX/UI design enthusiast and versatile
-              programmer, with low level knowledge, based in Brazil. I'm looking for new challenges,
-              opportunities that can awaken my potential to grow together with the team.
+              programmer, with a knowledge of low level languages, based in Brazil. I'm looking for
+              new challenges, opportunities that can awaken my potential to grow together with the
+              team.
             </p>
           </div>
 
@@ -25,7 +26,7 @@ const Action = () => {
         </div>
 
         <div className="container-action-section">
-          <img className="bg-container" src="/bg-binary.jpg" alt="Binary Numbers" />
+          <img className="bg-container" src="/conceito-bg.jpg" alt="Binary Numbers" />
         </div>
       </div>
     </Section>
