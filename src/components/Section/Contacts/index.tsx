@@ -16,16 +16,16 @@ const Contacts = () => {
           </p>
 
           <div className="social-media-container">
-            <a href="">
+            <a href="https://wa.me/5547988447503" target="_blank">
               <img src="whatsapp.png" alt="WhatsApp Image" />
             </a>
-            <a href="">
+            <a href="https://github.com/viperluan" target="_blank">
               <img src="github.png" alt="Github Image" />
             </a>
-            <a href="">
+            <a href="https://www.linkedin.com/in/luan-conte-soares" target="_blank">
               <img src="linkedin.png" alt="Linked In Image" />
             </a>
-            <a href="">
+            <a href="mailto:viperluan@gmail.com" target="_blank">
               <img src="mail.png" alt="Mail Image" />
             </a>
           </div>
