@@ -7,7 +7,7 @@ const Contacts = () => {
     <Section>
       <Title>can I help you with something?</Title>
       <div id="contact" className="contacts-container">
-        <img className="help-image" src="/help-image.png" alt="IT Support Cartoon" />
+        <img className="help-image" src="/help-image.webp" alt="IT Support Cartoon" />
 
         <div className="text-and-social-media-container">
           <p className="text-container">
@@ -17,16 +17,16 @@ const Contacts = () => {
 
           <div className="social-media-container">
             <a href="https://wa.me/5547988447503" target="_blank">
-              <img src="whatsapp.png" alt="WhatsApp Image" />
+              <img src="whatsapp.webp" alt="WhatsApp Image" />
             </a>
             <a href="https://github.com/viperluan" target="_blank">
-              <img src="github.png" alt="Github Image" />
+              <img src="github.webp" alt="Github Image" />
             </a>
             <a href="https://www.linkedin.com/in/luan-conte-soares" target="_blank">
-              <img src="linkedin.png" alt="Linked In Image" />
+              <img src="linkedin.webp" alt="Linked In Image" />
             </a>
             <a href="mailto:viperluan@gmail.com" target="_blank">
-              <img src="mail.png" alt="Mail Image" />
+              <img src="mail.webp" alt="Mail Image" />
             </a>
           </div>
         </div>

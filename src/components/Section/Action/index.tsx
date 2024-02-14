@@ -20,13 +20,13 @@ const Action = () => {
           <button className="button">
             See my works
             <a className="arrow-container" href="#works">
-              <img src="/arrow.svg" alt="Arrow" />
+              <img src="/arrow.webp" alt="Arrow" />
             </a>
           </button>
         </div>
 
         <div className="container-action-section">
-          <img className="bg-container" src="/bg-concept.png" alt="Binary Numbers" />
+          <img className="bg-container" src="/bg-concept.webp" alt="Binary Numbers" />
         </div>
       </div>
     </Section>

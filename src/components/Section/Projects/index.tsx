@@ -7,13 +7,13 @@ const projects = [
   {
     name: 'Reppos - Marketplace',
     link: 'https://reppos.com.br',
-    image: '/reppos.png',
+    image: '/reppos.webp',
     stylesClassName: 'reppos-project',
   },
   {
     name: 'Econext - Sustainability',
     link: 'https://www.econext.com.br/',
-    image: '/econext.png',
+    image: '/econext.webp',
     stylesClassName: 'econext-project',
   },
 ];

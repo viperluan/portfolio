@@ -51,7 +51,7 @@ const Footer = () => {
 
       <div className="info-lcs-container">
         <p className="text-container">© LCS Soluções em Tecnologia LTDA - 2022</p>
-        <img src="logo.svg" alt="Logo Image" />
+        <img src="logo.webp" alt="Logo Image" />
       </div>
     </div>
   );
