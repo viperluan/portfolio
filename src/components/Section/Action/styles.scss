@@ -25,27 +25,26 @@
     }
   }
 
-  .button {
+  .arrow-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+
+    text-decoration: none;
+    color: #f2f2f2;
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
-    width: 100%;
     border-radius: 8px;
 
-    cursor: pointer;
     background-color: #121212;
-    border: none;
 
     padding: 12px 45px;
     margin-top: 40px;
-    justify-self: flex-end;
 
     @include lg {
-      max-width: 280px;
-    }
-
-    .arrow-container {
-      margin-left: 20px;
+      max-width: 380px;
     }
   }
 
