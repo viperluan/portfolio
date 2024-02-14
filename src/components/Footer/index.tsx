@@ -8,6 +8,7 @@ const Footer = () => {
 
         <a
           className="media-assingment"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/whatsapp"
           title="whatsapp icons"
         >
@@ -15,6 +16,7 @@ const Footer = () => {
         </a>
         <a
           className="media-assingment"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/linkedin"
           title="linkedin icons"
         >
@@ -22,6 +24,7 @@ const Footer = () => {
         </a>
         <a
           className="media-assingment"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/github"
           title="github icons"
         >
@@ -29,6 +32,7 @@ const Footer = () => {
         </a>
         <a
           className="media-assingment"
+          target="_blank"
           href="https://www.flaticon.com/free-icons/email"
           title="email icons"
         >
