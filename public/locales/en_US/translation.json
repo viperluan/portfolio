@@ -1,0 +1,28 @@
+{
+  "navigation_buttons": {
+    "about": "about",
+    "projects": "projects",
+    "contact": "contact"
+  },
+  "action_section": {
+    "title": "web, mobile & desktop developer",
+    "hi": "Hi I'm",
+    "name": "Luan Conte Soares",
+    "text": "A UX/UI design enthusiast and versatile programmer, with a knowledge of low level languages, living in Brazil. I'm looking fornew challenges, opportunities that can awaken my potential to grow together with the team.",
+    "button": "See my projects"
+  },
+  "projects_section": {
+    "title": "some projects that I contributed"
+  },
+  "about_section": {
+    "title": "a little history about me",
+    "text": "My story begins in 2005, when I started studying computer science. First it was just computer maintenance, formatting, etc. Afterwards, I took a technical course in IT and another in industrial electronics. I worked for 10 years as an electronics technician, repairing different types of equipment. In 2018, I started my studies in programming, where I found my passion: creating my own solutions. Today, I seek new challenges to create solutions that can innovate the world. Languages ​​I work with: PHP, Javascript, Java and C++."
+  },
+  "contact_section": {
+    "title": "can I help you with something?",
+    "text": "Feel free to get in touch, if you want to know more about the projects, what was my participation or even just to say hi. These are some ways you can contact me:"
+  },
+  "footer": {
+    "title": "Assignment links of icons and images used in this site:"
+  }
+}

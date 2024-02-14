@@ -1,0 +1,28 @@
+{
+  "navigation_buttons": {
+    "about": "sobre",
+    "projects": "projetos",
+    "contact": "contato"
+  },
+  "action_section": {
+    "title": "desenvolvedor web, mobile e desktop",
+    "hi": "Olá, meu nome é",
+    "name": "Luan Conte Soares",
+    "text": "Sou um entusiasta em design UX/UI e um programador versátil, com conhecimento de linguagens de baixo nível, morando no Brasil. Procuro novos desafios, oportunidades que possam despertar meu potencial para crescer junto com a equipe.",
+    "button": "Veja meus trabalhos"
+  },
+  "projects_section": {
+    "title": "desenvolvedor web, mobile e desktop"
+  },
+  "about_section": {
+    "title": "um pouco sobre minha história",
+    "text": "Minha história começa em 2005, quando iniciei meus estudos em informática. Primeiro, apenas manutenção de computadores, formatação, etc. Depois, fiz um curso técnico em informática e outro em eletrônica industrial. Trabalhei por 10 anos como técnico em eletrônica, consertando diversos tipos de equipamentos. Em 2018 iniciei meus estudos em programação, onde encontrei minha paixão: criar minhas próprias soluções. Hoje busco novos desafios para criar soluções que possam inovar o mundo. Linguagens que trabalho: PHP, Javascript, Java e C++."
+  },
+  "contact_section": {
+    "title": "posso ajudar você com alguma coisa?",
+    "text": "Fique a vontade para entrar em contato, caso queira saber mais sobre os projetos, qual foi minha participação ou até mesmo apenas para dar um oi. Estas são algumas maneiras pelas quais você pode entrar em contato comigo:"
+  },
+  "footer": {
+    "title": "Links para associação de ícones e imagens utilizadas neste site:"
+  }
+}

@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react';
 import './styles.scss';
 
+import { useTranslation } from 'react-i18next';
+
 interface MenuMobileProps {
   isOpen: boolean;
   handleRequestClose: () => void;
 }
 
 const MenuMobile = ({ isOpen, handleRequestClose }: MenuMobileProps) => {
+  const { t } = useTranslation();
+
   const [html, setHtml] = useState<HTMLElement | null>(null);
   const [menu, setMenu] = useState<HTMLElement | null>(null);
 
@@ -47,13 +51,13 @@ const MenuMobile = ({ isOpen, handleRequestClose }: MenuMobileProps) => {
       <nav className="nav-container">
         <ul>
           <li onClick={handleClick}>
-            <a href="#about">about</a>
+            <a href="#about">{t('navigation_buttons.about')}</a>
           </li>
           <li onClick={handleClick}>
-            <a href="#works">works</a>
+            <a href="#works">{t('navigation_buttons.projects')}</a>
           </li>
           <li onClick={handleClick}>
-            <a href="#contact">contact</a>
+            <a href="#contact">{t('navigation_buttons.contact')}</a>
           </li>
         </ul>
       </nav>

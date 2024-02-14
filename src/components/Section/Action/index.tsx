@@ -2,27 +2,27 @@ import { Section } from '..';
 import { Title } from '../../Title';
 import './styles.scss';
 
+import { useTranslation } from 'react-i18next';
+
 const Action = () => {
+  const { t } = useTranslation();
+
   return (
     <Section>
       <div className="container-action">
         <div className="container-action-section">
           <div>
-            <Title>web, mobile & desktop developer</Title>
+            <Title>{t('action_section.title')}</Title>
             <p className="text-container">
-              Hi I’m <span>Luan Conte Soares</span>. A UX/UI design enthusiast and versatile
-              programmer, with a knowledge of low level languages, based in Brazil. I'm looking for
-              new challenges, opportunities that can awaken my potential to grow together with the
-              team.
+              {t('action_section.hi')} <span>{t('action_section.name')}</span>.
+              {t('action_section.text')}
             </p>
           </div>
 
-          <button className="button">
-            See my works
-            <a className="arrow-container" href="#works">
-              <img src="/arrow.webp" alt="Arrow" />
-            </a>
-          </button>
+          <a className="arrow-container" href="#works">
+            {t('action_section.button')}
+            <img src="/arrow.webp" alt="Arrow" />
+          </a>
         </div>
 
         <div className="container-action-section">
