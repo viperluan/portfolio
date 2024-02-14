@@ -15,7 +15,7 @@
       grid-template-columns: repeat(2, 2fr);
     }
 
-    @include lg {
+    @include xl {
       grid-template-columns: repeat(3, 3fr);
     }
   }

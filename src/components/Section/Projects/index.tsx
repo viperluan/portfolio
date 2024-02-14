@@ -11,7 +11,7 @@ const projects = [
     stylesClassName: 'reppos-project',
   },
   {
-    name: 'Econext - Sustainability Portal',
+    name: 'Econext - Sustainability',
     link: 'https://www.econext.com.br/',
     image: '/econext.png',
     stylesClassName: 'econext-project',
