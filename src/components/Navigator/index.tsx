@@ -7,7 +7,7 @@ const Navigator = () => {
   return (
     <nav className="nav-container">
       {buttons.map((button) => {
-        return <ButtonNavigator name={button} />;
+        return <ButtonNavigator key={button} name={button} />;
       })}
     </nav>
   );

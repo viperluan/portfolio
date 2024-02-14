@@ -29,7 +29,13 @@ const Projects = () => {
         <div className="container-projects-section">
           {projects.map(({ name, link, image, stylesClassName }) => {
             return (
-              <Project name={name} link={link} image={image} stylesClassName={stylesClassName} />
+              <Project
+                key={name}
+                name={name}
+                link={link}
+                image={image}
+                stylesClassName={stylesClassName}
+              />
             );
           })}
         </div>
