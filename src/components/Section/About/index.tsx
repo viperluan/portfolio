@@ -5,7 +5,7 @@ import './styles.scss';
 const About = () => {
   return (
     <Section>
-      <div className="container-about">
+      <div id="about" className="container-about">
         <Title>a little history about me</Title>
 
         <p className="text-container">

@@ -5,7 +5,11 @@ interface ButtonNavigatorProps {
 }
 
 const ButtonNavigator = ({ name }: ButtonNavigatorProps) => {
-  return <button className="button-navigator">{name}</button>;
+  return (
+    <a href={`#${name}`} className="button-navigator">
+      {name}
+    </a>
+  );
 };
 
 export { ButtonNavigator };

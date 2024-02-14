@@ -21,7 +21,7 @@ const projects = [
 const Projects = () => {
   return (
     <Section>
-      <div className="container-projects">
+      <div id="works" className="container-projects">
         <div className="container-title">
           <Title>some projects that I contributed</Title>
         </div>

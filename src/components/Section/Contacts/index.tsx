@@ -6,7 +6,7 @@ const Contacts = () => {
   return (
     <Section>
       <Title>can I help you with something?</Title>
-      <div className="contacts-container">
+      <div id="contact" className="contacts-container">
         <img className="help-image" src="/help-image.png" alt="IT Support Cartoon" />
 
         <div className="text-and-social-media-container">
