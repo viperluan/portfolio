@@ -1,3 +1,5 @@
+@use "/src/scss/media-query" as *;
+
 .header {
   width: 100%;
   margin-top: 40px;
@@ -5,4 +7,52 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    color: #121212;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+
+    span {
+      display: block;
+      border-top: 3px solid #121212;
+      width: 30px;
+
+      &::after,
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin-top: 7px;
+        background-color: currentColor;
+        position: relative;
+        transition: all 0.3s;
+      }
+
+      &.active {
+        border-top-color: transparent;
+
+        &::before {
+          transform: rotate(135deg);
+          background-color: #f2f2f2;
+        }
+
+        &::after {
+          transform: rotate(-135deg);
+          top: -9.3px;
+          background-color: #f2f2f2;
+        }
+      }
+    }
+
+    @include md {
+      display: none;
+    }
+  }
 }

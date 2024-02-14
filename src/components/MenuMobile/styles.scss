@@ -1,0 +1,47 @@
+@use "/src/scss/media-query" as *;
+
+.menu-mobile-container {
+  display: block;
+  visibility: hidden;
+  padding: 2rem;
+
+  background-color: rgba($color: #121212, $alpha: 0.9);
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  transform: translateX(-100%);
+  transition: all ease 0.3s;
+
+  &.active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .nav-container {
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    ul {
+      list-style: none;
+
+      li a {
+        font-size: 48px;
+        color: #f2f2f2;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
