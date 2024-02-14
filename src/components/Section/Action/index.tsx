@@ -19,14 +19,14 @@ const Action = () => {
 
           <button className="button">
             See my works
-            <a className="arrow-container" href="/">
+            <a className="arrow-container" href="#works">
               <img src="/arrow.svg" alt="Arrow" />
             </a>
           </button>
         </div>
 
         <div className="container-action-section">
-          <img className="bg-container" src="/conceito-bg.jpg" alt="Binary Numbers" />
+          <img className="bg-container" src="/bg-concept.jpg" alt="Binary Numbers" />
         </div>
       </div>
     </Section>
