@@ -26,7 +26,7 @@ const Action = () => {
         </div>
 
         <div className="container-action-section">
-          <img className="bg-container" src="/bg-concept.jpg" alt="Binary Numbers" />
+          <img className="bg-container" src="/bg-concept.png" alt="Binary Numbers" />
         </div>
       </div>
     </Section>
