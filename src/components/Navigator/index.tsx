@@ -4,7 +4,18 @@ import './styles.scss';
 import { useTranslation } from 'react-i18next';
 
 const Navigator = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = () => {
+    const actualLanguage = i18n.language;
+
+    if (actualLanguage == 'en_US') {
+      i18n.changeLanguage('pt_BR');
+      return;
+    }
+
+    i18n.changeLanguage('en_US');
+  };
 
   const buttons = [
     t('navigation_buttons.about'),
@@ -17,6 +28,7 @@ const Navigator = () => {
       {buttons.map((button) => {
         return <ButtonNavigator key={button} name={button} />;
       })}
+      <img onClick={changeLanguage} src="/translation.webp" alt="" />
     </nav>
   );
 };

@@ -9,7 +9,18 @@ interface MenuMobileProps {
 }
 
 const MenuMobile = ({ isOpen, handleRequestClose }: MenuMobileProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = () => {
+    const actualLanguage = i18n.language;
+
+    if (actualLanguage == 'en_US') {
+      i18n.changeLanguage('pt_BR');
+      return;
+    }
+
+    i18n.changeLanguage('en_US');
+  };
 
   const [html, setHtml] = useState<HTMLElement | null>(null);
   const [menu, setMenu] = useState<HTMLElement | null>(null);
@@ -58,6 +69,9 @@ const MenuMobile = ({ isOpen, handleRequestClose }: MenuMobileProps) => {
           </li>
           <li onClick={handleClick}>
             <a href="#contact">{t('navigation_buttons.contact')}</a>
+          </li>
+          <li onClick={changeLanguage}>
+            <img src="/translation.webp" alt="language changer" />
           </li>
         </ul>
       </nav>

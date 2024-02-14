@@ -2,6 +2,14 @@
 
 .nav-container {
   display: none;
+  align-items: center;
+
+  img {
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    cursor: pointer;
+  }
 
   .button-navigator {
     font-size: 24px;

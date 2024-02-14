@@ -47,6 +47,14 @@ const Footer = () => {
         >
           Image by Freepik
         </a>
+        <a
+          className="media-assingment"
+          target="_blank"
+          href="https://www.flaticon.com/free-icons/translation"
+          title="translation icons"
+        >
+          Translation icons created by Freepik - Flaticon
+        </a>
       </div>
 
       <div className="info-lcs-container">
