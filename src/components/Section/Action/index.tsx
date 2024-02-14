@@ -21,12 +21,12 @@ const Action = () => {
 
           <a className="arrow-container" href="#works">
             {t('action_section.button')}
-            <img src="/arrow.webp" alt="Arrow" />
+            <img src="images/arrow.webp" alt="Arrow" />
           </a>
         </div>
 
         <div className="container-action-section">
-          <img className="bg-container" src="/bg-concept.webp" alt="Binary Numbers" />
+          <img className="bg-container" src="images/bg-concept.webp" alt="Binary Numbers" />
         </div>
       </div>
     </Section>

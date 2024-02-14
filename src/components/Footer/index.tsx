@@ -1,12 +1,14 @@
 import './styles.scss';
 
+import { useTranslation } from 'react-i18next';
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="footer">
       <div className="social-media-assingment-container">
-        <p className="text-assingment-container">
-          Assignment links of icons and images used in this site:
-        </p>
+        <p className="text-assingment-container">{t('footer.title')}</p>
         <a
           className="media-assingment"
           target="_blank"
@@ -59,7 +61,7 @@ const Footer = () => {
 
       <div className="info-lcs-container">
         <p className="text-container">© LCS Soluções em Tecnologia LTDA - 2022</p>
-        <img src="logo.webp" alt="Logo Image" />
+        <img src="images/logo.webp" alt="Logo Image" />
       </div>
     </div>
   );

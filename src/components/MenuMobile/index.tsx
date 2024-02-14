@@ -71,7 +71,7 @@ const MenuMobile = ({ isOpen, handleRequestClose }: MenuMobileProps) => {
             <a href="#contact">{t('navigation_buttons.contact')}</a>
           </li>
           <li onClick={changeLanguage}>
-            <img src="/translation.webp" alt="language changer" />
+            <img src="images/translation.webp" alt="language changer" />
           </li>
         </ul>
       </nav>

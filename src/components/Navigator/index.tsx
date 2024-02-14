@@ -28,7 +28,7 @@ const Navigator = () => {
       {buttons.map((button) => {
         return <ButtonNavigator key={button} name={button} />;
       })}
-      <img onClick={changeLanguage} src="/translation.webp" alt="" />
+      <img onClick={changeLanguage} src="images/translation.webp" alt="" />
     </nav>
   );
 };
