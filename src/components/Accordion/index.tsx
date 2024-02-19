@@ -11,17 +11,15 @@ const Accordion = ({ children, text }: PropsWithChildren<AccordionProps>) => {
 
   const handleAccordionClick = () => {
     setAccordionIsActive(!accordionIsActive);
-
-    console.log(accordionIsActive);
   };
 
   return (
-    <div className="accordion-container">
+    <div onClick={handleAccordionClick} className="accordion-container">
       <div className="accordion-header">
         <p className="accordion-text">{text}</p>
 
         <div className="accordion-button-container">
-          <button className={BUTTON_CLASS_STATE} onClick={handleAccordionClick}>
+          <button className={BUTTON_CLASS_STATE}>
             <img src="/images/arrow-down.webp" alt="Accordion button image" />
           </button>
         </div>
