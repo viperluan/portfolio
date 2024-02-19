@@ -3,20 +3,33 @@
 .footer {
   .info-lcs-container {
     margin-bottom: 10px;
+    width: 100%;
 
     @include lg {
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
       align-items: center;
     }
 
-    img {
-      display: none;
-      width: 30px;
-      height: 30px;
+    .copyright-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       @include lg {
-        display: block;
+        justify-content: space-between;
+      }
+
+      img {
+        display: none;
+        width: 30px;
+        height: 30px;
+
+        @include lg {
+          display: block;
+        }
       }
     }
   }
@@ -32,22 +45,12 @@
     }
   }
 
-  .text-assingment-container {
-    font-size: 14px;
-    font-weight: 100;
-    text-align: center;
-    margin-bottom: 10px;
-
-    @include lg {
-      text-align: left;
-    }
-  }
-
   .social-media-assingment-container {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin-bottom: 20px;
+    width: 100%;
 
     @include lg {
       align-items: flex-start;
