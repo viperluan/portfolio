@@ -9,10 +9,15 @@ const About = () => {
 
   return (
     <Section>
+      <Title>{t('about_section.title')}</Title>
       <div id="about" className="container-about">
-        <Title>{t('about_section.title')}</Title>
+        <div className="text-container">
+          <p>{t('about_section.text')}</p>
+        </div>
 
-        <p className="text-container">{t('about_section.text')}</p>
+        <div className="image-container">
+          <img src="/images/about.webp" alt="" />
+        </div>
       </div>
     </Section>
   );

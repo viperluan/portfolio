@@ -11,7 +11,9 @@ const Contacts = () => {
     <Section>
       <Title>{t('contact_section.title')}</Title>
       <div id="contact" className="contacts-container">
-        <img className="help-image" src="images/help-image.webp" alt="IT Support Cartoon" />
+        <div className="image-container">
+          <img className="help-image" src="images/help-image.webp" alt="IT Support Cartoon" />
+        </div>
 
         <div className="text-and-social-media-container">
           <p className="text-container">{t('contact_section.text')}</p>
