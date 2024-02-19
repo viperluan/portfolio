@@ -2,27 +2,30 @@
 
 .container-about {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch;
   gap: 20px;
-  margin-top: 30px;
 
   @include md {
     flex-direction: row;
   }
 
-  .text-container {
+  .title-and-text {
     width: 100%;
-    height: 100%;
-
-    p {
-      font-size: 14px;
-      font-weight: 100;
+    .text-container {
+      margin-top: 30px;
+      width: 100%;
       height: 100%;
 
-      @include lg {
-        font-size: 16px;
+      p {
+        font-size: 14px;
+        font-weight: 100;
+        height: 100%;
+
+        @include lg {
+          font-size: 16px;
+        }
       }
     }
   }
@@ -32,10 +35,6 @@
     height: 100%;
     border-radius: 8px;
     overflow: hidden;
-
-    @include md {
-      max-height: 289px;
-    }
 
     img {
       display: block;

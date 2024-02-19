@@ -9,14 +9,16 @@ const Contacts = () => {
 
   return (
     <Section>
-      <Title>{t('contact_section.title')}</Title>
       <div id="contact" className="contacts-container">
         <div className="image-container">
           <img className="help-image" src="images/help-image.webp" alt="IT Support Cartoon" />
         </div>
 
         <div className="text-and-social-media-container">
-          <p className="text-container">{t('contact_section.text')}</p>
+          <div className="title-and-text">
+            <Title>{t('contact_section.title')}</Title>
+            <p className="text-container">{t('contact_section.text')}</p>
+          </div>
 
           <div className="social-media-container">
             <a href="https://wa.me/5547988447503" target="_blank">

@@ -9,10 +9,13 @@ const About = () => {
 
   return (
     <Section>
-      <Title>{t('about_section.title')}</Title>
       <div id="about" className="container-about">
-        <div className="text-container">
-          <p>{t('about_section.text')}</p>
+        <div className="title-and-text">
+          <Title>{t('about_section.title')}</Title>
+
+          <div className="text-container">
+            <p>{t('about_section.text')}</p>
+          </div>
         </div>
 
         <div className="image-container">
