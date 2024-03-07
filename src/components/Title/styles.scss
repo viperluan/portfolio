@@ -5,6 +5,15 @@
   font-family: "JetBrains Mono";
   width: 100%;
 
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-out;
+
+  &.inview {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   @include lg {
     font-size: 40px;
     max-width: 580px;
