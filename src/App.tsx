@@ -1,10 +1,11 @@
 import './App.scss';
+import { MenuMobile } from './components/layout/menuMobile';
 
 function App() {
   return (
-    <>
-      <div>Inicio</div>
-    </>
+    <div className="app-container">
+      <MenuMobile />
+    </div>
   );
 }
 
