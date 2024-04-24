@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { Container } from '../container';
-
 import './styles.scss';
 
 const MenuMobile = () => {
@@ -43,7 +41,7 @@ const MenuMobile = () => {
   }, [isOpen]);
 
   return (
-    <Container>
+    <>
       <div
         className={`menu-mobile-container ${isOpen ? 'active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -57,7 +55,7 @@ const MenuMobile = () => {
           <li>Contato</li>
         </ul>
       </nav>
-    </Container>
+    </>
   );
 };
 
