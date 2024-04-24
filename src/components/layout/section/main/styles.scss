@@ -3,6 +3,7 @@
 main {
   padding: 100px 30px;
   text-align: center;
+  position: relative;
 
   .main-tag {
     user-select: none;
@@ -34,7 +35,7 @@ main {
   .main-buttons-container {
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 
     .main-button-curriculum,
     .main-button-contact {
@@ -73,7 +74,8 @@ main {
     user-select: none;
   }
 
-  .main-bg {
+  &::before {
+    content: "";
     background-image: url("/smoke-vertical.png");
     background-color: $azulMarinho;
     background-position: center;

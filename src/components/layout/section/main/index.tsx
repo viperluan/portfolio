@@ -26,8 +26,6 @@ const Main = () => {
         </div>
 
         <span className="main-scroll-down">{'>>>'}</span>
-
-        <div className="main-bg"></div>
       </main>
     </>
   );
