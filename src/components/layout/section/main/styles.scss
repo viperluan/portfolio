@@ -1,0 +1,90 @@
+@import "../../../../styles/variables.scss";
+
+main {
+  padding: 100px 30px;
+  text-align: center;
+
+  .main-tag {
+    user-select: none;
+    color: $verdeEsmeralda;
+    width: 100%;
+    max-width: 380px;
+    padding: 13px 0;
+    margin-bottom: 50px;
+
+    border: 1px solid $cinzaClaro;
+    border-radius: 16px;
+  }
+
+  .main-title {
+    font-size: 24px;
+
+    span {
+      color: $azulCiano;
+      font-weight: bold;
+    }
+  }
+
+  .main-text,
+  .main-title {
+    margin-bottom: 50px;
+    user-select: none;
+  }
+
+  .main-buttons-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+
+    .main-button-curriculum,
+    .main-button-contact {
+      padding: 10px 0;
+      border: 2px solid $azulCiano;
+      border-radius: 16px;
+
+      a {
+        color: $azulCiano;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .main-button-curriculum {
+      background-color: $azulCiano;
+      margin-bottom: 20px;
+
+      a {
+        color: $brancoPuro;
+      }
+    }
+
+    .main-button-contact {
+      background-color: transparent;
+    }
+  }
+
+  .main-scroll-down {
+    font-size: 40px;
+    font-weight: bold;
+    writing-mode: vertical-rl;
+    color: $verdeEsmeralda;
+    user-select: none;
+  }
+
+  .main-bg {
+    background-image: url("/smoke-vertical.png");
+    background-color: $azulMarinho;
+    background-position: center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
