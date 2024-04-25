@@ -24,6 +24,9 @@
     "paths": {
       "~/*": [
         "./src/*"
+      ],
+      "~layout/*": [
+        "./src/components/layout/*"
       ]
     }
   },
