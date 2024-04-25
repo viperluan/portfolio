@@ -1,6 +1,8 @@
 import './App.scss';
-import { MenuMobile } from './components/layout/menuMobile';
-import { Main } from './components/layout/section/main';
+
+import { MenuMobile } from '~layout/menuMobile';
+import { Main } from '~layout/section/main';
+import { Portfolio } from '~layout/section/portfolio';
 
 function App() {
   return (
@@ -8,6 +10,7 @@ function App() {
       <MenuMobile />
 
       <Main />
+      <Portfolio />
     </div>
   );
 }
