@@ -1,0 +1,47 @@
+@import "~/styles/variables";
+
+.resume-card-container {
+  padding: 20px;
+  background-color: rgba($color: $azulCeleste, $alpha: 0.5);
+  border: 1px solid beige;
+  border-radius: 16px;
+  height: 300px;
+
+  &:hover {
+    background-color: rgba($color: $azulCeleste, $alpha: 1);
+  }
+
+  .resume-card-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: $verdeEsmeralda;
+  }
+
+  .resume-card-role {
+    margin-bottom: 10px;
+    font-size: 12px;
+
+    & span {
+      color: $verdeEsmeralda;
+    }
+  }
+
+  .resume-card-period {
+    margin-bottom: 20px;
+    font-size: 11px;
+    color: $verdeEsmeralda;
+  }
+
+  .resume-card-title,
+  .resume-card-role,
+  .resume-card-period {
+    text-align: center;
+    line-height: 150%;
+  }
+
+  .resume-card-description {
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
