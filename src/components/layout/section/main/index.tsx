@@ -12,7 +12,7 @@ const Main = () => {
 
         <p className="main-text">
           Crio soluções consistentes, inteligentes e seguras para impulsionar o futuro do seu
-          empreendimento
+          empreendimento.
         </p>
 
         <div className="main-buttons-container">
