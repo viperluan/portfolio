@@ -39,30 +39,28 @@ main {
 
     .main-button-curriculum,
     .main-button-contact {
-      padding: 10px 0;
       border: 2px solid $azulCiano;
+      padding: 10px 0;
       border-radius: 16px;
 
-      a {
-        color: $azulCiano;
-        text-decoration: none;
+      button {
+        font-weight: bold;
         text-transform: uppercase;
         font-size: 20px;
-        font-weight: bold;
+        color: $brancoPuro;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
       }
     }
 
     .main-button-curriculum {
       background-color: $azulCiano;
       margin-bottom: 20px;
-
-      a {
-        color: $brancoPuro;
-      }
     }
 
-    .main-button-contact {
-      background-color: transparent;
+    .main-button-contact button {
+      color: $azulCiano;
     }
   }
 

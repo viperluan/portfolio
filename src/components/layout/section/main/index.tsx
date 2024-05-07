@@ -16,13 +16,13 @@ const Main = () => {
         </p>
 
         <div className="main-buttons-container">
-          <button className="main-button-curriculum">
-            <a href="">Baixar currículo</a>
-          </button>
+          <a className="main-button-curriculum" href="">
+            <button>Baixar currículo</button>
+          </a>
 
-          <button className="main-button-contact">
-            <a href="">Contato</a>
-          </button>
+          <a className="main-button-contact" href="">
+            <button>Contato</button>
+          </a>
         </div>
 
         <span className="main-scroll-down">{'>>>'}</span>
