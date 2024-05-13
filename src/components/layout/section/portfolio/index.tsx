@@ -44,7 +44,7 @@ const Portfolio = () => {
       <ul className="portfolio-project-list">
         {projects.map(({ image, name, link, description }) => {
           return (
-            <li>
+            <li key={name}>
               <ProjectCard image={image} name={name} link={link} description={description} />
             </li>
           );
