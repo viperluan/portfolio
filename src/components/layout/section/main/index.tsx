@@ -25,7 +25,11 @@ const Main = () => {
           </a>
         </div>
 
-        <span className="main-scroll-down">{'>>>'}</span>
+        <div className="scroll-down-container">
+          <span className="first-scroll-down">{'>'}</span>
+          <span className="second-scroll-down">{'>'}</span>
+          <span className="third-scroll-down">{'>'}</span>
+        </div>
       </main>
     </>
   );
