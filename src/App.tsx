@@ -1,10 +1,10 @@
 import './App.scss';
 
 import { MenuMobile } from '~layout/menuMobile';
+import { About } from '~layout/section/about';
 import { Main } from '~layout/section/main';
 import { Portfolio } from '~layout/section/portfolio';
-
-import { Resume } from './components/layout/section/resume';
+import { Resume } from '~layout/section/resume';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Main />
       <Portfolio />
       <Resume />
+      <About />
     </div>
   );
 }
