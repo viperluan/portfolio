@@ -1,0 +1,48 @@
+@import "~/styles/variables.scss";
+
+.about-container {
+  padding: 50px 30px;
+  background-color: $azulMarinho;
+
+  .about-content-container {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+
+    margin-top: 20px;
+    background-color: $azulCeleste;
+    padding: 20px;
+    border: 1px solid $cinzaClaro;
+    border-radius: 16px;
+
+    &::before {
+      content: "";
+      background-image: url("/background-images/universe.png");
+      background-color: $azulCeleste;
+      background-position: center;
+      background-size: cover;
+      background-blend-mode: luminosity;
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    h1 {
+      line-height: 150%;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 150%;
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+  }
+}
