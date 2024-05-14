@@ -27,114 +27,135 @@ main {
     }
   }
 
-  .main-tag {
-    user-select: none;
-    color: $verdeEsmeralda;
-    width: 100%;
-    max-width: 380px;
-    padding: 13px 0;
-    margin: 0 auto 50px;
-
-    border: 1px solid $cinzaClaro;
-    border-radius: 16px;
-  }
-
-  .main-title {
-    font-size: 24px;
-
-    span {
-      color: $azulCiano;
-      font-weight: bold;
-    }
-  }
-
-  .main-text,
-  .main-title {
-    margin-bottom: 50px;
-    user-select: none;
-  }
-
-  .main-buttons-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-
+  .main-content-container {
     @include md {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      column-gap: 20px;
+      max-width: 1280px;
+      margin: 0 auto;
     }
 
-    .main-button-curriculum,
-    .main-button-contact {
-      border: 2px solid $azulCiano;
-      padding: 10px 0;
+    .main-tag {
+      user-select: none;
+      color: $verdeEsmeralda;
+      width: 100%;
+      max-width: 380px;
+      padding: 13px 0;
+      margin: 0 auto 50px;
+
+      border: 1px solid $cinzaClaro;
       border-radius: 16px;
-      transition: transform 0.2s ease-in-out;
-
-      &:hover {
-        transform: scale(1.05);
-      }
 
       @include md {
-        width: 100%;
-        max-width: 280px;
+        font-size: 24px;
+      }
+    }
+
+    .main-title {
+      font-size: 24px;
+
+      @include md {
+        font-size: 48px;
       }
 
-      button {
+      span {
+        color: $azulCiano;
         font-weight: bold;
-        text-transform: uppercase;
-        font-size: 20px;
-        color: $brancoPuro;
-        background-color: transparent;
-        border: none;
-        cursor: pointer;
       }
     }
 
-    .main-button-curriculum {
-      background-color: $azulCiano;
-      margin-bottom: 20px;
+    .main-text {
+      @include md {
+        font-size: 32px;
+      }
+    }
+
+    .main-text,
+    .main-title {
+      margin-bottom: 50px;
+      user-select: none;
+    }
+
+    .main-buttons-container {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 100px;
 
       @include md {
-        margin-bottom: 0;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 20px;
+      }
+
+      .main-button-curriculum,
+      .main-button-contact {
+        border: 2px solid $azulCiano;
+        padding: 10px 0;
+        border-radius: 16px;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        @include md {
+          width: 100%;
+          max-width: 280px;
+        }
+
+        button {
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 20px;
+          color: $brancoPuro;
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+        }
+      }
+
+      .main-button-curriculum {
+        background-color: $azulCiano;
+        margin-bottom: 20px;
+
+        @include md {
+          margin-bottom: 0;
+        }
+      }
+
+      .main-button-contact button {
+        color: $azulCiano;
       }
     }
 
-    .main-button-contact button {
-      color: $azulCiano;
+    .scroll-down-container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      font-size: 40px;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      color: $verdeEsmeralda;
+      user-select: none;
+
+      .first-scroll-down {
+        animation: scroll-animation 0.6s ease-in-out alternate infinite;
+      }
+
+      .second-scroll-down {
+        animation: scroll-animation 0.6s ease-in-out alternate 0.2s infinite;
+      }
+
+      .third-scroll-down {
+        animation: scroll-animation 0.6s ease-in-out alternate 0.4s infinite;
+      }
     }
-  }
 
-  .scroll-down-container {
-    display: flex;
-    align-items: center;
-    width: 100%;
-
-    font-size: 40px;
-    font-weight: bold;
-    writing-mode: vertical-rl;
-    color: $verdeEsmeralda;
-    user-select: none;
-
-    .first-scroll-down {
-      animation: scroll-animation 0.6s ease-in-out alternate infinite;
-    }
-
-    .second-scroll-down {
-      animation: scroll-animation 0.6s ease-in-out alternate 0.2s infinite;
-    }
-
-    .third-scroll-down {
-      animation: scroll-animation 0.6s ease-in-out alternate 0.4s infinite;
-    }
-  }
-
-  @keyframes scroll-animation {
-    100% {
-      color: $brancoPuro;
-      transform: scale(1.5);
+    @keyframes scroll-animation {
+      100% {
+        color: $brancoPuro;
+        transform: scale(1.5);
+      }
     }
   }
 }
