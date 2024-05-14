@@ -4,7 +4,7 @@ import { Title } from '~layout/title';
 
 const About = () => {
   return (
-    <section className="about-container">
+    <section id="about" className="about-container">
       <Title text="Sobre" />
 
       <div className="about-content-container">

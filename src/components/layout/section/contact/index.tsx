@@ -4,7 +4,7 @@ import { Title } from '~layout/title';
 
 const Contact = () => {
   return (
-    <section className="contact-container">
+    <section id="contact" className="contact-container">
       <Title text="Contato" />
 
       <div className="social-media-container">

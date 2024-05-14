@@ -38,7 +38,7 @@ const projects: IProjectCard[] = [
 
 const Portfolio = () => {
   return (
-    <section className="portfolio-container">
+    <section id="portfolio" className="portfolio-container">
       <Title text="Portfólio" />
 
       <ul className="portfolio-project-list">

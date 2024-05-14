@@ -51,7 +51,7 @@ const cards: IResumeCard[] = [
 
 const Resume = () => {
   return (
-    <div className="resume-container">
+    <section id="resume" className="resume-container">
       <Title text="Resumo" />
 
       <div className="resume-cards-container">
@@ -68,7 +68,7 @@ const Resume = () => {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 };
 
