@@ -1,54 +1,105 @@
 @import "../../../styles/variables.scss";
 
-.menu-mobile-container {
-  border-top: 3px solid $verdeEsmeralda;
-
+.menu-mobile-bg {
   position: fixed;
-  right: 30px;
-  top: 30px;
-  cursor: pointer;
-  z-index: 2;
-
-  &::after,
-  &::before {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    margin-top: 6px;
-    background-color: $verdeEsmeralda;
-    position: relative;
-    transition: all 0.3s;
-  }
-
-  &.active {
-    border-top-color: transparent;
-
-    &::before {
-      transform: rotate(135deg);
-      background-color: $verdeEsmeralda;
-    }
-
-    &::after {
-      transform: rotate(-135deg);
-      top: -9.3px;
-      background-color: $verdeEsmeralda;
-    }
-  }
-}
-
-.menu-mobile-content {
-  display: none;
-  background: rgba(0, 0, 0, 0.8);
-
-  position: fixed;
+  height: 80px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 1;
 
-  &.active {
-    display: block;
+  &.scroll-active {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .menu-mobile-logo {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+
+    font-size: 32px;
+    font-weight: bold;
+    color: $verdeEsmeralda;
+    text-decoration: none;
+  }
+
+  .menu-mobile-container {
+    border-top: 3px solid $verdeEsmeralda;
+
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    z-index: 2;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      margin-top: 6px;
+      background-color: $verdeEsmeralda;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    &.active {
+      border-top-color: transparent;
+
+      &::before {
+        transform: rotate(135deg);
+        background-color: $verdeEsmeralda;
+      }
+
+      &::after {
+        transform: rotate(-135deg);
+        top: -9.3px;
+        background-color: $verdeEsmeralda;
+      }
+    }
+  }
+
+  .menu-mobile-content {
+    display: none;
+    background: rgba(0, 0, 0, 0.9);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    &.active {
+      display: block;
+    }
+
+    .menu-list-content {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      li {
+        margin-bottom: 50px;
+      }
+
+      li a {
+        display: block;
+        text-decoration: none;
+        color: $brancoPuro;
+        font-size: 44px;
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          color: $verdeEsmeralda;
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 }
