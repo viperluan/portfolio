@@ -17,10 +17,10 @@ const MenuMobile = () => {
     }
   };
 
-  const handleClick = () => {
-    html?.removeEventListener('click', handleClickOutside);
-    setIsOpen(false);
-  };
+  // const handleClick = () => {
+  //   html?.removeEventListener('click', handleClickOutside);
+  //   setIsOpen(false);
+  // };
 
   useEffect(() => {
     if (!html || !menu) {
