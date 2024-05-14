@@ -1,3 +1,5 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables";
 
 .project-card-container {
@@ -12,6 +14,14 @@
   z-index: 0;
   overflow: hidden;
   user-select: none;
+
+  @include lg {
+    display: flex;
+    align-items: center;
+    column-gap: 120px;
+    max-height: 300px;
+    width: 100%;
+  }
 
   &::after {
     content: "";
@@ -39,26 +49,53 @@
     height: 250px;
 
     margin-bottom: 20px;
-  }
 
-  .project-card-name {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 20px;
-
-    a {
-      text-decoration: none;
-      color: $verdeEsmeralda;
+    @include lg {
+      max-width: 330px;
+      min-width: 330px;
+      margin-bottom: 0;
+      margin: 0;
     }
   }
 
-  .project-card-description {
-    font-size: 14px;
-    text-align: center;
-  }
+  .project-card-info-container {
+    @include lg {
+      display: flex;
+      flex-direction: column;
+      max-width: 580px;
+    }
 
-  .project-card-name,
-  .project-card-description {
-    line-height: 150%;
+    .project-card-name {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+
+      @include md {
+        font-size: 36px;
+      }
+
+      a {
+        text-decoration: none;
+        color: $verdeEsmeralda;
+      }
+    }
+
+    .project-card-description {
+      font-size: 14px;
+      text-align: center;
+
+      @include md {
+        font-size: 16px;
+      }
+
+      @include lg {
+        text-align: left;
+      }
+    }
+
+    .project-card-name,
+    .project-card-description {
+      line-height: 150%;
+    }
   }
 }

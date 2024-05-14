@@ -12,13 +12,15 @@ const ProjectCard = ({ image, name, link, description }: IProjectCardProps) => {
     <div className="project-card-container">
       <img className="project-card-image" src={image} alt={name} />
 
-      <p className="project-card-name">
-        <a href={`https://${link}`} target="_blank">
-          {link}
-        </a>
-      </p>
+      <div className="project-card-info-container">
+        <p className="project-card-name">
+          <a href={`https://${link}`} target="_blank">
+            {link}
+          </a>
+        </p>
 
-      <p className="project-card-description">{description}</p>
+        <p className="project-card-description">{description}</p>
+      </div>
     </div>
   );
 };

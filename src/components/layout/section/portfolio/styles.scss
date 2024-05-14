@@ -1,14 +1,23 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables";
 
 .portfolio-container {
   padding: 100px 30px 50px;
   background-color: $azulMarinho;
 
-  .portfolio-project-list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+  .portfolio-content-container {
+    @include md {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
 
-    padding-top: 20px;
+    .portfolio-project-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      padding-top: 20px;
+    }
   }
 }

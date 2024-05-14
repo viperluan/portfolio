@@ -39,17 +39,19 @@ const projects: IProjectCard[] = [
 const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio-container">
-      <Title text="Portfólio" />
+      <div className="portfolio-content-container">
+        <Title text="Portfólio" />
 
-      <ul className="portfolio-project-list">
-        {projects.map(({ image, name, link, description }) => {
-          return (
-            <li key={name}>
-              <ProjectCard image={image} name={name} link={link} description={description} />
-            </li>
-          );
-        })}
-      </ul>
+        <ul className="portfolio-project-list">
+          {projects.map(({ image, name, link, description }) => {
+            return (
+              <li key={name}>
+                <ProjectCard image={image} name={name} link={link} description={description} />
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 };
