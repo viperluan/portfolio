@@ -1,3 +1,5 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "../../../styles/variables.scss";
 
 .menu-mobile-bg {
@@ -8,6 +10,10 @@
   right: 0;
   bottom: 0;
   z-index: 1;
+
+  @include lg {
+    display: none;
+  }
 
   &.scroll-active {
     background-color: rgba(0, 0, 0, 0.9);
@@ -23,6 +29,7 @@
     font-weight: bold;
     color: $verdeEsmeralda;
     text-decoration: none;
+    z-index: 2;
   }
 
   .menu-mobile-container {
