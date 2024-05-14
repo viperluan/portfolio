@@ -52,21 +52,23 @@ const cards: IResumeCard[] = [
 const Resume = () => {
   return (
     <section id="resume" className="resume-container">
-      <Title text="Resumo" />
+      <div className="resume-content-container">
+        <Title text="Resumo" />
 
-      <div className="resume-cards-container">
-        {cards.map(({ title, role, period, type, description }) => {
-          return (
-            <ResumeCard
-              key={title}
-              title={title}
-              role={role}
-              period={period}
-              type={type}
-              description={description}
-            />
-          );
-        })}
+        <div className="resume-cards-container">
+          {cards.map(({ title, role, period, type, description }) => {
+            return (
+              <ResumeCard
+                key={title}
+                title={title}
+                role={role}
+                period={period}
+                type={type}
+                description={description}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

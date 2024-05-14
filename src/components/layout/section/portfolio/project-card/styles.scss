@@ -74,6 +74,10 @@
         font-size: 36px;
       }
 
+      @include lg {
+        text-align: left;
+      }
+
       a {
         text-decoration: none;
         color: $verdeEsmeralda;

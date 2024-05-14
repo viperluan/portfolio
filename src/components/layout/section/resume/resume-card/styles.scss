@@ -1,3 +1,5 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables";
 
 .resume-card-container {
@@ -11,37 +13,90 @@
     background-color: rgba($color: $azulCeleste, $alpha: 1);
   }
 
-  .resume-card-title {
-    margin-bottom: 10px;
-    font-size: 24px;
-    font-weight: bold;
-    color: $verdeEsmeralda;
+  @include lg {
+    max-height: 300px;
+
+    flex-basis: 40%;
+    flex-grow: 1;
+    flex-shrink: 0;
   }
 
-  .resume-card-role {
-    margin-bottom: 10px;
-    font-size: 12px;
+  .resume-card-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 
-    & span {
-      color: $verdeEsmeralda;
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
     }
-  }
 
-  .resume-card-period {
-    margin-bottom: 20px;
-    font-size: 11px;
-    color: $verdeEsmeralda;
-  }
+    .resume-card-title {
+      margin-bottom: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      color: $verdeEsmeralda;
 
-  .resume-card-title,
-  .resume-card-role,
-  .resume-card-period {
-    text-align: center;
-    line-height: 150%;
+      @include md {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+    }
+
+    .resume-card-role {
+      margin-bottom: 10px;
+      font-size: 12px;
+
+      @include md {
+        font-size: 14px;
+      }
+
+      & span {
+        color: $verdeEsmeralda;
+      }
+    }
+
+    .resume-card-period {
+      margin-bottom: 20px;
+      font-size: 11px;
+      color: $verdeEsmeralda;
+
+      @include md {
+        font-size: 14px;
+      }
+    }
+
+    .resume-card-title,
+    .resume-card-role,
+    .resume-card-period {
+      text-align: center;
+      line-height: 150%;
+
+      @include md {
+        text-align: left;
+      }
+    }
+
+    .resume-card-period {
+      @include lg {
+        width: 40%;
+        text-align: right;
+      }
+    }
   }
 
   .resume-card-description {
     font-size: 14px;
     line-height: 120%;
+
+    @include md {
+      font-size: 16px;
+    }
+
+    @include xl {
+      line-height: 150%;
+    }
   }
 }

@@ -1,3 +1,5 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables.scss";
 
 .resume-container {
@@ -20,12 +22,28 @@
     bottom: 0;
     left: 0;
     right: 0;
+
+    @include md {
+      background-image: url("/background-images/lines-horizontal.png");
+    }
   }
 
-  .resume-cards-container {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+  .resume-content-container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+
+    .resume-cards-container {
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+
+      @include lg {
+        flex-direction: row;
+        column-gap: 20px;
+        flex-wrap: wrap;
+      }
+    }
   }
 }
