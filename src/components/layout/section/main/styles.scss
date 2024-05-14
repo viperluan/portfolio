@@ -1,3 +1,5 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables.scss";
 
 main {
@@ -19,6 +21,10 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
+
+    @include md {
+      background-image: url("/background-images/smoke-horizontal.png");
+    }
   }
 
   .main-tag {
@@ -53,16 +59,27 @@ main {
     flex-direction: column;
     margin-bottom: 100px;
 
+    @include md {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      column-gap: 20px;
+    }
+
     .main-button-curriculum,
     .main-button-contact {
       border: 2px solid $azulCiano;
       padding: 10px 0;
       border-radius: 16px;
-
       transition: transform 0.2s ease-in-out;
 
       &:hover {
         transform: scale(1.05);
+      }
+
+      @include md {
+        width: 100%;
+        max-width: 280px;
       }
 
       button {
@@ -79,6 +96,10 @@ main {
     .main-button-curriculum {
       background-color: $azulCiano;
       margin-bottom: 20px;
+
+      @include md {
+        margin-bottom: 0;
+      }
     }
 
     .main-button-contact button {
