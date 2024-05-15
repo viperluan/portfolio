@@ -1,9 +1,15 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables";
 
 .title-component {
   font-size: 32px;
   line-height: 150%;
   text-transform: uppercase;
+
+  @include lg {
+    font-size: 48px;
+  }
 
   &::after {
     content: "";
