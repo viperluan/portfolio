@@ -1,107 +1,129 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "~/styles/variables.scss";
 
 .contact-container {
   background-color: $azulMarinho;
   padding: 50px 30px;
 
-  .social-media-container {
-    margin-top: 20px;
+  .contact-content-container {
+    @include lg {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
 
-    .contact-link {
-      display: block;
-      margin-bottom: 20px;
-      text-decoration: none;
-      font-size: 14px;
+    .social-media-container {
+      margin-top: 20px;
 
-      p {
-        color: $brancoPuro;
+      .contact-link {
+        display: block;
+        margin-bottom: 20px;
+        text-decoration: none;
+        font-size: 14px;
+        width: fit-content;
 
-        span {
-          color: $verdeEsmeralda;
+        @include lg {
+          font-size: 24px;
+        }
+
+        p {
+          color: $brancoPuro;
+
+          span {
+            color: $verdeEsmeralda;
+          }
         }
       }
     }
-  }
 
-  .contact-user-container {
-    margin-top: 30px;
+    .contact-user-container {
+      margin-top: 30px;
 
-    .input-container {
-      margin-bottom: 20px;
-      background-color: $azulCeleste;
-      border: 1px solid $cinzaClaro;
-      border-radius: 16px;
-      height: 60px;
-      padding: 18px 20px;
+      .input-container {
+        margin-bottom: 20px;
+        background-color: $azulCeleste;
+        border: 1px solid $cinzaClaro;
+        border-radius: 16px;
+        height: 60px;
+        padding: 18px 20px;
 
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      input:-webkit-autofill:active {
-        transition: background-color 100000s ease-in-out 0s;
-        -webkit-text-fill-color: $brancoPuro !important;
-      }
-    }
-
-    .text-area-container {
-      background-color: $azulCeleste;
-      border: 1px solid $cinzaClaro;
-      border-radius: 16px;
-      padding: 20px 0px 20px 20px;
-      height: 300px;
-
-      textarea {
-        resize: none;
-        overflow-y: scroll;
-        padding-right: 14px;
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active {
+          transition: background-color 100000s ease-in-out 0s;
+          -webkit-text-fill-color: $brancoPuro !important;
+        }
       }
 
-      textarea::-webkit-scrollbar {
-        width: 6px;
+      .text-area-container {
+        background-color: $azulCeleste;
+        border: 1px solid $cinzaClaro;
+        border-radius: 16px;
+        padding: 20px 0px 20px 20px;
+        height: 300px;
+
+        textarea {
+          resize: none;
+          overflow-y: scroll;
+          padding-right: 14px;
+        }
+
+        textarea::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        textarea::-webkit-scrollbar-button {
+          display: none;
+        }
+
+        textarea::-webkit-scrollbar-track {
+          background-color: transparent;
+        }
+
+        textarea::-webkit-scrollbar-thumb {
+          background: $cinzaClaro;
+        }
       }
 
-      textarea::-webkit-scrollbar-button {
-        display: none;
-      }
-
-      textarea::-webkit-scrollbar-track {
+      .input-container input,
+      .text-area-container textarea {
+        font-size: 16px;
+        outline: none;
+        border-style: none;
         background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+        color: $brancoPuro;
+
+        @include lg {
+          font-size: 24px;
+        }
       }
 
-      textarea::-webkit-scrollbar-thumb {
-        background: $cinzaClaro;
-      }
-    }
+      .send-message-button {
+        color: $brancoPuro;
+        background-color: $azulCiano;
+        border: transparent;
+        border-radius: 16px;
+        padding: 18px 0;
 
-    .input-container input,
-    .text-area-container textarea {
-      font-size: 16px;
-      outline: none;
-      border-style: none;
-      background-color: transparent;
-      border: none;
-      width: 100%;
-      height: 100%;
-      color: $brancoPuro;
-    }
+        width: 100%;
+        margin-top: 20px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: transform ease-in-out 0.2s;
 
-    .send-message-button {
-      color: $brancoPuro;
-      background-color: $azulCiano;
-      border: transparent;
-      border-radius: 16px;
-      padding: 18px 0;
+        &:hover {
+          transform: scale(1.05);
+        }
 
-      width: 100%;
-      margin-top: 20px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      transition: transform ease-in-out 0.2s;
-
-      &:hover {
-        transform: scale(1.05);
+        @include lg {
+          font-size: 24px;
+        }
       }
     }
   }
