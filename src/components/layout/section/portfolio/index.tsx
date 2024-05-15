@@ -13,7 +13,7 @@ interface IProjectCard {
 
 const projects: IProjectCard[] = [
   {
-    image: '',
+    image: '/portfolio-images/econext.png',
     name: 'Econext',
     link: 'www.econext.com.br',
     description: `Desenvolvido em Next.js, 
@@ -22,17 +22,19 @@ const projects: IProjectCard[] = [
       MUI, Axios etc.`,
   },
   {
-    image: '',
+    image: '/portfolio-images/reppos.png',
+    name: 'Reppos',
+    link: 'www.reppos.com.br',
+    description: `Desenvolvido em PHP, este ecommerce foi desenvolvido com um monolito e aprimorado
+      com uma API em Laravel utilizando arquitetura hexagonal. Atuei em todas fases dessa loja, 
+      antes e depois do lançamento.`,
+  },
+  {
+    image: '/portfolio-images/luancs.png',
     name: 'Luan Conte Soares',
     link: 'www.luancs.com.br',
     description: `Desenvolvido em React.js, utiliza-se da componentização em diversas áreas do site.
       Tecnologias: React.js, SCSS, Typescript etc.`,
-  },
-  {
-    image: '',
-    name: 'Em breve',
-    link: '',
-    description: ``,
   },
 ];
 
