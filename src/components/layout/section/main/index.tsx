@@ -21,7 +21,7 @@ const Main = () => {
               <button>Baixar currículo</button>
             </a>
 
-            <a className="main-button-contact" href="">
+            <a className="main-button-contact" href="#contact">
               <button>Contato</button>
             </a>
           </div>
