@@ -17,7 +17,7 @@ const Main = () => {
           </p>
 
           <div className="main-buttons-container">
-            <a className="main-button-curriculum" href="">
+            <a className="main-button-curriculum" href="/curriculum/luan-conte-soares.pdf" download>
               <button>Baixar currículo</button>
             </a>
 
