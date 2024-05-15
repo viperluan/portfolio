@@ -1,7 +1,20 @@
+@use "~/styles/breakpoints.scss" as *;
+
 @import "../../../styles/variables.scss";
 
 .footer-container {
   background-color: $azulCeleste;
   padding: 30px 0;
-  text-align: center;
+
+  .footer-text-container {
+    text-align: center;
+
+    @include lg {
+      font-size: 20px;
+      text-align: left;
+
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+  }
 }
