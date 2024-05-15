@@ -1,6 +1,7 @@
 import './App.scss';
 
 import { Footer } from '~layout/footer';
+import { Header } from '~layout/header';
 import { MenuMobile } from '~layout/menuMobile';
 import { About } from '~layout/section/about';
 import { Contact } from '~layout/section/contact';
@@ -13,6 +14,7 @@ function App() {
     <div className="app-container">
       <MenuMobile />
 
+      <Header />
       <Main />
       <Portfolio />
       <Resume />

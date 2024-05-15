@@ -1,0 +1,63 @@
+@use "~/styles/breakpoints.scss" as *;
+
+@import "~/styles/variables";
+
+.header-container {
+  display: none;
+  height: 80px;
+  z-index: 1;
+
+  &.active {
+    background-color: $azulCeleste;
+  }
+
+  @include lg {
+    display: flex;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .header-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 100%;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    border-bottom: 2px solid $azulCeleste;
+
+    @include rwd(1320) {
+      padding: 0;
+    }
+
+    .header-logo {
+      text-decoration: none;
+      color: $brancoPuro;
+      font-size: 40px;
+      font-weight: bold;
+    }
+
+    .header-navigation-container {
+      .header-navigation-list-container {
+        display: flex;
+        flex-direction: row;
+
+        .header-navigation-item a {
+          text-decoration: none;
+          margin-left: 50px;
+          font-size: 24px;
+          color: $brancoPuro;
+        }
+      }
+    }
+  }
+}
