@@ -10,7 +10,7 @@
 
   &::before {
     content: "";
-    background-image: url("/background-images/lines-vertical.png");
+    background-image: url("/background-images/lines-vertical.webp");
     background-color: $azulMarinho;
     background-position: center;
     background-size: cover;
@@ -24,7 +24,7 @@
     right: 0;
 
     @include md {
-      background-image: url("/background-images/lines-horizontal.png");
+      background-image: url("/background-images/lines-horizontal.webp");
     }
   }
 

@@ -9,7 +9,7 @@ main {
 
   &::before {
     content: "";
-    background-image: url("/background-images/smoke-vertical.png");
+    background-image: url("/background-images/smoke-vertical.webp");
     background-color: $azulMarinho;
     background-position: center;
     background-size: contain;
@@ -23,7 +23,7 @@ main {
     right: 0;
 
     @include md {
-      background-image: url("/background-images/smoke-horizontal.png");
+      background-image: url("/background-images/smoke-horizontal.webp");
     }
   }
 
