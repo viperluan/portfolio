@@ -4,11 +4,25 @@
 
 .header-container {
   display: none;
-  height: 80px;
+  height: 60px;
   z-index: 1;
 
   &.active {
     background-color: $verdeEsmeralda;
+
+    .header-content-container {
+      .header-logo:hover {
+        color: $azulMarinho;
+      }
+
+      .header-navigation-container {
+        .header-navigation-list-container {
+          .header-navigation-item a:hover {
+            color: $azulMarinho;
+          }
+        }
+      }
+    }
   }
 
   @include lg {
@@ -44,6 +58,10 @@
       color: $brancoPuro;
       font-size: 40px;
       font-weight: bold;
+
+      &:hover {
+        color: $verdeEsmeralda;
+      }
     }
 
     .header-navigation-container {
@@ -56,6 +74,10 @@
           margin-left: 50px;
           font-size: 24px;
           color: $brancoPuro;
+
+          &:hover {
+            color: $verdeEsmeralda;
+          }
         }
       }
     }
