@@ -44,10 +44,10 @@ const Contact = () => {
 
         <div className="contact-user-container">
           <div className="input-container">
-            <input type="text" name="name" id="name" placeholder="Seu nome" />
+            <input type="text" name="name" id="name" placeholder="Seu nome" maxLength={100} />
           </div>
           <div className="input-container">
-            <input type="email" name="email" id="email" placeholder="Seu email" />
+            <input type="email" name="email" id="email" placeholder="Seu email" maxLength={100} />
           </div>
           <div className="text-area-container">
             <textarea
