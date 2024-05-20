@@ -1,8 +1,12 @@
+import { MutableRefObject, useRef } from 'react';
 import './styles.scss';
 
+import { sendEmail } from '~/components/utils/emailjs';
 import { Title } from '~layout/title';
 
 const Contact = () => {
+  const form = useRef() as MutableRefObject<HTMLFormElement>;
+
   return (
     <section id="contact" className="contact-container">
       <div className="contact-content-container">
@@ -42,23 +46,33 @@ const Contact = () => {
           </a>
         </div>
 
-        <div className="contact-user-container">
+        <form
+          ref={form}
+          className="contact-user-container"
+          onSubmit={(event) => sendEmail(event, form)}
+        >
           <div className="input-container">
-            <input type="text" name="name" id="name" placeholder="Seu nome" maxLength={100} />
+            <input type="text" name="from_name" id="name" placeholder="Seu nome" maxLength={100} />
           </div>
           <div className="input-container">
-            <input type="email" name="email" id="email" placeholder="Seu email" maxLength={100} />
+            <input
+              type="email"
+              name="from_email"
+              id="email"
+              placeholder="Seu email"
+              maxLength={100}
+            />
           </div>
           <div className="text-area-container">
             <textarea
-              name="text-area"
+              name="message"
               id="text-area"
               placeholder="Sinta-se a vontade para tirar dúvidas, será um prazer ajudar para juntos encontrarmos uma solução que impulsione seu empreendimento"
               maxLength={800}
             />
           </div>
           <button className="send-message-button">Enviar mensagem</button>
-        </div>
+        </form>
       </div>
     </section>
   );
