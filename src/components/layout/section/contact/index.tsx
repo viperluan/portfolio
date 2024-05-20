@@ -71,7 +71,9 @@ const Contact = () => {
               maxLength={800}
             />
           </div>
-          <button className="send-message-button">Enviar mensagem</button>
+          <button type="submit" className="send-message-button">
+            Enviar mensagem
+          </button>
         </form>
       </div>
     </section>
