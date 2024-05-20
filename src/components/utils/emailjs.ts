@@ -3,9 +3,9 @@ import { FormEvent, MutableRefObject } from 'react';
 import emailjs from '@emailjs/browser';
 
 const emailjs_variables = {
-  service_id: import.meta.env.VITE_EMAILJS_SERVICE_ID,
-  template_id: import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-  public_key: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+  service_id: import.meta.env.EMAILJS_SERVICE_ID,
+  template_id: import.meta.env.EMAILJS_TEMPLATE_ID,
+  public_key: import.meta.env.EMAILJS_PUBLIC_KEY,
 };
 
 const sendEmail = (event: FormEvent<HTMLFormElement>, form: MutableRefObject<HTMLFormElement>) => {
