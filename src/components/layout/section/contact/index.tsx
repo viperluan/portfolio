@@ -1,14 +1,51 @@
-import { MutableRefObject, useRef } from 'react';
+import { useRef, useState } from 'react';
 import './styles.scss';
 
 import { sendEmail } from '~/components/utils/emailjs';
+import { Modal } from '~layout/modal';
 import { Title } from '~layout/title';
 
+interface IModalParams {
+  isOpen: boolean;
+  status: 'Erro' | 'Sucesso';
+  text: string;
+}
+
 const Contact = () => {
-  const form = useRef() as MutableRefObject<HTMLFormElement>;
+  const form = useRef() as React.MutableRefObject<HTMLFormElement>;
+
+  const [modalParams, setModalParams] = useState<IModalParams>({
+    isOpen: false,
+    status: 'Erro',
+    text: 'teste',
+  });
+
+  const handleRequestCloseModal = () => {
+    setModalParams({ ...modalParams, isOpen: false });
+  };
+
+  const handleSendEmail = async (
+    event: React.FormEvent<HTMLFormElement>,
+    form: React.MutableRefObject<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+
+    const { status, text } = await sendEmail(event, form);
+
+    setModalParams({ status, text, isOpen: true });
+  };
+
+  const { isOpen, status, text } = modalParams;
 
   return (
     <section id="contact" className="contact-container">
+      <Modal
+        isOpen={isOpen}
+        requestCloseModal={handleRequestCloseModal}
+        text={text}
+        status={status}
+      />
+
       <div className="contact-content-container">
         <Title text="Contato" />
 
@@ -49,7 +86,7 @@ const Contact = () => {
         <form
           ref={form}
           className="contact-user-container"
-          onSubmit={(event) => sendEmail(event, form)}
+          onSubmit={(event) => handleSendEmail(event, form)}
         >
           <div className="input-container">
             <input type="text" name="from_name" id="name" placeholder="Seu nome" maxLength={100} />
