@@ -24,11 +24,27 @@ const Contact = () => {
     setModalParams({ ...modalParams, isOpen: false });
   };
 
+  const preventSubmitEmptyInputs = (form: React.MutableRefObject<HTMLFormElement>) => {
+    const elementsNotFilled = Array.from(form.current).filter((element) => {
+      if (element.tagName != 'BUTTON') {
+        return (element as HTMLInputElement)?.value == '';
+      }
+    });
+
+    return elementsNotFilled;
+  };
+
   const handleSendEmail = async (
     event: React.FormEvent<HTMLFormElement>,
     form: React.MutableRefObject<HTMLFormElement>
   ) => {
     event.preventDefault();
+
+    const elementsNotFilled = preventSubmitEmptyInputs(form);
+
+    if (elementsNotFilled.length > 0) {
+      return;
+    }
 
     const { status, text } = await sendEmail(event, form);
 
@@ -89,7 +105,14 @@ const Contact = () => {
           onSubmit={(event) => handleSendEmail(event, form)}
         >
           <div className="input-container">
-            <input type="text" name="from_name" id="name" placeholder="Seu nome" maxLength={100} />
+            <input
+              type="text"
+              name="from_name"
+              id="name"
+              placeholder="Seu nome"
+              maxLength={100}
+              required
+            />
           </div>
           <div className="input-container">
             <input
@@ -98,6 +121,7 @@ const Contact = () => {
               id="email"
               placeholder="Seu email"
               maxLength={100}
+              required
             />
           </div>
           <div className="text-area-container">
@@ -106,6 +130,7 @@ const Contact = () => {
               id="text-area"
               placeholder="Sinta-se a vontade para tirar dúvidas, será um prazer ajudar para juntos encontrarmos uma solução que impulsione seu empreendimento"
               maxLength={800}
+              required
             />
           </div>
           <button type="submit" className="send-message-button">
