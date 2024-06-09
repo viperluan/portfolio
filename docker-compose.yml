@@ -1,0 +1,20 @@
+services:
+  portfolio-luan:
+    image: viperluan/portfolio-luan:latest
+    container_name: "portfolio-luan"
+    volumes:
+      - ./nginx/log:/var/log/nginx
+    restart: always
+    environment:
+      - VIRTUAL_HOST=luancs.com.br, www.luancs.com.br
+      - VIRTUAL_NETWORK=nginx-proxy
+      - VIRTUAL_PORT=80
+      - LETSENCRYPT_HOST=luancs.com.br, www.luancs.com.br
+      - LETSENCRYPT_EMAIL=viperluan@gmail.com
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: nginx-proxy
+    external: true
