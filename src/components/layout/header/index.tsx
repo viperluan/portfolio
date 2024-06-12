@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import './styles.scss';
+import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
 
 const Header = () => {
   const [scrollActive, setScrollActive] = useState(false);
@@ -10,6 +12,12 @@ const Header = () => {
     } else {
       setScrollActive(false);
     }
+  };
+
+  const handleClickMenu = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const document = window.document;
+
+    scrollToIdOnClick(event, document);
   };
 
   // useEffect for listener scroll
@@ -31,16 +39,24 @@ const Header = () => {
         <nav className="header-navigation-container">
           <ul className="header-navigation-list-container">
             <li className="header-navigation-item">
-              <a href="#portfolio">Portfólio</a>
+              <a href="#portfolio" onClick={handleClickMenu}>
+                Portfólio
+              </a>
             </li>
             <li className="header-navigation-item">
-              <a href="#resume">Resumo</a>
+              <a href="#resume" onClick={handleClickMenu}>
+                Resumo
+              </a>
             </li>
             <li className="header-navigation-item">
-              <a href="#about">Sobre</a>
+              <a href="#about" onClick={handleClickMenu}>
+                Sobre
+              </a>
             </li>
             <li className="header-navigation-item">
-              <a href="#contact">Contato</a>
+              <a href="#contact" onClick={handleClickMenu}>
+                Contato
+              </a>
             </li>
           </ul>
         </nav>
