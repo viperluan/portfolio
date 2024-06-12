@@ -12,9 +12,9 @@ services:
       - LETSENCRYPT_HOST=luancs.com.br, www.luancs.com.br
       - LETSENCRYPT_EMAIL=viperluan@gmail.com
     networks:
-      - proxy
+      - reverse-proxy
 
 networks:
-  proxy:
+  reverse-proxy:
     name: nginx-proxy
     external: true

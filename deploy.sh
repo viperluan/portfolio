@@ -19,7 +19,7 @@ DOCKER_IMAGE_TAG="latest"
 # Production credentials
 SERVER_USER="root"
 SERVER_HOST="185.173.110.126"
-COMPOSE_FILE_PATH="/home/lcs-solucoes/portfolio"
+COMPOSE_FILE_PATH="/home/lcs-solucoes/portfolio/docker-compose.yml"
 
 # Build the Docker image
 build() {
@@ -54,7 +54,7 @@ deploy() {
 
   image_push
 
-  # docker_compose
+  docker_compose
 
   echo -e "${NORMALGREEN} Finished! ${ENDCOLOR}"
 }
