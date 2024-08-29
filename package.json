@@ -13,7 +13,8 @@
     "@emailjs/browser": "^4.3.3",
     "@fontsource/poppins": "^5.0.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-toastify": "^10.0.5"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

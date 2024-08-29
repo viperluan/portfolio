@@ -1,27 +1,18 @@
-import { useRef, useState } from 'react';
 import './styles.scss';
 
-import { sendEmail } from '~/components/utils/emailjs';
-import { Modal } from '~layout/modal';
-import { Title } from '~layout/title';
+import { useRef } from 'react';
+import { toast } from 'react-toastify';
 
-interface IModalParams {
-  isOpen: boolean;
-  status: 'Erro' | 'Sucesso';
-  text: string;
-}
+import { sendEmail } from '~/components/utils/emailjs';
+import { Title } from '~layout/title';
 
 const Contact = () => {
   const form = useRef() as React.MutableRefObject<HTMLFormElement>;
 
-  const [modalParams, setModalParams] = useState<IModalParams>({
-    isOpen: false,
-    status: 'Erro',
-    text: 'teste',
-  });
+  const handleToastMessage = (status: 'Erro' | 'Sucesso', text: string) => {
+    const type = status == 'Sucesso' ? 'success' : 'error';
 
-  const handleRequestCloseModal = () => {
-    setModalParams({ ...modalParams, isOpen: false });
+    return toast(text, { type });
   };
 
   const preventSubmitEmptyInputs = (form: React.MutableRefObject<HTMLFormElement>) => {
@@ -48,20 +39,11 @@ const Contact = () => {
 
     const { status, text } = await sendEmail(event, form);
 
-    setModalParams({ status, text, isOpen: true });
+    handleToastMessage(status, text);
   };
-
-  const { isOpen, status, text } = modalParams;
 
   return (
     <section id="contact" className="contact-container">
-      <Modal
-        isOpen={isOpen}
-        requestCloseModal={handleRequestCloseModal}
-        text={text}
-        status={status}
-      />
-
       <div className="contact-content-container">
         <Title text="Contato" />
 

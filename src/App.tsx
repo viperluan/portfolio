@@ -9,9 +9,13 @@ import { Main } from '~layout/section/main';
 import { Portfolio } from '~layout/section/portfolio';
 import { Resume } from '~layout/section/resume';
 
+import { ToastifyContainer } from './components/layout/toastContainer';
+
 function App() {
   return (
     <div className="app-container">
+      <ToastifyContainer />
+
       <MenuMobile />
 
       <Header />
