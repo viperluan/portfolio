@@ -1,6 +1,14 @@
+import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
 import './styles.scss';
 
 const Main = () => {
+  const handleClickContactButton = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const document = window.document;
+
+    scrollToIdOnClick(event, document);
+  };
+
   return (
     <>
       <main>
@@ -21,7 +29,7 @@ const Main = () => {
               <button>Baixar currículo</button>
             </a>
 
-            <a className="main-button-contact" href="#contact">
+            <a className="main-button-contact" href="#contact" onClick={handleClickContactButton}>
               <button>Contato</button>
             </a>
           </div>

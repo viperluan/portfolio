@@ -15,6 +15,7 @@ const Header = () => {
   };
 
   const handleClickMenu = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
     const document = window.document;
 
     scrollToIdOnClick(event, document);

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import './styles.scss';
+import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
 
 const MenuMobile = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,11 @@ const MenuMobile = () => {
     }
   };
 
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    const document = window.document;
+    scrollToIdOnClick(event, document);
+
     html?.removeEventListener('click', handleClickOutside);
     setIsOpen(false);
   };
