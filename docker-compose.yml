@@ -1,6 +1,7 @@
 services:
   luan-portfolio:
     container_name: "luan-portfolio"
+    build: .
     restart: unless-stopped
     volumes:
       - ./nginx/log:/var/log/nginx
