@@ -8,5 +8,5 @@ services:
 
 networks:
   default:
-    name: nginx-proxy-manager
+    name: proxy-manager
     external: true
