@@ -13,6 +13,16 @@ interface IResumeCard {
 
 const cards: IResumeCard[] = [
   {
+    title: 'Amil',
+    role: 'Desenvolvedor Fullstack Sênior',
+    period: 'Set 2024 - Atual',
+    type: 'PJ',
+    description: `Desenvolvimento de automatizações nos processos internos para gestão de contas de 
+      usuários para utilização de sistemas com Active Directory, integrações entre plataformas externas,
+      criação de funcionalidades numa ferramenta interna para gestão de ITSM. Tecnologias: PHP, Javascript,
+      Node, Express, MariaDB, OracleDB, CronJobs.`,
+  },
+  {
     title: 'Infracommerce',
     role: 'Desenvolvedor Fullstack Pleno',
     period: 'Fev 2022 - Fev 2024',
