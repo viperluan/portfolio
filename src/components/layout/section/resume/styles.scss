@@ -35,14 +35,16 @@
 
     .resume-cards-container {
       padding-top: 20px;
-      display: flex;
-      flex-direction: column;
-      row-gap: 20px;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
 
       @include lg {
-        flex-direction: row;
-        column-gap: 20px;
-        flex-wrap: wrap;
+        grid-template-columns: 1fr 1fr;
+
+        > :first-child {
+          grid-column: span 2;
+        }
       }
     }
   }
