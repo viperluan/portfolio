@@ -1,5 +1,5 @@
 # BUILD SITE
-FROM node:18-alpine3.18 as portfolio
+FROM node:24.12.0-alpine as portfolio
 
 WORKDIR /app
 
