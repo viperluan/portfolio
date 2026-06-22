@@ -1,42 +1,43 @@
 import { useEffect, useState } from 'react';
 
+import { NAV_SECTIONS } from '~/constants/navigation';
+import { scrollToIdOnClick, scrollToTop } from '~/components/utils/smoothScroll';
+
 import './styles.scss';
-import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
 
-const MenuMobile = () => {
+interface MenuMobileProps {
+  activeSection: string;
+}
+
+const MenuMobile = ({ activeSection }: MenuMobileProps) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const [html, setHtml] = useState<HTMLElement | null>(null);
   const [menu, setMenu] = useState<HTMLElement | null>(null);
   const [scrollActive, setScrollActive] = useState(false);
 
   const handleClickOutside = (htmlEvent: MouseEvent) => {
-    if (htmlEvent) {
-      if (menu?.contains(htmlEvent.target as Node)) {
-        setIsOpen(false);
-        html?.removeEventListener('click', handleClickOutside);
-      }
+    if (htmlEvent && menu?.contains(htmlEvent.target as Node)) {
+      setIsOpen(false);
+      html?.removeEventListener('click', handleClickOutside);
     }
   };
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
-    const document = window.document;
-    scrollToIdOnClick(event, document);
-
+    scrollToIdOnClick(event, window.document);
     html?.removeEventListener('click', handleClickOutside);
     setIsOpen(false);
   };
 
-  const handleScrollY = () => {
-    if (window.scrollY > 80) {
-      setScrollActive(true);
-    } else {
-      setScrollActive(false);
-    }
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    scrollToTop();
+    setIsOpen(false);
   };
 
-  // useEffect for listener scroll
+  const handleScrollY = () => {
+    setScrollActive(window.scrollY > 80);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScrollY);
 
@@ -45,7 +46,6 @@ const MenuMobile = () => {
     };
   }, []);
 
-  // useEffect for listener click outside area of menu
   useEffect(() => {
     if (!html || !menu) {
       const htmlElement = document.documentElement;
@@ -64,39 +64,47 @@ const MenuMobile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <div className={`menu-mobile-bg ${scrollActive ? 'scroll-active' : ''}`}>
-      <a href="/" className="menu-mobile-logo">
+      <a href="#main-content" className="menu-mobile-logo" onClick={handleLogoClick}>
         LCS
       </a>
 
-      <div
+      <button
+        type="button"
         className={`menu-mobile-container ${isOpen ? 'active' : ''}`}
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+        aria-expanded={isOpen}
+        aria-controls="menu"
       />
 
-      <nav id="menu" className={`menu-mobile-content ${isOpen ? 'active' : ''}`}>
+      <nav
+        id="menu"
+        className={`menu-mobile-content ${isOpen ? 'active' : ''}`}
+        aria-label="Navegação mobile"
+      >
         <ul className="menu-list-content">
-          <li>
-            <a href="#portfolio" onClick={handleClick}>
-              Portfólio
-            </a>
-          </li>
-          <li>
-            <a href="#resume" onClick={handleClick}>
-              Resumo
-            </a>
-          </li>
-          <li>
-            <a href="#about" onClick={handleClick}>
-              Sobre
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={handleClick}>
-              Contato
-            </a>
-          </li>
+          {NAV_SECTIONS.map(({ id, label, href }) => (
+            <li key={id}>
+              <a
+                href={href}
+                className={activeSection === id ? 'active' : ''}
+                onClick={handleClick}
+                aria-current={activeSection === id ? 'page' : undefined}
+              >
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

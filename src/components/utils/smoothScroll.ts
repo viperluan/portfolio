@@ -59,3 +59,17 @@ export const scrollToIdOnClick = (
 
   scrollToPosition(position, duration);
 };
+
+export const scrollToTop = (duration?: number) => {
+  scrollToPosition(0, duration);
+};
+
+export const scrollToId = (id: string, duration?: number) => {
+  const element = document.querySelector(id) as HTMLElement | null;
+
+  if (!element) {
+    return;
+  }
+
+  scrollToPosition(element.offsetTop - 30, duration);
+};

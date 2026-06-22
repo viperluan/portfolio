@@ -1,13 +1,37 @@
 import './styles.scss';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { sendEmail } from '~/components/utils/emailjs';
 import { Title } from '~layout/title';
 
+const SOCIAL_LINKS = [
+  {
+    label: 'WhatsApp',
+    value: '+55 47 98844-7503',
+    href: 'https://wa.me/5547988447503',
+  },
+  {
+    label: 'Email',
+    value: 'viperluan@gmail.com',
+    href: 'mailto:viperluan@gmail.com',
+  },
+  {
+    label: 'Github',
+    value: '@viperluan',
+    href: 'https://www.github.com/viperluan',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Luan Conte Soares',
+    href: 'https://www.linkedin.com/in/luan-conte-soares',
+  },
+];
+
 const Contact = () => {
   const form = useRef() as React.MutableRefObject<HTMLFormElement>;
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleToastMessage = (status: 'Erro' | 'Sucesso', text: string) => {
     const type = status == 'Sucesso' ? 'success' : 'error';
@@ -38,9 +62,14 @@ const Contact = () => {
       return;
     }
 
-    const { status, text } = await sendEmail(event, form);
+    setIsSubmitting(true);
 
-    handleToastMessage(status, text);
+    try {
+      const { status, text } = await sendEmail(event, form);
+      handleToastMessage(status, text);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -49,53 +78,20 @@ const Contact = () => {
         <Title text="Contato" />
 
         <div className="social-media-container">
-          <a
-            className="contact-link"
-            href="https://wa.me/5547988447503"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>
-              <span>WhatsApp: </span>
-              +55 47988447503
-            </p>
-          </a>
-
-          <a
-            className="contact-link"
-            href="mailto:viperluan@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>
-              <span>Email: </span>
-              viperluan@gmail.com
-            </p>
-          </a>
-
-          <a
-            className="contact-link"
-            href="https://www.github.com/viperluan"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>
-              <span>Github: </span>
-              https://www.github.com/viperluan
-            </p>
-          </a>
-
-          <a
-            className="contact-link"
-            href="https://www.linkedin.com/in/luan-conte-soares"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <p>
-              <span>LinkedIn: </span>
-              https://www.linkedin.com/in/luan-conte-soares
-            </p>
-          </a>
+          {SOCIAL_LINKS.map(({ label, value, href }) => (
+            <a
+              key={label}
+              className="contact-link"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p>
+                <span>{label}: </span>
+                {value}
+              </p>
+            </a>
+          ))}
         </div>
 
         <form
@@ -113,6 +109,7 @@ const Contact = () => {
                 placeholder="Como devemos te chamar?"
                 maxLength={100}
                 required
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -127,6 +124,7 @@ const Contact = () => {
                 placeholder="seu@email.com"
                 maxLength={100}
                 required
+                disabled={isSubmitting}
               />
             </div>
           </div>
@@ -140,12 +138,13 @@ const Contact = () => {
                 placeholder="Sinta-se à vontade para tirar dúvidas. Será um prazer ajudar a encontrarmos uma solução para o seu empreendimento."
                 maxLength={800}
                 required
+                disabled={isSubmitting}
               />
             </div>
           </div>
 
-          <button type="submit" className="send-message-button">
-            Enviar mensagem
+          <button type="submit" className="send-message-button" disabled={isSubmitting}>
+            {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
           </button>
         </form>
       </div>

@@ -17,8 +17,12 @@
 
       .header-navigation-container {
         .header-navigation-list-container {
-          .header-navigation-item a:hover {
-            color: $azulMarinho;
+          .header-navigation-item a {
+            &:hover,
+            &.active {
+              color: $azulMarinho;
+              border-bottom-color: $azulMarinho;
+            }
           }
         }
       }
@@ -74,9 +78,14 @@
           margin-left: 50px;
           font-size: 24px;
           color: $brancoPuro;
+          padding-bottom: 4px;
+          border-bottom: 2px solid transparent;
+          transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
-          &:hover {
+          &:hover,
+          &.active {
             color: $verdeEsmeralda;
+            border-bottom-color: $verdeEsmeralda;
           }
         }
       }

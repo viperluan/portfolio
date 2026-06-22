@@ -8,22 +8,31 @@ import { Contact } from '~layout/section/contact';
 import { Main } from '~layout/section/main';
 import { Portfolio } from '~layout/section/portfolio';
 import { Resume } from '~layout/section/resume';
+import { SkipLink } from '~layout/skipLink';
+import { WhatsAppFloat } from '~layout/whatsappFloat';
 
 import { ToastifyContainer } from './components/layout/toastContainer';
+import { SECTION_IDS } from './constants/navigation';
+import { useActiveSection } from './hooks/useActiveSection';
 
 function App() {
+  const activeSection = useActiveSection(SECTION_IDS);
+
   return (
     <div className="app-container">
+      <SkipLink />
       <ToastifyContainer />
 
-      <MenuMobile />
+      <MenuMobile activeSection={activeSection} />
+      <Header activeSection={activeSection} />
 
-      <Header />
       <Main />
+      <About />
       <Portfolio />
       <Resume />
-      <About />
       <Contact />
+
+      <WhatsAppFloat />
       <Footer />
     </div>
   );

@@ -36,7 +36,7 @@ main {
     .main-tag {
       color: $verdeEsmeralda;
       width: 100%;
-      max-width: 380px;
+      max-width: 520px;
       padding: 13px 0;
       margin: 0 auto 50px;
 
@@ -72,20 +72,48 @@ main {
       margin-bottom: 50px;
     }
 
+    .main-social-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 24px;
+      margin-bottom: 40px;
+
+      .main-social-link {
+        color: $azulCiano;
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: $verdeEsmeralda;
+        }
+
+        @include md {
+          font-size: 18px;
+        }
+      }
+    }
+
     .main-buttons-container {
       display: flex;
       flex-direction: column;
       margin-bottom: 100px;
+      gap: 20px;
 
       @include md {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         column-gap: 20px;
+        row-gap: 20px;
       }
 
       .main-button-curriculum,
-      .main-button-contact {
+      .main-button-contact,
+      .main-button-portfolio {
         display: inline-block;
         text-align: center;
         text-decoration: none;
@@ -104,18 +132,19 @@ main {
 
         @include md {
           width: 100%;
-          max-width: 280px;
+          max-width: 240px;
         }
+      }
+
+      .main-button-portfolio {
+        color: $brancoPuro;
+        background-color: transparent;
+        border-color: $verdeEsmeralda;
       }
 
       .main-button-curriculum {
         color: $brancoPuro;
         background-color: $azulCiano;
-        margin-bottom: 20px;
-
-        @include md {
-          margin-bottom: 0;
-        }
       }
 
       .main-button-contact {
@@ -127,13 +156,21 @@ main {
     .scroll-down-container {
       display: flex;
       align-items: center;
-      width: 100%;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      text-decoration: none;
 
       font-size: 40px;
       font-weight: bold;
       writing-mode: vertical-rl;
       color: $verdeEsmeralda;
-      user-select: none;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $azulCiano;
+      }
 
       .first-scroll-down {
         animation: scroll-animation 0.6s ease-in-out alternate infinite;

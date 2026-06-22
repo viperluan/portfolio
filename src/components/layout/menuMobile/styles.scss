@@ -33,13 +33,29 @@
   }
 
   .menu-mobile-container {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
     border-top: 3px solid $verdeEsmeralda;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
 
     position: fixed;
     right: 30px;
     top: 20px;
     cursor: pointer;
     z-index: 2;
+
+    &:focus-visible {
+      outline: 2px solid $azulCiano;
+      outline-offset: 4px;
+    }
 
     &::after,
     &::before {
@@ -100,9 +116,10 @@
         text-decoration: none;
         color: $brancoPuro;
         font-size: 44px;
-        transition: all ease-in-out 0.2s;
+        transition: color ease-in-out 0.2s, transform ease-in-out 0.2s;
 
-        &:hover {
+        &:hover,
+        &.active {
           color: $verdeEsmeralda;
           transform: scale(1.05);
         }

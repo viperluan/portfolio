@@ -1,0 +1,36 @@
+@use "~/styles/breakpoints.scss" as *;
+
+@import "~/styles/variables.scss";
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 56px;
+  height: 56px;
+  padding: 0 16px;
+  border-radius: 999px;
+
+  background-color: $verdeEsmeralda;
+  color: $brancoPuro;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  @include md {
+    font-size: 16px;
+    min-width: 64px;
+    height: 64px;
+  }
+}
