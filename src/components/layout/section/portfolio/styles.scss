@@ -3,7 +3,7 @@
 @import "~/styles/variables";
 
 .portfolio-container {
-  padding: 60px 30px;
+  padding: 80px 30px;
   background-color: $azulMarinho;
 
   .portfolio-content-container {
@@ -15,7 +15,7 @@
     .portfolio-project-list {
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
+      row-gap: 28px;
 
       padding-top: 20px;
     }

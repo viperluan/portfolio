@@ -9,8 +9,10 @@ interface IProjectCard {
   name: string;
   link: string;
   description: string;
+  tags: string[];
   imageWidth: number;
   imageHeight: number;
+  githubLink?: string;
 }
 
 const projects: IProjectCard[] = [
@@ -20,10 +22,9 @@ const projects: IProjectCard[] = [
     link: 'www.econext.com.br',
     imageWidth: 1902,
     imageHeight: 938,
-    description: `Desenvolvido em Next.js, 
-      o portal visa promover a inovação e sustentabilidade entre pessoas e organizações.
-      Foi utilizado typescript e padrão funcional na aplicação. Tecnologias: Zustand, React Query,
-      MUI, Axios etc.`,
+    tags: ['Next.js', 'TypeScript', 'Zustand', 'React Query', 'MUI'],
+    description:
+      'Portal que promove inovação e sustentabilidade entre pessoas e organizações. Desenvolvido com padrão funcional, foco em performance e experiência consistente entre áreas do produto.',
   },
   {
     image: '/portfolio-images/reppos.webp',
@@ -31,9 +32,9 @@ const projects: IProjectCard[] = [
     link: 'www.reppos.com.br',
     imageWidth: 1912,
     imageHeight: 938,
-    description: `Desenvolvido em PHP, este ecommerce foi desenvolvido com um monolito e aprimorado
-      com uma API em Laravel utilizando arquitetura hexagonal. Atuei em todas fases dessa loja, 
-      antes e depois do lançamento.`,
+    tags: ['PHP', 'Laravel', 'E-commerce', 'API Hexagonal'],
+    description:
+      'E-commerce desenvolvido com monolito PHP e API em Laravel com arquitetura hexagonal. Atuação em todas as fases do projeto, antes e depois do lançamento.',
   },
   {
     image: '/portfolio-images/luancs.webp',
@@ -41,8 +42,10 @@ const projects: IProjectCard[] = [
     link: 'www.luancs.com.br',
     imageWidth: 1912,
     imageHeight: 938,
-    description: `Desenvolvido em React.js, utiliza-se da componentização em diversas áreas do site.
-      Tecnologias: React.js, SCSS, Typescript etc.`,
+    tags: ['React', 'TypeScript', 'SCSS', 'Vite'],
+    description:
+      'Site pessoal com componentização em diversas áreas, tipagem com TypeScript e estilização modular em SCSS.',
+    githubLink: 'https://www.github.com/viperluan/portfolio',
   },
 ];
 
@@ -53,7 +56,7 @@ const Portfolio = () => {
         <Title text="Portfólio" />
 
         <ul className="portfolio-project-list">
-          {projects.map(({ image, name, link, description, imageWidth, imageHeight }) => {
+          {projects.map(({ image, name, link, description, tags, imageWidth, imageHeight, githubLink }) => {
             return (
               <li key={name}>
                 <ProjectCard
@@ -61,8 +64,10 @@ const Portfolio = () => {
                   name={name}
                   link={link}
                   description={description}
+                  tags={tags}
                   imageWidth={imageWidth}
                   imageHeight={imageHeight}
+                  githubLink={githubLink}
                 />
               </li>
             );

@@ -2,38 +2,82 @@ import './styles.scss';
 
 import { Title } from '~layout/title';
 
+const HIGHLIGHTS = [
+  'Mais de 10 anos de experiência técnica antes da transição para desenvolvimento',
+  'Atuação fullstack com foco em qualidade, testes e boas práticas',
+  'Background em eletrônica e baixo nível, acelerando a curva de aprendizado',
+  'Interesse em projetos com impacto social e compartilhamento de conhecimento',
+];
+
+const SKILLS = [
+  'React',
+  'Next.js',
+  'TypeScript',
+  'Node.js',
+  'PHP',
+  'Laravel',
+  'Vue.js',
+  'Docker',
+  'MySQL',
+  'Git',
+  'SCSS',
+  'REST APIs',
+];
+
 const About = () => {
   return (
     <section id="about" className="about-container">
       <div className="about-content-and-title-container">
         <Title text="Sobre" />
+
         <div className="about-content-container">
           <h3>Técnico, autodidata e minimalista</h3>
 
-          <p>
-            Costumo contar minha história, revelando que desde muito jovem tive facilidade para
-            aprender assuntos relacionados à informática. Iniciei minha trajetória em 2005, com
-            cursos técnicos e profissionalizantes na área da informática. Após alguns anos
-            consertando e formatando computadores, finalizei uma formação como técnico em eletrônica
-            industrial, onde atuei por 10 anos na manutenção de diversos equipamentos eletrônicos.
-          </p>
+          <div className="about-blocks">
+            <div className="about-block">
+              <h4>Minha trajetória</h4>
+              <p>
+                Desde jovem tive facilidade com informática. Iniciei em 2005 com cursos técnicos na
+                área, passei por manutenção de computadores e me formei como técnico em eletrônica
+                industrial, atuando por 10 anos na manutenção de equipamentos eletrônicos.
+              </p>
+            </div>
 
-          <p>
-            Já em 2019, após alguns anos tentando estudar programação e tudo parecer que não fazia
-            sentido, entrei em um bootcamp realizado pelo Instituto de Gestão e Tecnologia da
-            Informação (IGTI), e finalmente, entendi alguns conceitos necessários e minha dedicação
-            voltou-se para programação web e mobile.
-          </p>
+            <div className="about-block">
+              <h4>Transição para programação</h4>
+              <p>
+                Em 2019, após anos tentando estudar programação, entrei no bootcamp do IGTI e os
+                conceitos finalmente fizeram sentido. A partir daí, dediquei-me a desenvolvimento web
+                e mobile com consistência e foco em evolução contínua.
+              </p>
+            </div>
 
-          <p>
-            Tenho diversos conhecimentos em linguagens de baixo nível e isso foi de extrema
-            importância para minha evolução rápida e meu sucesso nesta área. Também tenho apreço
-            pelas atividades que visam proporcionar o bem estar da nossa sociedade. Nos próximos
-            anos, tenho metas para cumprir, desenvolvendo soluções para instituições sem fins
-            lucrativos e ONGs que auxiliam no resgate e cuidado de diversos animais, compartilhar
-            conhecimento para que mais pessoas possam mudar suas vidas através da programação e
-            propagar a ideia de que uma sociedade unida sempre tende a prosperar.
-          </p>
+            <div className="about-block">
+              <h4>O que me move hoje</h4>
+              <p>
+                Busco criar soluções consistentes e seguras, com apreço por projetos que geram impacto
+                positivo. Tenho metas de apoiar ONGs, compartilhar conhecimento e contribuir para uma
+                sociedade mais colaborativa através da tecnologia.
+              </p>
+            </div>
+          </div>
+
+          <ul className="about-highlights">
+            {HIGHLIGHTS.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+
+          <div className="about-skills">
+            <h4>Principais tecnologias</h4>
+            <ul className="about-skills-list">
+              {SKILLS.map((skill) => (
+                <li key={skill} className="about-skill-chip">
+                  {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

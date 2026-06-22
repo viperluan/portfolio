@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $azulCeleste $brancoPuro;
+}
+
 html,
 body,
 #root {

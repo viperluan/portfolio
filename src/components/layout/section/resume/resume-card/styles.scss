@@ -3,103 +3,142 @@
 @import "~/styles/variables";
 
 .resume-card-container {
-  padding: 20px;
-  background-color: rgba($color: $azulCeleste, $alpha: 0.5);
-  border: 1px solid beige;
-  border-radius: 16px;
-  height: 350px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 32px;
 
-  &:hover {
-    background-color: rgba($color: $azulCeleste, $alpha: 1);
+  &.is-last {
+    padding-bottom: 0;
   }
 
-  @include lg {
-    max-height: 300px;
-
-    flex-basis: 40%;
-    flex-grow: 1;
+  .resume-card-marker {
     flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 22px;
+    border-radius: 50%;
+    background-color: $azulCiano;
+    border: 2px solid $verdeEsmeralda;
+    z-index: 1;
   }
 
-  .resume-card-info-container {
+  &.is-current .resume-card-marker {
+    background-color: $verdeEsmeralda;
+    box-shadow: 0 0 0 4px rgba($verdeEsmeralda, 0.25);
+  }
+
+  .resume-card-content {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba($color: $azulCeleste, $alpha: 0.5);
+    border: 1px solid $cinzaClaro;
+    border-radius: 16px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba($color: $azulCeleste, $alpha: 0.85);
+    }
+  }
+
+  .resume-card-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 16px;
 
-    @include sm {
-      margin-bottom: 40px;
-    }
-
-    @include lg {
+    @include md {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
     }
+  }
 
-    .resume-card-title {
-      margin-bottom: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      color: $verdeEsmeralda;
+  .resume-card-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
 
-      @include md {
-        font-size: 32px;
-        margin-bottom: 0;
-      }
+  .resume-card-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: $verdeEsmeralda;
+    line-height: 150%;
+
+    @include md {
+      font-size: 28px;
     }
+  }
 
-    .resume-card-role {
-      margin-bottom: 10px;
+  .resume-card-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: $verdeEsmeralda;
+    color: $brancoPuro;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    @include md {
       font-size: 12px;
+    }
+  }
 
-      @include md {
-        font-size: 14px;
-      }
+  .resume-card-role {
+    font-size: 14px;
+    line-height: 150%;
 
-      & span {
-        color: $verdeEsmeralda;
-      }
+    @include md {
+      font-size: 15px;
     }
 
-    .resume-card-period {
-      font-size: 11px;
+    span {
       color: $verdeEsmeralda;
-
-      @include md {
-        font-size: 14px;
-      }
     }
+  }
 
-    .resume-card-title,
-    .resume-card-role,
-    .resume-card-period {
-      text-align: center;
-      line-height: 150%;
+  .resume-card-period {
+    font-size: 13px;
+    color: $azulCiano;
+    font-weight: 600;
+    line-height: 150%;
+    white-space: nowrap;
 
-      @include md {
-        text-align: left;
-      }
-    }
-
-    .resume-card-period {
-      @include lg {
-        width: 40%;
-        text-align: right;
-      }
+    @include md {
+      font-size: 14px;
+      text-align: right;
     }
   }
 
   .resume-card-description {
     font-size: 14px;
-    line-height: 120%;
+    line-height: 160%;
 
     @include md {
       font-size: 16px;
     }
+  }
 
-    @include xl {
-      line-height: 150%;
+  .resume-card-toggle {
+    appearance: none;
+    margin-top: 14px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: $azulCiano;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $verdeEsmeralda;
     }
   }
 }
