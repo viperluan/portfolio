@@ -5,9 +5,7 @@ const Footer = () => {
 
   return (
     <footer className="footer-container">
-      <p className="footer-text-container">
-        © LCS Soluções em Tecnologia LTDA - {currentYear}
-      </p>
+      <p className="footer-text-container">© LCS Soluções em Tecnologia LTDA - {currentYear}</p>
     </footer>
   );
 };

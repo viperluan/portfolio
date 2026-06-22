@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-const useParallax = (speed = 0.25, minWidth = 992) => {
+const useParallax = (speed = 0.32, minWidth = 768) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -10,41 +10,71 @@ const useParallax = (speed = 0.25, minWidth = 992) => {
       return;
     }
 
+    const scope = element.closest('main') as HTMLElement | null;
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     const widthQuery = window.matchMedia(`(min-width: ${minWidth}px)`);
 
-    const resetTransform = () => {
-      element.style.transform = '';
+    let maxOffset = 0;
+
+    const syncLayer = () => {
+      if (!scope || !widthQuery.matches) {
+        maxOffset = 0;
+        return;
+      }
+
+      maxOffset = Math.round(scope.clientHeight * speed);
+    };
+
+    const getScrollOffset = () => {
+      if (!scope) {
+        return 0;
+      }
+
+      const scopeTop = window.scrollY + scope.getBoundingClientRect().top;
+      const scrolledInScope = Math.max(0, window.scrollY - scopeTop);
+      const cappedScroll = Math.min(scrolledInScope, scope.offsetHeight);
+
+      return Math.min(Math.round(cappedScroll * speed), maxOffset);
+    };
+
+    const resetParallax = () => {
+      element.style.backgroundPosition = '';
     };
 
     const handleScroll = () => {
       if (!widthQuery.matches || motionQuery.matches) {
-        resetTransform();
+        resetParallax();
         return;
       }
 
-      element.style.transform = `translate3d(0, ${window.scrollY * speed}px, 0)`;
+      const offset = getScrollOffset();
+      element.style.backgroundPosition = offset > 0 ? `center ${offset}px` : 'center top';
     };
 
-    const handleWidthChange = () => {
+    const handleLayoutChange = () => {
       if (!widthQuery.matches) {
-        resetTransform();
+        resetParallax();
+        maxOffset = 0;
         return;
       }
 
+      syncLayer();
       handleScroll();
     };
 
-    handleScroll();
+    handleLayoutChange();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    widthQuery.addEventListener('change', handleWidthChange);
+    window.addEventListener('resize', handleLayoutChange);
+    widthQuery.addEventListener('change', handleLayoutChange);
     motionQuery.addEventListener('change', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      widthQuery.removeEventListener('change', handleWidthChange);
+      window.removeEventListener('resize', handleLayoutChange);
+      widthQuery.removeEventListener('change', handleLayoutChange);
       motionQuery.removeEventListener('change', handleScroll);
-      resetTransform();
+      resetParallax();
     };
   }, [speed, minWidth]);
 

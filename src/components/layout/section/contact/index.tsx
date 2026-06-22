@@ -103,54 +103,54 @@ const Contact = () => {
             className="contact-user-container"
             onSubmit={(event) => handleSendEmail(event, form)}
           >
-          <div className="input-field">
-            <label htmlFor="name">Seu nome</label>
-            <div className="input-container">
-              <input
-                type="text"
-                name="from_name"
-                id="name"
-                placeholder="Como devemos te chamar?"
-                maxLength={100}
-                required
-                disabled={isSubmitting}
-              />
+            <div className="input-field">
+              <label htmlFor="name">Seu nome</label>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="from_name"
+                  id="name"
+                  placeholder="Como devemos te chamar?"
+                  maxLength={100}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="input-field">
-            <label htmlFor="email">Seu email</label>
-            <div className="input-container">
-              <input
-                type="email"
-                name="from_email"
-                id="email"
-                placeholder="seu@email.com"
-                maxLength={100}
-                required
-                disabled={isSubmitting}
-              />
+            <div className="input-field">
+              <label htmlFor="email">Seu email</label>
+              <div className="input-container">
+                <input
+                  type="email"
+                  name="from_email"
+                  id="email"
+                  placeholder="seu@email.com"
+                  maxLength={100}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="input-field">
-            <label htmlFor="text-area">Sua mensagem</label>
-            <div className="text-area-container">
-              <textarea
-                name="message"
-                id="text-area"
-                placeholder="Sinta-se à vontade para tirar dúvidas. Será um prazer ajudar a encontrarmos uma solução para o seu empreendimento."
-                maxLength={800}
-                required
-                disabled={isSubmitting}
-              />
+            <div className="input-field">
+              <label htmlFor="text-area">Sua mensagem</label>
+              <div className="text-area-container">
+                <textarea
+                  name="message"
+                  id="text-area"
+                  placeholder="Sinta-se à vontade para tirar dúvidas. Será um prazer ajudar a encontrarmos uma solução para o seu empreendimento."
+                  maxLength={800}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
             </div>
-          </div>
 
-          <button type="submit" className="send-message-button" disabled={isSubmitting}>
-            {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
-          </button>
-        </form>
+            <button type="submit" className="send-message-button" disabled={isSubmitting}>
+              {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+            </button>
+          </form>
         </ScrollReveal>
       </div>
     </section>

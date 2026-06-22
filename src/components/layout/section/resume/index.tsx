@@ -1,5 +1,5 @@
-import { Title } from '~layout/title';
 import { ScrollReveal } from '~/components/utils/ScrollReveal';
+import { Title } from '~layout/title';
 
 import { ResumeCard } from './resume-card';
 import './styles.scss';

@@ -31,7 +31,9 @@ const ResumeCard = ({
       : `${description.slice(0, DESCRIPTION_PREVIEW_LENGTH).trim()}...`;
 
   return (
-    <article className={`resume-card-container ${isCurrent ? 'is-current' : ''} ${isLast ? 'is-last' : ''}`}>
+    <article
+      className={`resume-card-container ${isCurrent ? 'is-current' : ''} ${isLast ? 'is-last' : ''}`}
+    >
       <div className="resume-card-marker" aria-hidden="true" />
 
       <div className="resume-card-content">

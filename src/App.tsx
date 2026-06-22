@@ -3,12 +3,12 @@ import './App.scss';
 import { Footer } from '~layout/footer';
 import { Header } from '~layout/header';
 import { MenuMobile } from '~layout/menuMobile';
+import { ReadingProgressBar } from '~layout/readingProgressBar';
 import { About } from '~layout/section/about';
 import { Contact } from '~layout/section/contact';
 import { Main } from '~layout/section/main';
 import { Portfolio } from '~layout/section/portfolio';
 import { Resume } from '~layout/section/resume';
-import { ReadingProgressBar } from '~layout/readingProgressBar';
 import { SkipLink } from '~layout/skipLink';
 import { WhatsAppFloat } from '~layout/whatsappFloat';
 

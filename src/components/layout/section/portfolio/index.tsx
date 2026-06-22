@@ -1,5 +1,5 @@
-import { Title } from '~layout/title';
 import { ScrollReveal } from '~/components/utils/ScrollReveal';
+import { Title } from '~layout/title';
 
 import { ProjectCard } from './project-card';
 
@@ -58,7 +58,10 @@ const Portfolio = () => {
 
         <ul className="portfolio-project-list">
           {projects.map(
-            ({ image, name, link, description, tags, imageWidth, imageHeight, githubLink }, index) => {
+            (
+              { image, name, link, description, tags, imageWidth, imageHeight, githubLink },
+              index
+            ) => {
               return (
                 <li key={name}>
                   <ScrollReveal delay={index * 120}>

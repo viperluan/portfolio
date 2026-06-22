@@ -1,6 +1,6 @@
-import { FIRST_SECTION_AFTER_HERO } from '~/constants/navigation';
 import { ScrollReveal } from '~/components/utils/ScrollReveal';
 import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
+import { FIRST_SECTION_AFTER_HERO } from '~/constants/navigation';
 import { useParallax } from '~/hooks/useParallax';
 
 import './styles.scss';
@@ -21,7 +21,7 @@ const SOCIAL_LINKS = [
 ];
 
 const Main = () => {
-  const parallaxRef = useParallax(0.08, 992);
+  const parallaxRef = useParallax();
 
   const handleAnchorClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     scrollToIdOnClick(event, window.document);
@@ -29,7 +29,9 @@ const Main = () => {
 
   return (
     <main id="main-content">
-      <div ref={parallaxRef} className="main-parallax-bg" aria-hidden="true" />
+      <div className="main-parallax-bg" aria-hidden="true">
+        <div ref={parallaxRef} className="main-parallax-bg__layer" />
+      </div>
 
       <div className="main-content-container">
         <ScrollReveal delay={0} immediate>

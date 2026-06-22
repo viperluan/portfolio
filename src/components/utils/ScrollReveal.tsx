@@ -7,7 +7,12 @@ interface ScrollRevealProps {
   immediate?: boolean;
 }
 
-const ScrollReveal = ({ children, className = '', delay = 0, immediate = false }: ScrollRevealProps) => {
+const ScrollReveal = ({
+  children,
+  className = '',
+  delay = 0,
+  immediate = false,
+}: ScrollRevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

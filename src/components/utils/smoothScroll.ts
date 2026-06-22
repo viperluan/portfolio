@@ -4,6 +4,8 @@
  * https://github.com/origamid/publico/blob/main/scroll-suave-para-link-interno-javascript-puro/scroll-suave-final/js/app.js
  */
 
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /**
  * Smooth scroll animation
  * @param {int} endX: destination x coordinate
@@ -11,6 +13,10 @@
  * @param {int} duration: animation duration in ms
  */
 const smoothScrollTo = (endX: number, endY: number, duration?: number) => {
+  if (prefersReducedMotion()) {
+    window.scrollTo(endX, endY);
+    return;
+  }
   const startX = window.scrollX || window.pageXOffset;
   const startY = window.scrollY || window.pageYOffset;
   const distanceX = endX - startX;

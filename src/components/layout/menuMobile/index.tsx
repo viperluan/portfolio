@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { NAV_SECTIONS } from '~/constants/navigation';
 import { scrollToIdOnClick, scrollToTop } from '~/components/utils/smoothScroll';
+import { NAV_SECTIONS } from '~/constants/navigation';
 
 import './styles.scss';
 
