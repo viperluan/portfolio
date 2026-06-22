@@ -1,5 +1,6 @@
 import './styles.scss';
 
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 import { Title } from '~layout/title';
 
 const HIGHLIGHTS = [
@@ -24,6 +25,21 @@ const SKILLS = [
   'REST APIs',
 ];
 
+const ABOUT_BLOCKS = [
+  {
+    title: 'Minha trajetória',
+    text: 'Desde jovem tive facilidade com informática. Iniciei em 2005 com cursos técnicos na área, passei por manutenção de computadores e me formei como técnico em eletrônica industrial, atuando por 10 anos na manutenção de equipamentos eletrônicos.',
+  },
+  {
+    title: 'Transição para programação',
+    text: 'Em 2019, após anos tentando estudar programação, entrei no bootcamp do IGTI e os conceitos finalmente fizeram sentido. A partir daí, dediquei-me a desenvolvimento web e mobile com consistência e foco em evolução contínua.',
+  },
+  {
+    title: 'O que me move hoje',
+    text: 'Busco criar soluções consistentes e seguras, com apreço por projetos que geram impacto positivo. Tenho metas de apoiar ONGs, compartilhar conhecimento e contribuir para uma sociedade mais colaborativa através da tecnologia.',
+  },
+];
+
 const About = () => {
   return (
     <section id="about" className="about-container">
@@ -31,53 +47,41 @@ const About = () => {
         <Title text="Sobre" />
 
         <div className="about-content-container">
-          <h3>Técnico, autodidata e minimalista</h3>
+          <ScrollReveal>
+            <h3>Técnico, autodidata e minimalista</h3>
+          </ScrollReveal>
 
           <div className="about-blocks">
-            <div className="about-block">
-              <h4>Minha trajetória</h4>
-              <p>
-                Desde jovem tive facilidade com informática. Iniciei em 2005 com cursos técnicos na
-                área, passei por manutenção de computadores e me formei como técnico em eletrônica
-                industrial, atuando por 10 anos na manutenção de equipamentos eletrônicos.
-              </p>
-            </div>
-
-            <div className="about-block">
-              <h4>Transição para programação</h4>
-              <p>
-                Em 2019, após anos tentando estudar programação, entrei no bootcamp do IGTI e os
-                conceitos finalmente fizeram sentido. A partir daí, dediquei-me a desenvolvimento web
-                e mobile com consistência e foco em evolução contínua.
-              </p>
-            </div>
-
-            <div className="about-block">
-              <h4>O que me move hoje</h4>
-              <p>
-                Busco criar soluções consistentes e seguras, com apreço por projetos que geram impacto
-                positivo. Tenho metas de apoiar ONGs, compartilhar conhecimento e contribuir para uma
-                sociedade mais colaborativa através da tecnologia.
-              </p>
-            </div>
+            {ABOUT_BLOCKS.map(({ title, text }, index) => (
+              <ScrollReveal key={title} delay={index * 100}>
+                <div className="about-block">
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
 
-          <ul className="about-highlights">
-            {HIGHLIGHTS.map((highlight) => (
-              <li key={highlight}>{highlight}</li>
-            ))}
-          </ul>
-
-          <div className="about-skills">
-            <h4>Principais tecnologias</h4>
-            <ul className="about-skills-list">
-              {SKILLS.map((skill) => (
-                <li key={skill} className="about-skill-chip">
-                  {skill}
-                </li>
+          <ScrollReveal delay={100}>
+            <ul className="about-highlights">
+              {HIGHLIGHTS.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <div className="about-skills">
+              <h4>Principais tecnologias</h4>
+              <ul className="about-skills-list">
+                {SKILLS.map((skill) => (
+                  <li key={skill} className="about-skill-chip">
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

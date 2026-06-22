@@ -8,6 +8,7 @@ import { Contact } from '~layout/section/contact';
 import { Main } from '~layout/section/main';
 import { Portfolio } from '~layout/section/portfolio';
 import { Resume } from '~layout/section/resume';
+import { ReadingProgressBar } from '~layout/readingProgressBar';
 import { SkipLink } from '~layout/skipLink';
 import { WhatsAppFloat } from '~layout/whatsappFloat';
 
@@ -21,6 +22,7 @@ function App() {
   return (
     <div className="app-container">
       <SkipLink />
+      <ReadingProgressBar />
       <ToastifyContainer />
 
       <MenuMobile activeSection={activeSection} />

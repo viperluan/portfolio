@@ -38,6 +38,10 @@
     padding-top: 20px;
     padding-left: 8px;
 
+    .scroll-reveal {
+      width: 100%;
+    }
+
     &::before {
       content: "";
       position: absolute;

@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { sendEmail } from '~/components/utils/emailjs';
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 import { Title } from '~layout/title';
 
 const SOCIAL_LINKS = [
@@ -77,28 +78,31 @@ const Contact = () => {
       <div className="contact-content-container">
         <Title text="Contato" />
 
-        <div className="social-media-container">
-          {SOCIAL_LINKS.map(({ label, value, href }) => (
-            <a
-              key={label}
-              className="contact-link"
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <p>
-                <span>{label}: </span>
-                {value}
-              </p>
-            </a>
-          ))}
-        </div>
+        <ScrollReveal delay={100}>
+          <div className="social-media-container">
+            {SOCIAL_LINKS.map(({ label, value, href }) => (
+              <a
+                key={label}
+                className="contact-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <span>{label}: </span>
+                  {value}
+                </p>
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
 
-        <form
-          ref={form}
-          className="contact-user-container"
-          onSubmit={(event) => handleSendEmail(event, form)}
-        >
+        <ScrollReveal delay={200}>
+          <form
+            ref={form}
+            className="contact-user-container"
+            onSubmit={(event) => handleSendEmail(event, form)}
+          >
           <div className="input-field">
             <label htmlFor="name">Seu nome</label>
             <div className="input-container">
@@ -147,6 +151,7 @@ const Contact = () => {
             {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
           </button>
         </form>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Title } from '~layout/title';
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 
 import { ResumeCard } from './resume-card';
 import './styles.scss';
@@ -65,16 +66,17 @@ const Resume = () => {
         <div className="resume-timeline">
           {cards.map(({ title, role, period, type, description, isCurrent }, index) => {
             return (
-              <ResumeCard
-                key={`${title}-${period}`}
-                title={title}
-                role={role}
-                period={period}
-                type={type}
-                description={description}
-                isCurrent={isCurrent}
-                isLast={index === cards.length - 1}
-              />
+              <ScrollReveal key={`${title}-${period}`} delay={index * 80}>
+                <ResumeCard
+                  title={title}
+                  role={role}
+                  period={period}
+                  type={type}
+                  description={description}
+                  isCurrent={isCurrent}
+                  isLast={index === cards.length - 1}
+                />
+              </ScrollReveal>
             );
           })}
         </div>

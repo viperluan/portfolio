@@ -69,6 +69,14 @@
         border-radius: 16px;
         height: 60px;
         padding: 18px 20px;
+        transition:
+          border-color 0.25s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+
+        &:focus-within {
+          border-color: $azulCiano;
+          box-shadow: 0 0 0 3px rgba($azulCiano, 0.25);
+        }
 
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
@@ -85,6 +93,14 @@
         border-radius: 16px;
         padding: 20px 0px 20px 20px;
         height: 300px;
+        transition:
+          border-color 0.25s ease-in-out,
+          box-shadow 0.25s ease-in-out;
+
+        &:focus-within {
+          border-color: $azulCiano;
+          box-shadow: 0 0 0 3px rgba($azulCiano, 0.25);
+        }
 
         textarea {
           resize: none;

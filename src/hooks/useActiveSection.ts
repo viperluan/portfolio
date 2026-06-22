@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const HEADER_OFFSET = 120;
+
 const useActiveSection = (sectionIds: string[]) => {
   const [activeSection, setActiveSection] = useState('');
 
@@ -12,29 +14,30 @@ const useActiveSection = (sectionIds: string[]) => {
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+    const updateActiveSection = () => {
+      let current = '';
 
-        if (!visibleEntries.length) {
-          return;
+      for (let index = elements.length - 1; index >= 0; index -= 1) {
+        const section = elements[index];
+        const { top } = section.getBoundingClientRect();
+
+        if (top <= HEADER_OFFSET) {
+          current = section.id;
+          break;
         }
-
-        const closestToTop = visibleEntries.sort(
-          (first, second) => first.boundingClientRect.top - second.boundingClientRect.top
-        )[0];
-
-        setActiveSection(closestToTop.target.id);
-      },
-      {
-        rootMargin: '-80px 0px -55% 0px',
-        threshold: [0, 0.15, 0.5],
       }
-    );
 
-    elements.forEach((element) => observer.observe(element));
+      setActiveSection(current);
+    };
 
-    return () => observer.disconnect();
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
   }, [sectionIds]);
 
   return activeSection;

@@ -11,23 +11,47 @@ main {
     content: "";
     background-image: url("/background-images/smoke-vertical.webp");
     background-color: $azulMarinho;
-    background-position: center;
+    background-position: center top;
     background-size: contain;
     background-blend-mode: luminosity;
     background-repeat: no-repeat;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
+    pointer-events: none;
 
     @include md {
-      background-image: url("/background-images/smoke-horizontal.webp");
+      display: none;
+    }
+  }
+
+  .main-parallax-bg {
+    display: none;
+    background-image: url("/background-images/smoke-horizontal.webp");
+    background-color: $azulMarinho;
+    background-position: center top;
+    background-size: contain;
+    background-blend-mode: luminosity;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+
+    @include md {
+      display: block;
     }
   }
 
   .main-content-container {
+    position: relative;
+    z-index: 1;
     @include md {
       max-width: 1280px;
       margin: 0 auto;
@@ -55,9 +79,20 @@ main {
         font-size: 48px;
       }
 
-      span {
-        color: $azulCiano;
+      span,
+      .main-title-highlight {
         font-weight: bold;
+        background: linear-gradient(
+          90deg,
+          $azulCiano 0%,
+          $verdeEsmeralda 50%,
+          $azulCiano 100%
+        );
+        background-size: 200% auto;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: gradient-shift 5s linear infinite;
       }
     }
 

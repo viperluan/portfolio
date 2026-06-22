@@ -1,4 +1,5 @@
 import { Title } from '~layout/title';
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 
 import { ProjectCard } from './project-card';
 
@@ -56,22 +57,26 @@ const Portfolio = () => {
         <Title text="Portfólio" />
 
         <ul className="portfolio-project-list">
-          {projects.map(({ image, name, link, description, tags, imageWidth, imageHeight, githubLink }) => {
-            return (
-              <li key={name}>
-                <ProjectCard
-                  image={image}
-                  name={name}
-                  link={link}
-                  description={description}
-                  tags={tags}
-                  imageWidth={imageWidth}
-                  imageHeight={imageHeight}
-                  githubLink={githubLink}
-                />
-              </li>
-            );
-          })}
+          {projects.map(
+            ({ image, name, link, description, tags, imageWidth, imageHeight, githubLink }, index) => {
+              return (
+                <li key={name}>
+                  <ScrollReveal delay={index * 120}>
+                    <ProjectCard
+                      image={image}
+                      name={name}
+                      link={link}
+                      description={description}
+                      tags={tags}
+                      imageWidth={imageWidth}
+                      imageHeight={imageHeight}
+                      githubLink={githubLink}
+                    />
+                  </ScrollReveal>
+                </li>
+              );
+            }
+          )}
         </ul>
       </div>
     </section>

@@ -15,7 +15,12 @@
     content: "";
     display: block;
     height: 2px;
-    width: 80px;
+    width: 0;
     background-color: $verdeEsmeralda;
+    transition: width 0.5s ease-out;
   }
+}
+
+.scroll-reveal-visible .title-component::after {
+  width: 80px;
 }
