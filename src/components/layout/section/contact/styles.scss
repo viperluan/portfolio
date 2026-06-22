@@ -47,8 +47,23 @@
         margin-top: 50px;
       }
 
-      .input-container {
+      .input-field {
         margin-bottom: 20px;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          color: $verdeEsmeralda;
+          font-size: 14px;
+          font-weight: 600;
+
+          @include lg {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .input-container {
         background-color: $azulCeleste;
         border: 1px solid $cinzaClaro;
         border-radius: 16px;

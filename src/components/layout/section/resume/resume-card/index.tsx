@@ -13,10 +13,10 @@ const ResumeCard = ({ title, role, period, type, description }: IResumeCardProps
     <div className="resume-card-container">
       <div className="resume-card-info-container">
         <div className="resume-card-title-container">
-          <h1 className="resume-card-title">{title}</h1>
-          <h2 className="resume-card-role">
+          <h3 className="resume-card-title">{title}</h3>
+          <h4 className="resume-card-role">
             {role} <span>({type})</span>
-          </h2>
+          </h4>
         </div>
         <p className="resume-card-period">{period}</p>
       </div>

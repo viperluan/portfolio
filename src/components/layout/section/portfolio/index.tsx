@@ -9,6 +9,8 @@ interface IProjectCard {
   name: string;
   link: string;
   description: string;
+  imageWidth: number;
+  imageHeight: number;
 }
 
 const projects: IProjectCard[] = [
@@ -16,6 +18,8 @@ const projects: IProjectCard[] = [
     image: '/portfolio-images/econext.webp',
     name: 'Econext',
     link: 'www.econext.com.br',
+    imageWidth: 1902,
+    imageHeight: 938,
     description: `Desenvolvido em Next.js, 
       o portal visa promover a inovação e sustentabilidade entre pessoas e organizações.
       Foi utilizado typescript e padrão funcional na aplicação. Tecnologias: Zustand, React Query,
@@ -25,6 +29,8 @@ const projects: IProjectCard[] = [
     image: '/portfolio-images/reppos.webp',
     name: 'Reppos',
     link: 'www.reppos.com.br',
+    imageWidth: 1912,
+    imageHeight: 938,
     description: `Desenvolvido em PHP, este ecommerce foi desenvolvido com um monolito e aprimorado
       com uma API em Laravel utilizando arquitetura hexagonal. Atuei em todas fases dessa loja, 
       antes e depois do lançamento.`,
@@ -33,6 +39,8 @@ const projects: IProjectCard[] = [
     image: '/portfolio-images/luancs.webp',
     name: 'Luan Conte Soares',
     link: 'www.luancs.com.br',
+    imageWidth: 1912,
+    imageHeight: 938,
     description: `Desenvolvido em React.js, utiliza-se da componentização em diversas áreas do site.
       Tecnologias: React.js, SCSS, Typescript etc.`,
   },
@@ -45,10 +53,17 @@ const Portfolio = () => {
         <Title text="Portfólio" />
 
         <ul className="portfolio-project-list">
-          {projects.map(({ image, name, link, description }) => {
+          {projects.map(({ image, name, link, description, imageWidth, imageHeight }) => {
             return (
               <li key={name}>
-                <ProjectCard image={image} name={name} link={link} description={description} />
+                <ProjectCard
+                  image={image}
+                  name={name}
+                  link={link}
+                  description={description}
+                  imageWidth={imageWidth}
+                  imageHeight={imageHeight}
+                />
               </li>
             );
           })}

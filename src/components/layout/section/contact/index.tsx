@@ -34,6 +34,7 @@ const Contact = () => {
     const elementsNotFilled = preventSubmitEmptyInputs(form);
 
     if (elementsNotFilled.length > 0) {
+      handleToastMessage('Erro', 'Preencha todos os campos antes de enviar sua mensagem.');
       return;
     }
 
@@ -48,21 +49,36 @@ const Contact = () => {
         <Title text="Contato" />
 
         <div className="social-media-container">
-          <a className="contact-link" href="https://wa.me/5547988447503" target="_blank">
+          <a
+            className="contact-link"
+            href="https://wa.me/5547988447503"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <p>
               <span>WhatsApp: </span>
               +55 47988447503
             </p>
           </a>
 
-          <a className="contact-link" href="mailto:viperluan@gmail.com" target="_blank">
+          <a
+            className="contact-link"
+            href="mailto:viperluan@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <p>
               <span>Email: </span>
               viperluan@gmail.com
             </p>
           </a>
 
-          <a className="contact-link" href="https://www.github.com/viperluan" target="_blank">
+          <a
+            className="contact-link"
+            href="https://www.github.com/viperluan"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <p>
               <span>Github: </span>
               https://www.github.com/viperluan
@@ -73,6 +89,7 @@ const Contact = () => {
             className="contact-link"
             href="https://www.linkedin.com/in/luan-conte-soares"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <p>
               <span>LinkedIn: </span>
@@ -86,35 +103,47 @@ const Contact = () => {
           className="contact-user-container"
           onSubmit={(event) => handleSendEmail(event, form)}
         >
-          <div className="input-container">
-            <input
-              type="text"
-              name="from_name"
-              id="name"
-              placeholder="Seu nome"
-              maxLength={100}
-              required
-            />
+          <div className="input-field">
+            <label htmlFor="name">Seu nome</label>
+            <div className="input-container">
+              <input
+                type="text"
+                name="from_name"
+                id="name"
+                placeholder="Como devemos te chamar?"
+                maxLength={100}
+                required
+              />
+            </div>
           </div>
-          <div className="input-container">
-            <input
-              type="email"
-              name="from_email"
-              id="email"
-              placeholder="Seu email"
-              maxLength={100}
-              required
-            />
+
+          <div className="input-field">
+            <label htmlFor="email">Seu email</label>
+            <div className="input-container">
+              <input
+                type="email"
+                name="from_email"
+                id="email"
+                placeholder="seu@email.com"
+                maxLength={100}
+                required
+              />
+            </div>
           </div>
-          <div className="text-area-container">
-            <textarea
-              name="message"
-              id="text-area"
-              placeholder="Sinta-se a vontade para tirar dúvidas, será um prazer ajudar para juntos encontrarmos uma solução que impulsione seu empreendimento"
-              maxLength={800}
-              required
-            />
+
+          <div className="input-field">
+            <label htmlFor="text-area">Sua mensagem</label>
+            <div className="text-area-container">
+              <textarea
+                name="message"
+                id="text-area"
+                placeholder="Sinta-se à vontade para tirar dúvidas. Será um prazer ajudar a encontrarmos uma solução para o seu empreendimento."
+                maxLength={800}
+                required
+              />
+            </div>
           </div>
+
           <button type="submit" className="send-message-button">
             Enviar mensagem
           </button>

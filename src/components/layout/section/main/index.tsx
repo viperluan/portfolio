@@ -16,7 +16,7 @@ const Main = () => {
           <p className="main-tag">Desenvolvedor Web & Mobile</p>
 
           <h1 className="main-title">
-            Bem vindo! Meu nome é <span>Luan</span>.
+            Bem-vindo! Meu nome é <span>Luan</span>.
           </h1>
 
           <p className="main-text">
@@ -26,11 +26,11 @@ const Main = () => {
 
           <div className="main-buttons-container">
             <a className="main-button-curriculum" href="/curriculum/luan-conte-soares.pdf" download>
-              <button>Baixar currículo</button>
+              Baixar currículo
             </a>
 
             <a className="main-button-contact" href="#contact" onClick={handleClickContactButton}>
-              <button>Contato</button>
+              Contato
             </a>
           </div>
 

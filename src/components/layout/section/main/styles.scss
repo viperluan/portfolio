@@ -34,7 +34,6 @@ main {
     }
 
     .main-tag {
-      user-select: none;
       color: $verdeEsmeralda;
       width: 100%;
       max-width: 380px;
@@ -71,7 +70,6 @@ main {
     .main-text,
     .main-title {
       margin-bottom: 50px;
-      user-select: none;
     }
 
     .main-buttons-container {
@@ -88,10 +86,17 @@ main {
 
       .main-button-curriculum,
       .main-button-contact {
+        display: inline-block;
+        text-align: center;
+        text-decoration: none;
         border: 2px solid $azulCiano;
         padding: 10px 0;
         border-radius: 16px;
         transition: transform 0.2s ease-in-out;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 20px;
+        cursor: pointer;
 
         &:hover {
           transform: scale(1.05);
@@ -101,19 +106,10 @@ main {
           width: 100%;
           max-width: 280px;
         }
-
-        button {
-          font-weight: bold;
-          text-transform: uppercase;
-          font-size: 20px;
-          color: $brancoPuro;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-        }
       }
 
       .main-button-curriculum {
+        color: $brancoPuro;
         background-color: $azulCiano;
         margin-bottom: 20px;
 
@@ -122,8 +118,9 @@ main {
         }
       }
 
-      .main-button-contact button {
+      .main-button-contact {
         color: $azulCiano;
+        background-color: transparent;
       }
     }
 

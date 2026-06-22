@@ -8,7 +8,7 @@ const About = () => {
       <div className="about-content-and-title-container">
         <Title text="Sobre" />
         <div className="about-content-container">
-          <h1>Técnico, autodidata e minimalista</h1>
+          <h3>Técnico, autodidata e minimalista</h3>
 
           <p>
             Costumo contar minha história, revelando que desde muito jovem tive facilidade para
