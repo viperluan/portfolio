@@ -4,18 +4,57 @@
 
 .footer-container {
   background-color: $surface-2;
-  padding: 30px 0;
+  padding: 30px 20px;
   border-top: 1px solid $border-subtle;
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    @include lg {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
 
   .footer-text-container {
     text-align: center;
     color: $text-muted;
+    font-size: 14px;
 
     @include lg {
-      font-size: 20px;
-
-      max-width: 1280px;
-      margin: 0 auto;
+      font-size: 16px;
+      text-align: left;
     }
+  }
+
+  .footer-back-to-top {
+    font-size: 14px;
+    font-weight: 500;
+    color: $accent;
+    text-decoration: none;
+    transition:
+      color 0.2s ease-in-out,
+      transform 0.2s ease-in-out;
+
+    &:hover {
+      color: $text-primary;
+      transform: translateY(-1px);
+    }
+
+    @include lg {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-back-to-top:hover {
+    transform: none;
   }
 }

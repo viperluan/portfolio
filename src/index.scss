@@ -56,4 +56,16 @@ body,
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
+  .about-block:hover,
+  .project-card-container:hover,
+  .resume-card-content:hover,
+  .whatsapp-float:hover,
+  .send-message-button:hover:not(:disabled),
+  .main-button-portfolio:hover,
+  .main-button-contact:hover,
+  .main-social-link:hover,
+  .project-card-button:hover {
+    transform: none !important;
+  }
 }

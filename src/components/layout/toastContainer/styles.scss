@@ -1,0 +1,40 @@
+@import "react-toastify/dist/ReactToastify.css";
+@import "~/styles/variables.scss";
+
+.toast-container {
+  --toastify-color-dark: #{$surface-2};
+  --toastify-text-color-dark: #{$text-primary};
+  --toastify-color-progress-dark: #{$accent};
+  --toastify-icon-color-success: #{$accent-warm};
+  --toastify-icon-color-error: #f87171;
+  --toastify-toast-width: 360px;
+
+  .Toastify__toast-theme--dark {
+    background: rgba($surface-2, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid $border-subtle;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    font-family: $font-sans;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .Toastify__toast-body {
+    color: $text-primary;
+  }
+
+  .Toastify__close-button--dark {
+    color: $text-muted;
+    opacity: 1;
+
+    &:hover {
+      color: $text-primary;
+    }
+  }
+
+  .toast-progress {
+    background: linear-gradient(90deg, $accent, $accent-warm);
+  }
+}

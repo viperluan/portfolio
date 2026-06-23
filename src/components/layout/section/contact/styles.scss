@@ -156,10 +156,14 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        transition: transform ease-in-out 0.2s, opacity ease-in-out 0.2s;
+        transition:
+          transform ease-in-out 0.2s,
+          opacity ease-in-out 0.2s,
+          box-shadow ease-in-out 0.2s;
 
         &:hover:not(:disabled) {
-          transform: scale(1.05);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
         }
 
         &:disabled {

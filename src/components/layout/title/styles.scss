@@ -19,10 +19,10 @@
     height: 2px;
     width: 0;
     background-color: $accent;
-    transition: width 0.5s ease-out;
+    transition: width 0.3s ease-out;
   }
 }
 
 .scroll-reveal-visible .title-component::after {
-  width: 80px;
+  width: 60px;
 }
