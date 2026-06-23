@@ -20,14 +20,14 @@
     margin-top: 22px;
     border-radius: 50%;
     background-color: $accent;
-    border: 2px solid $surface-1;
+    border: 2px solid $surface-2;
     z-index: 1;
   }
 
   &.is-current .resume-card-marker {
     background-color: $accent-warm;
     border-color: $accent-warm;
-    box-shadow: 0 0 0 4px rgba($accent-warm, 0.25);
+    box-shadow: 0 0 0 4px $accent-warm-ring;
   }
 
   .resume-card-content {
@@ -40,10 +40,11 @@
       box-shadow 0.25s ease-in-out,
       background-color 0.25s ease-in-out;
     @include glass-surface;
+    background: $resume-card-bg;
 
     &:hover {
       @include glass-surface-hover;
-      background: rgba($surface-2, 0.7);
+      background: $resume-card-hover-bg;
     }
   }
 
@@ -86,7 +87,7 @@
     padding: 4px 10px;
     border-radius: 999px;
     background-color: $accent-warm;
-    color: $surface-0;
+    color: $text-on-accent;
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;

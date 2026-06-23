@@ -77,7 +77,7 @@
 
         &:focus-within {
           border-color: $accent;
-          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px $input-focus-shadow;
         }
 
         input:-webkit-autofill,
@@ -101,7 +101,7 @@
 
         &:focus-within {
           border-color: $accent;
-          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px $input-focus-shadow;
         }
 
         textarea {
@@ -145,7 +145,7 @@
       }
 
       .send-message-button {
-        color: $surface-0;
+        color: $text-on-accent;
         background-color: $accent;
         border: transparent;
         border-radius: 16px;
@@ -163,7 +163,7 @@
 
         &:hover:not(:disabled) {
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
+          box-shadow: 0 8px 24px $accent-shadow;
         }
 
         &:disabled {

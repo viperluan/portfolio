@@ -7,7 +7,7 @@
   right: 0;
   height: 3px;
   z-index: 10;
-  background-color: rgba($surface-0, 0.6);
+  background-color: $reading-progress-track;
 }
 
 .reading-progress-bar-fill {

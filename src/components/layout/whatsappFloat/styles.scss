@@ -21,7 +21,7 @@
   font-size: 14px;
   font-weight: 700;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 4px 16px $shadow-medium;
   transition:
     transform 0.2s ease-in-out,
     box-shadow 0.2s ease-in-out;

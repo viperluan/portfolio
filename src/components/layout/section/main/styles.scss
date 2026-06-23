@@ -15,17 +15,17 @@ main {
     z-index: 0;
     pointer-events: none;
     background:
-      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56, 189, 248, 0.1) 0%, transparent 55%),
-      radial-gradient(ellipse 50% 40% at 80% 60%, rgba(129, 140, 248, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse 80% 50% at 50% -10%, $hero-gradient-start 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 80% 60%, $hero-gradient-end 0%, transparent 50%),
       $surface-0;
 
     &::after {
       content: "";
       position: absolute;
       inset: 0;
-      background-image: radial-gradient(rgba(148, 163, 184, 0.14) 1px, transparent 1px);
+      background-image: radial-gradient($grid-dot 1px, transparent 1px);
       background-size: 24px 24px;
-      opacity: 0.35;
+      opacity: var(--grid-opacity);
       mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 85%);
     }
   }
@@ -74,7 +74,7 @@ main {
 
       .main-title-highlight {
         font-weight: 700;
-        background: linear-gradient(135deg, $accent 0%, #818cf8 100%);
+        background: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;
@@ -141,12 +141,12 @@ main {
     }
 
     .main-button-portfolio {
-      color: $surface-0;
+      color: $text-on-accent;
       background-color: $accent;
       border: 2px solid $accent;
 
       &:hover {
-        box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+        box-shadow: 0 8px 24px $accent-shadow-strong;
       }
     }
 
@@ -217,7 +217,7 @@ main {
       height: 44px;
       border-radius: 50%;
       border: 1px solid $border-subtle;
-      background-color: rgba($surface-2, 0.6);
+      background-color: $social-link-bg;
       color: $text-secondary;
       text-decoration: none;
       transition:

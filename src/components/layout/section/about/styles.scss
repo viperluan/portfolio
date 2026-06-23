@@ -131,7 +131,7 @@
           color: $accent;
           background-color: $accent-glow;
           border: 1px solid $border-active;
-          box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+          box-shadow: 0 0 12px $accent-shadow-soft;
         }
       }
     }
@@ -193,7 +193,7 @@
       padding: 8px 14px;
       border: 1px solid $border-subtle;
       border-radius: 999px;
-      background-color: rgba($surface-3, 0.7);
+      background-color: $tag-bg;
       color: $text-primary;
 
       @include lg {

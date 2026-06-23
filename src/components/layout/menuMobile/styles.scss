@@ -95,7 +95,7 @@
 
   .menu-mobile-content {
     display: none;
-    background: rgba($surface-0, 0.85);
+    background: $menu-overlay-bg;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 

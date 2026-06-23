@@ -1,24 +1,52 @@
-// Surfaces — camadas de fundo (do mais escuro ao mais claro)
-$surface-0: #070b14;
-$surface-1: #0f1629;
-$surface-2: #161f35;
-$surface-3: #1e2a45;
+// Aliases SCSS → CSS custom properties (definidas em themes.scss)
+$surface-0: var(--surface-0);
+$surface-1: var(--surface-1);
+$surface-2: var(--surface-2);
+$surface-3: var(--surface-3);
 
-// Texto
-$text-primary: #f0f4f8;
-$text-secondary: #94a3b8;
-$text-muted: #64748b;
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
 
-// Acentos
-$accent: #38bdf8;
-$accent-glow: rgba(56, 189, 248, 0.15);
-$accent-warm: #34d399;
+$accent: var(--accent);
+$accent-deep: var(--accent-deep);
+$accent-glow: var(--accent-glow);
+$accent-warm: var(--accent-warm);
+$text-on-accent: var(--text-on-accent);
 
-// Bordas
-$border-subtle: rgba(148, 163, 184, 0.12);
-$border-active: rgba(56, 189, 248, 0.4);
+$border-subtle: var(--border-subtle);
+$border-active: var(--border-active);
 
-// Marca externa
+$hero-gradient-start: var(--hero-gradient-start);
+$hero-gradient-end: var(--hero-gradient-end);
+$grid-dot: var(--grid-dot);
+$grid-opacity: var(--grid-opacity);
+
+$glass-surface-bg: var(--glass-surface-bg);
+$glass-bar-bg: var(--glass-bar-bg);
+$glass-shadow: var(--glass-shadow);
+$glass-shadow-hover: var(--glass-shadow-hover);
+$shadow-medium: var(--shadow-medium);
+$toast-shadow: var(--toast-shadow);
+
+$overlay-image: var(--overlay-image);
+$social-link-bg: var(--social-link-bg);
+$tag-bg: var(--tag-bg);
+$menu-overlay-bg: var(--menu-overlay-bg);
+$toast-bg: var(--toast-bg);
+$reading-progress-track: var(--reading-progress-track);
+$resume-card-bg: var(--resume-card-bg);
+$resume-card-hover-bg: var(--resume-card-hover-bg);
+$accent-warm-ring: var(--accent-warm-ring);
+$timeline-fade: var(--timeline-fade);
+$divider-glow: var(--divider-glow);
+$accent-shadow-soft: var(--accent-shadow-soft);
+$accent-shadow: var(--accent-shadow);
+$accent-shadow-strong: var(--accent-shadow-strong);
+$input-focus-shadow: var(--input-focus-shadow);
+$grain-opacity: var(--grain-opacity);
+
+// Marca externa (fixa)
 $whatsapp-brand: #25d366;
 
 // Tipografia
