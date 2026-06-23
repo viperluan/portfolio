@@ -1,8 +1,10 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables.scss";
+@import "~/styles/mixins.scss";
 
 .contact-container {
+  position: relative;
   background-color: $surface-0;
   padding: 80px 30px;
 
@@ -64,18 +66,18 @@
       }
 
       .input-container {
-        background-color: $surface-2;
-        border: 1px solid $border-subtle;
-        border-radius: 16px;
+        border-radius: 14px;
         height: 60px;
         padding: 18px 20px;
         transition:
           border-color 0.25s ease-in-out,
-          box-shadow 0.25s ease-in-out;
+          box-shadow 0.25s ease-in-out,
+          transform 0.25s ease-in-out;
+        @include glass-surface;
 
         &:focus-within {
           border-color: $accent;
-          box-shadow: 0 0 0 3px $accent-glow;
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px rgba(0, 0, 0, 0.2);
         }
 
         input:-webkit-autofill,
@@ -88,18 +90,18 @@
       }
 
       .text-area-container {
-        background-color: $surface-2;
-        border: 1px solid $border-subtle;
-        border-radius: 16px;
+        border-radius: 14px;
         padding: 20px 0px 20px 20px;
         height: 300px;
         transition:
           border-color 0.25s ease-in-out,
-          box-shadow 0.25s ease-in-out;
+          box-shadow 0.25s ease-in-out,
+          transform 0.25s ease-in-out;
+        @include glass-surface;
 
         &:focus-within {
           border-color: $accent;
-          box-shadow: 0 0 0 3px $accent-glow;
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px rgba(0, 0, 0, 0.2);
         }
 
         textarea {

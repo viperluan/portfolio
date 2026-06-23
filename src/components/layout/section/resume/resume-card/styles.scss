@@ -1,6 +1,7 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
 
 .resume-card-container {
   position: relative;
@@ -32,13 +33,17 @@
   .resume-card-content {
     flex: 1;
     padding: 20px;
-    background-color: rgba($surface-2, 0.6);
-    border: 1px solid $border-subtle;
-    border-radius: 16px;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 14px;
+    transition:
+      border-color 0.25s ease-in-out,
+      transform 0.25s ease-in-out,
+      box-shadow 0.25s ease-in-out,
+      background-color 0.25s ease-in-out;
+    @include glass-surface;
 
     &:hover {
-      background-color: rgba($surface-2, 0.9);
+      @include glass-surface-hover;
+      background: rgba($surface-2, 0.7);
     }
   }
 
@@ -138,7 +143,7 @@
     background: transparent;
     color: $accent;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;

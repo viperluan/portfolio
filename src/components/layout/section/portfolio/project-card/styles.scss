@@ -1,16 +1,26 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
+
+$project-card-image-radius: 12px;
 
 .project-card-container {
-  border: 1px solid $border-subtle;
   border-radius: 16px;
   width: 100%;
   padding: 20px;
   position: relative;
   z-index: 0;
   overflow: hidden;
-  background-color: $surface-2;
+  transition:
+    border-color 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
+  @include glass-surface;
+
+  &:hover {
+    @include glass-surface-hover;
+  }
 
   @include lg {
     display: flex;
@@ -19,28 +29,13 @@
     padding: 28px;
   }
 
-  &::after {
-    content: "";
-    background-image: url("/background-images/purple-waves.webp");
-    background-color: $surface-2;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: luminosity;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
-
   .project-card-image-wrapper {
     position: relative;
     overflow: hidden;
     border: 1px solid $border-subtle;
-    border-radius: 16px;
+    border-radius: $project-card-image-radius;
     margin-bottom: 20px;
+    isolation: isolate;
 
     @include lg {
       flex: 0 0 330px;
@@ -54,7 +49,10 @@
     width: 100%;
     height: 220px;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: $project-card-image-radius;
     transition: transform 0.35s ease-in-out;
+    transform-origin: center center;
 
     @include md {
       height: 250px;
@@ -71,13 +69,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba($surface-0, 0.72);
+    border-radius: $project-card-image-radius;
+    background-color: rgba($surface-0, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: $text-primary;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    overflow: hidden;
   }
 
   .project-card-image-wrapper:hover,
@@ -152,7 +154,7 @@
     padding: 6px 12px;
     border: 1px solid $border-subtle;
     border-radius: 999px;
-    background-color: $surface-3;
+    background-color: rgba($surface-3, 0.7);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: $tracking-wide;
@@ -196,10 +198,13 @@
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition:
+      transform 0.2s ease-in-out,
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
 
     &:hover {
-      transform: scale(1.03);
+      transform: translateY(-1px);
     }
 
     @include md {
@@ -210,6 +215,10 @@
   .project-card-button-primary {
     background-color: $accent;
     color: $surface-0;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(56, 189, 248, 0.25);
+    }
   }
 
   .project-card-button-secondary {

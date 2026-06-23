@@ -10,19 +10,19 @@ const HIGHLIGHTS = [
   'Interesse em projetos com impacto social e compartilhamento de conhecimento',
 ];
 
-const SKILLS = [
-  'React',
-  'Next.js',
-  'TypeScript',
-  'Node.js',
-  'PHP',
-  'Laravel',
-  'Vue.js',
-  'Docker',
-  'MySQL',
-  'Git',
-  'SCSS',
-  'REST APIs',
+const SKILL_GROUPS = [
+  {
+    label: 'Frontend',
+    skills: ['React', 'Next.js', 'TypeScript', 'Vue.js', 'SCSS'],
+  },
+  {
+    label: 'Backend',
+    skills: ['Node.js', 'PHP', 'Laravel', 'REST APIs'],
+  },
+  {
+    label: 'DevOps & Tools',
+    skills: ['Docker', 'MySQL', 'Git'],
+  },
 ];
 
 const ABOUT_BLOCKS = [
@@ -46,43 +46,48 @@ const About = () => {
       <div className="about-content-and-title-container">
         <Title text="Sobre" />
 
-        <div className="about-content-container">
-          <ScrollReveal>
-            <h3>Técnico, autodidata e minimalista</h3>
-          </ScrollReveal>
+        <ScrollReveal>
+          <h3 className="about-intro">Técnico, autodidata e minimalista</h3>
+        </ScrollReveal>
 
-          <div className="about-blocks">
-            {ABOUT_BLOCKS.map(({ title, text }, index) => (
-              <ScrollReveal key={title} delay={index * 100}>
-                <div className="about-block">
-                  <h4>{title}</h4>
-                  <p>{text}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          <ScrollReveal delay={100}>
-            <ul className="about-highlights">
-              {HIGHLIGHTS.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          </ScrollReveal>
-
-          <ScrollReveal delay={200}>
-            <div className="about-skills">
-              <h4>Principais tecnologias</h4>
-              <ul className="about-skills-list">
-                {SKILLS.map((skill) => (
-                  <li key={skill} className="about-skill-chip">
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </ScrollReveal>
+        <div className="about-blocks">
+          {ABOUT_BLOCKS.map(({ title, text }, index) => (
+            <ScrollReveal key={title} delay={index * 100}>
+              <article className="about-block">
+                <h4>{title}</h4>
+                <p>{text}</p>
+              </article>
+            </ScrollReveal>
+          ))}
         </div>
+
+        <ScrollReveal delay={100}>
+          <ul className="about-highlights">
+            {HIGHLIGHTS.map((highlight) => (
+              <li key={highlight}>{highlight}</li>
+            ))}
+          </ul>
+        </ScrollReveal>
+
+        <ScrollReveal delay={200}>
+          <div className="about-skills">
+            <h4>Principais tecnologias</h4>
+            <div className="about-skills-groups">
+              {SKILL_GROUPS.map(({ label, skills }) => (
+                <div key={label} className="about-skills-group">
+                  <span className="about-skills-group-label">{label}</span>
+                  <ul className="about-skills-list">
+                    {skills.map((skill) => (
+                      <li key={skill} className="about-skill-chip">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
