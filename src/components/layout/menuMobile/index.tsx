@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { ThemeToggle } from '~/components/layout/themeToggle';
 import { scrollToIdOnClick, scrollToTop } from '~/components/utils/smoothScroll';
 import { NAV_SECTIONS } from '~/constants/navigation';
 
@@ -78,14 +79,18 @@ const MenuMobile = ({ activeSection }: MenuMobileProps) => {
         LCS
       </a>
 
-      <button
-        type="button"
-        className={`menu-mobile-container ${isOpen ? 'active' : ''}`}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
-        aria-expanded={isOpen}
-        aria-controls="menu"
-      />
+      <div className="menu-mobile-actions">
+        <ThemeToggle />
+
+        <button
+          type="button"
+          className={`menu-mobile-container ${isOpen ? 'active' : ''}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Fechar menu' : 'Abrir menu'}
+          aria-expanded={isOpen}
+          aria-controls="menu"
+        />
+      </div>
 
       <nav
         id="menu"

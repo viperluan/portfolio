@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { ThemeToggle } from '~/components/layout/themeToggle';
 import { scrollToIdOnClick, scrollToTop } from '~/components/utils/smoothScroll';
 import { NAV_SECTIONS } from '~/constants/navigation';
 
@@ -40,22 +41,26 @@ const Header = ({ activeSection }: HeaderProps) => {
           LCS
         </a>
 
-        <nav className="header-navigation-container" aria-label="Navegação principal">
-          <ul className="header-navigation-list-container">
-            {NAV_SECTIONS.map(({ id, label, href }) => (
-              <li key={id} className="header-navigation-item">
-                <a
-                  href={href}
-                  className={activeSection === id ? 'active' : ''}
-                  onClick={handleClickMenu}
-                  aria-current={activeSection === id ? 'page' : undefined}
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="header-actions">
+          <nav className="header-navigation-container" aria-label="Navegação principal">
+            <ul className="header-navigation-list-container">
+              {NAV_SECTIONS.map(({ id, label, href }) => (
+                <li key={id} className="header-navigation-item">
+                  <a
+                    href={href}
+                    className={activeSection === id ? 'active' : ''}
+                    onClick={handleClickMenu}
+                    aria-current={activeSection === id ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

@@ -40,6 +40,16 @@
     z-index: 4;
   }
 
+  .menu-mobile-actions {
+    position: fixed;
+    right: 30px;
+    top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 4;
+  }
+
   .menu-mobile-container {
     appearance: none;
     -webkit-appearance: none;
@@ -54,9 +64,9 @@
     box-shadow: none;
     outline: none;
 
-    position: fixed;
-    right: 30px;
-    top: 20px;
+    position: relative;
+    right: auto;
+    top: auto;
     cursor: pointer;
     z-index: 4;
 
