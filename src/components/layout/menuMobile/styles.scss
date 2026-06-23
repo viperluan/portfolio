@@ -1,6 +1,7 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .menu-mobile-bg {
   position: fixed;
@@ -10,14 +11,16 @@
   right: 0;
   z-index: 9;
   background-color: transparent;
-  transition: background-color 0.25s ease-in-out;
+  transition:
+    background-color 0.25s ease-in-out,
+    backdrop-filter 0.25s ease-in-out;
 
   @include lg {
     display: none;
   }
 
   &.scroll-active {
-    background-color: rgba($surface-1, 0.95);
+    @include glass-bar;
   }
 
   .menu-mobile-logo {
@@ -29,7 +32,10 @@
     font-size: 28px;
     font-weight: 700;
     letter-spacing: $tracking-tight;
-    color: $text-primary;
+    background: linear-gradient(135deg, $text-primary 30%, $accent 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     text-decoration: none;
     z-index: 4;
   }
@@ -89,7 +95,9 @@
 
   .menu-mobile-content {
     display: none;
-    background: rgba($surface-0, 0.97);
+    background: rgba($surface-0, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     position: fixed;
     top: 0;
@@ -110,23 +118,30 @@
       transform: translateX(-50%);
 
       li {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
       }
 
       li a {
         display: block;
         text-decoration: none;
         color: $text-primary;
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 600;
-        transition: color ease-in-out 0.2s, transform ease-in-out 0.2s;
+        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 
         &:hover,
         &.active {
           color: $accent;
-          transform: scale(1.05);
+          transform: translateY(-2px);
         }
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-mobile-content .menu-list-content li a:hover,
+  .menu-mobile-content .menu-list-content li a.active {
+    transform: none;
   }
 }

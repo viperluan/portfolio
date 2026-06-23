@@ -29,6 +29,12 @@ $project-card-image-radius: 12px;
     padding: 28px;
   }
 
+  &.project-card-container--reversed {
+    @include lg {
+      flex-direction: row-reverse;
+    }
+  }
+
   .project-card-image-wrapper {
     position: relative;
     overflow: hidden;

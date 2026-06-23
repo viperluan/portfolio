@@ -74,6 +74,7 @@ const Portfolio = () => {
                       imageWidth={imageWidth}
                       imageHeight={imageHeight}
                       githubLink={githubLink}
+                      reversed={index % 2 === 1}
                     />
                   </ScrollReveal>
                 </li>

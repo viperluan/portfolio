@@ -9,6 +9,7 @@ interface IProjectCardProps {
   imageWidth: number;
   imageHeight: number;
   githubLink?: string;
+  reversed?: boolean;
 }
 
 const ProjectCard = ({
@@ -20,11 +21,14 @@ const ProjectCard = ({
   imageWidth,
   imageHeight,
   githubLink,
+  reversed = false,
 }: IProjectCardProps) => {
   const siteUrl = `https://${link}`;
 
   return (
-    <article className="project-card-container">
+    <article
+      className={`project-card-container${reversed ? ' project-card-container--reversed' : ''}`}
+    >
       <div className="project-card-image-wrapper">
         <img
           className="project-card-image"

@@ -15,9 +15,13 @@
     .portfolio-project-list {
       display: flex;
       flex-direction: column;
-      row-gap: 28px;
+      row-gap: 40px;
 
       padding-top: 20px;
+
+      @include lg {
+        row-gap: 48px;
+      }
     }
   }
 }

@@ -1,22 +1,26 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
 
 .header-container {
   display: none;
   height: 60px;
   z-index: 9;
   background-color: transparent;
-  transition: background-color 0.25s ease-in-out;
+  transition:
+    background-color 0.25s ease-in-out,
+    backdrop-filter 0.25s ease-in-out;
 
   &.active {
-    background-color: rgba($surface-1, 0.92);
+    @include glass-bar;
+    border-bottom: 1px solid $border-subtle;
 
     .header-content-container {
-      border-bottom-color: $border-subtle;
-
       .header-logo:hover {
-        color: $accent;
+        background: linear-gradient(135deg, $accent 0%, #818cf8 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
 
       .header-navigation-container {
@@ -40,6 +44,7 @@
   @include lg {
     display: flex;
     align-items: center;
+    width: 100%;
 
     position: fixed;
     top: 0;
@@ -52,14 +57,12 @@
     align-items: center;
     justify-content: space-between;
 
+    flex: 1;
     height: 100%;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
-
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.25s ease-in-out;
 
     @include rwd(1320) {
       padding: 0;
@@ -67,14 +70,19 @@
 
     .header-logo {
       text-decoration: none;
-      color: $text-primary;
       font-size: 32px;
       font-weight: 700;
       letter-spacing: $tracking-tight;
-      transition: color 0.25s ease-in-out;
+      background: linear-gradient(135deg, $text-primary 30%, $accent 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: background 0.25s ease-in-out;
 
       &:hover {
-        color: $accent;
+        background: linear-gradient(135deg, $accent 0%, #818cf8 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
     }
 
