@@ -9,7 +9,7 @@
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: $azulCeleste $brancoPuro;
+  scrollbar-color: $surface-3 $surface-0;
 }
 
 html,
@@ -25,21 +25,21 @@ body,
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $brancoPuro;
+  background: $surface-0;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: $azulCeleste;
+  background: $surface-3;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: $azulMarinho;
+  background: $accent;
 }
 
 :focus-visible {
-  outline: 2px solid $azulCiano;
+  outline: 2px solid $accent;
   outline-offset: 2px;
 }
 

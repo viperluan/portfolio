@@ -17,7 +17,7 @@
   }
 
   &.scroll-active {
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba($surface-1, 0.95);
   }
 
   .menu-mobile-logo {
@@ -28,7 +28,7 @@
 
     font-size: 32px;
     font-weight: bold;
-    color: $verdeEsmeralda;
+    color: $text-primary;
     text-decoration: none;
     z-index: 4;
   }
@@ -42,7 +42,7 @@
     color: inherit;
     background: transparent;
     border: none;
-    border-top: 3px solid $verdeEsmeralda;
+    border-top: 3px solid $accent;
     border-radius: 0;
     box-shadow: none;
     outline: none;
@@ -54,7 +54,7 @@
     z-index: 4;
 
     &:focus-visible {
-      outline: 2px solid $azulCiano;
+      outline: 2px solid $accent;
       outline-offset: 4px;
     }
 
@@ -65,7 +65,7 @@
       width: 40px;
       height: 3px;
       margin-top: 6px;
-      background-color: $verdeEsmeralda;
+      background-color: $accent;
       position: relative;
       transition: all 0.3s;
     }
@@ -75,20 +75,20 @@
 
       &::before {
         transform: rotate(135deg);
-        background-color: $verdeEsmeralda;
+        background-color: $accent;
       }
 
       &::after {
         transform: rotate(-135deg);
         top: -9.3px;
-        background-color: $verdeEsmeralda;
+        background-color: $accent;
       }
     }
   }
 
   .menu-mobile-content {
     display: none;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba($surface-0, 0.97);
 
     position: fixed;
     top: 0;
@@ -115,13 +115,13 @@
       li a {
         display: block;
         text-decoration: none;
-        color: $brancoPuro;
+        color: $text-primary;
         font-size: 44px;
         transition: color ease-in-out 0.2s, transform ease-in-out 0.2s;
 
         &:hover,
         &.active {
-          color: $verdeEsmeralda;
+          color: $accent;
           transform: scale(1.05);
         }
       }

@@ -7,12 +7,12 @@
   right: 0;
   height: 3px;
   z-index: 10;
-  background-color: rgba($azulMarinho, 0.4);
+  background-color: rgba($surface-0, 0.6);
 }
 
 .reading-progress-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, $verdeEsmeralda, $azulCiano);
+  background: linear-gradient(90deg, $accent, $accent-warm);
   transition: width 0.1s linear;
   transform-origin: left;
 }

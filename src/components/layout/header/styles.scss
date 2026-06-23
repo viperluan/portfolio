@@ -10,11 +10,13 @@
   transition: background-color 0.25s ease-in-out;
 
   &.active {
-    background-color: $verdeEsmeralda;
+    background-color: rgba($surface-1, 0.92);
 
     .header-content-container {
+      border-bottom-color: $border-subtle;
+
       .header-logo:hover {
-        color: $azulMarinho;
+        color: $accent;
       }
 
       .header-navigation-container {
@@ -22,10 +24,10 @@
           .header-navigation-item a {
             &:hover,
             &.active {
-              color: $azulMarinho;
+              color: $accent;
 
               &::after {
-                background-color: $azulMarinho;
+                background-color: $accent;
                 transform: scaleX(1);
               }
             }
@@ -56,7 +58,8 @@
     margin: 0 auto;
     padding: 0 20px;
 
-    border-bottom: 2px solid $verdeEsmeralda;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.25s ease-in-out;
 
     @include rwd(1320) {
       padding: 0;
@@ -64,13 +67,13 @@
 
     .header-logo {
       text-decoration: none;
-      color: $brancoPuro;
+      color: $text-primary;
       font-size: 40px;
       font-weight: bold;
       transition: color 0.25s ease-in-out;
 
       &:hover {
-        color: $verdeEsmeralda;
+        color: $accent;
       }
     }
 
@@ -84,7 +87,7 @@
           text-decoration: none;
           margin-left: 50px;
           font-size: 24px;
-          color: $brancoPuro;
+          color: $text-primary;
           padding-bottom: 6px;
           transition: color 0.25s ease-in-out;
 
@@ -95,7 +98,7 @@
             bottom: 0;
             width: 100%;
             height: 2px;
-            background-color: $verdeEsmeralda;
+            background-color: $accent;
             transform: scaleX(0);
             transform-origin: left center;
             transition: transform 0.3s ease-in-out;
@@ -103,7 +106,7 @@
 
           &:hover,
           &.active {
-            color: $verdeEsmeralda;
+            color: $accent;
 
             &::after {
               transform: scaleX(1);

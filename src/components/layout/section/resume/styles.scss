@@ -6,11 +6,12 @@
   position: relative;
   padding: 80px 30px;
   width: 100%;
+  background-color: $surface-1;
 
   &::before {
     content: "";
     background-image: url("/background-images/lines-vertical.webp");
-    background-color: $azulMarinho;
+    background-color: $surface-1;
     background-position: center;
     background-size: cover;
     background-blend-mode: luminosity;
@@ -51,9 +52,9 @@
       width: 2px;
       background: linear-gradient(
         to bottom,
-        $verdeEsmeralda 0%,
-        $azulCiano 50%,
-        rgba($cinzaClaro, 0.4) 100%
+        $accent 0%,
+        $accent-warm 50%,
+        rgba($text-muted, 0.4) 100%
       );
     }
   }

@@ -3,11 +3,13 @@
 @import "../../../styles/variables.scss";
 
 .footer-container {
-  background-color: $azulCeleste;
+  background-color: $surface-2;
   padding: 30px 0;
+  border-top: 1px solid $border-subtle;
 
   .footer-text-container {
     text-align: center;
+    color: $text-muted;
 
     @include lg {
       font-size: 20px;

@@ -1,6 +1,22 @@
-$azulMarinho: #0b132b;
-$azulCeleste: #3a506b;
-$azulCiano: #4cc9f0;
-$cinzaClaro: #d8e3e7;
-$verdeEsmeralda: #2e8b57;
-$brancoPuro: #ffffff;
+// Surfaces — camadas de fundo (do mais escuro ao mais claro)
+$surface-0: #070b14;
+$surface-1: #0f1629;
+$surface-2: #161f35;
+$surface-3: #1e2a45;
+
+// Texto
+$text-primary: #f0f4f8;
+$text-secondary: #94a3b8;
+$text-muted: #64748b;
+
+// Acentos
+$accent: #38bdf8;
+$accent-glow: rgba(56, 189, 248, 0.15);
+$accent-warm: #34d399;
+
+// Bordas
+$border-subtle: rgba(148, 163, 184, 0.12);
+$border-active: rgba(56, 189, 248, 0.4);
+
+// Marca externa
+$whatsapp-brand: #25d366;
