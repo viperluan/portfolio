@@ -12,13 +12,3 @@
     transform: translateY(0);
   }
 }
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% center;
-  }
-
-  100% {
-    background-position: 200% center;
-  }
-}
