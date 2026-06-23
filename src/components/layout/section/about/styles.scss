@@ -43,10 +43,11 @@
       }
 
       h3 {
-        line-height: 150%;
+        line-height: 1.3;
         text-align: center;
         font-size: 24px;
-        font-weight: bold;
+        font-weight: 600;
+        letter-spacing: $tracking-tight;
         color: $text-primary;
         margin-bottom: 28px;
 
@@ -67,7 +68,7 @@
       .about-block {
         h4 {
           font-size: 16px;
-          font-weight: 700;
+          font-weight: 600;
           color: $accent;
           margin-bottom: 10px;
           line-height: 150%;
@@ -125,7 +126,7 @@
       .about-skills {
         h4 {
           font-size: 16px;
-          font-weight: 700;
+          font-weight: 600;
           color: $accent;
           margin-bottom: 16px;
 
@@ -142,16 +143,19 @@
       }
 
       .about-skill-chip {
+        font-family: $font-mono;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: $tracking-wide;
         padding: 8px 14px;
         border: 1px solid $border-subtle;
         border-radius: 999px;
         background-color: $surface-3;
         color: $text-primary;
-        font-size: 13px;
-        font-weight: 600;
+        font-size: 12px;
 
         @include lg {
-          font-size: 14px;
+          font-size: 13px;
         }
       }
     }

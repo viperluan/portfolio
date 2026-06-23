@@ -27,7 +27,7 @@
         width: fit-content;
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
 
         p {
@@ -55,7 +55,7 @@
           margin-bottom: 8px;
           color: $accent;
           font-size: 14px;
-          font-weight: 600;
+          font-weight: 500;
 
           @include lg {
             font-size: 18px;
@@ -128,6 +128,7 @@
       .input-container input,
       .text-area-container textarea {
         font-size: 16px;
+        font-weight: 400;
         outline: none;
         border-style: none;
         background-color: transparent;
@@ -137,7 +138,7 @@
         color: $text-primary;
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
       }
 
@@ -152,8 +153,7 @@
         margin-top: 20px;
         cursor: pointer;
         font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
+        font-weight: 600;
         transition: transform ease-in-out 0.2s, opacity ease-in-out 0.2s;
 
         &:hover:not(:disabled) {
@@ -166,7 +166,7 @@
         }
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
       }
     }

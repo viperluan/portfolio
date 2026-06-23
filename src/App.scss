@@ -7,7 +7,9 @@
 
   color: $text-primary;
   background-color: $surface-0;
-  font-family: "Poppins";
+  font-family: $font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   &::after {
     content: "";
