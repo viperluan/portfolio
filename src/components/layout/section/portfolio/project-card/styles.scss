@@ -1,106 +1,235 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
+
+$project-card-image-radius: 12px;
 
 .project-card-container {
-  border: 1px solid $cinzaClaro;
   border-radius: 16px;
-
   width: 100%;
-  height: 550px;
   padding: 20px;
-
   position: relative;
   z-index: 0;
   overflow: hidden;
-  user-select: none;
+  transition:
+    border-color 0.25s ease-in-out,
+    transform 0.25s ease-in-out,
+    box-shadow 0.25s ease-in-out;
+  @include glass-surface;
+
+  &:hover {
+    @include glass-surface-hover;
+  }
 
   @include lg {
     display: flex;
-    align-items: center;
-    column-gap: 120px;
-    max-height: 300px;
-    width: 100%;
+    align-items: stretch;
+    column-gap: 48px;
+    padding: 28px;
   }
 
-  &::after {
-    content: "";
-    background-image: url("/background-images/purple-waves.webp");
-    background-color: $azulCeleste;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: luminosity;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+  &.project-card-container--reversed {
+    @include lg {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .project-card-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $border-subtle;
+    border-radius: $project-card-image-radius;
+    margin-bottom: 20px;
+    isolation: isolate;
+
+    @include lg {
+      flex: 0 0 330px;
+      margin-bottom: 0;
+      align-self: center;
+    }
   }
 
   .project-card-image {
-    margin: 0 auto;
     display: block;
-    border: 1px solid $cinzaClaro;
-    border-radius: 16px;
-
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
+    border-radius: $project-card-image-radius;
+    transition: transform 0.35s ease-in-out;
+    transform-origin: center center;
 
-    margin-bottom: 20px;
+    @include md {
+      height: 250px;
+    }
 
     @include lg {
-      max-width: 330px;
-      min-width: 330px;
-      margin-bottom: 0;
-      margin: 0;
+      height: 220px;
+    }
+  }
+
+  .project-card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $project-card-image-radius;
+    background-color: $overlay-image;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: $text-on-accent;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .project-card-image-wrapper:hover,
+  .project-card-image-wrapper:focus-within {
+    .project-card-image {
+      transform: scale(1.05);
+    }
+
+    .project-card-overlay {
+      opacity: 1;
     }
   }
 
   .project-card-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
     @include lg {
-      display: flex;
-      flex-direction: column;
-      max-width: 580px;
+      flex: 1;
+      justify-content: center;
+    }
+  }
+
+  .project-card-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: $tracking-tight;
+    color: $text-primary;
+    line-height: 150%;
+
+    @include md {
+      font-size: 32px;
     }
 
-    .project-card-name {
-      text-align: center;
-      font-size: 20px;
-      margin-bottom: 20px;
+    @include lg {
+      text-align: left;
+    }
+  }
 
-      @include md {
-        font-size: 36px;
-      }
+  .project-card-url {
+    font-family: $font-mono;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    color: $accent;
+    line-height: 150%;
 
-      @include lg {
-        text-align: left;
-      }
-
-      a {
-        text-decoration: none;
-        color: $verdeEsmeralda;
-      }
+    @include md {
+      font-size: 13px;
     }
 
-    .project-card-description {
-      font-size: 14px;
-      text-align: center;
+    @include lg {
+      text-align: left;
+    }
+  }
 
-      @include md {
-        font-size: 16px;
-      }
+  .project-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
 
-      @include lg {
-        text-align: left;
-      }
+    @include lg {
+      justify-content: flex-start;
+    }
+  }
+
+  .project-card-tag {
+    font-family: $font-mono;
+    padding: 6px 12px;
+    border: 1px solid $border-subtle;
+    border-radius: 999px;
+    background-color: $tag-bg;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: $tracking-wide;
+    color: $text-primary;
+
+    @include md {
+      font-size: 12px;
+    }
+  }
+
+  .project-card-description {
+    font-size: 14px;
+    text-align: center;
+    line-height: 160%;
+    color: $text-secondary;
+
+    @include md {
+      font-size: 16px;
     }
 
-    .project-card-name,
-    .project-card-description {
-      line-height: 150%;
+    @include lg {
+      text-align: left;
     }
+  }
+
+  .project-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+
+    @include lg {
+      justify-content: flex-start;
+    }
+  }
+
+  .project-card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease-in-out,
+      background-color 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+
+    @include md {
+      font-size: 15px;
+    }
+  }
+
+  .project-card-button-primary {
+    background-color: $accent;
+    color: $text-on-accent;
+
+    &:hover {
+      box-shadow: 0 4px 16px $accent-shadow;
+    }
+  }
+
+  .project-card-button-secondary {
+    border: 2px solid $accent;
+    color: $accent;
+    background-color: transparent;
   }
 }

@@ -1,0 +1,18 @@
+@import "~/styles/variables.scss";
+
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10;
+  background-color: $reading-progress-track;
+}
+
+.reading-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, $accent, $accent-warm);
+  transition: width 0.1s linear;
+  transform-origin: left;
+}

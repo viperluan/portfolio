@@ -4,6 +4,8 @@
  * https://github.com/origamid/publico/blob/main/scroll-suave-para-link-interno-javascript-puro/scroll-suave-final/js/app.js
  */
 
+const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 /**
  * Smooth scroll animation
  * @param {int} endX: destination x coordinate
@@ -11,6 +13,10 @@
  * @param {int} duration: animation duration in ms
  */
 const smoothScrollTo = (endX: number, endY: number, duration?: number) => {
+  if (prefersReducedMotion()) {
+    window.scrollTo(endX, endY);
+    return;
+  }
   const startX = window.scrollX || window.pageXOffset;
   const startY = window.scrollY || window.pageYOffset;
   const distanceX = endX - startX;
@@ -58,4 +64,18 @@ export const scrollToIdOnClick = (
   const position = getScrollTopByHref(event.currentTarget, document) - 30;
 
   scrollToPosition(position, duration);
+};
+
+export const scrollToTop = (duration?: number) => {
+  scrollToPosition(0, duration);
+};
+
+export const scrollToId = (id: string, duration?: number) => {
+  const element = document.querySelector(id) as HTMLElement | null;
+
+  if (!element) {
+    return;
+  }
+
+  scrollToPosition(element.offsetTop - 30, duration);
 };

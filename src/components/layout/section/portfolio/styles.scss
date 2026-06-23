@@ -3,8 +3,8 @@
 @import "~/styles/variables";
 
 .portfolio-container {
-  padding: 60px 30px;
-  background-color: $azulMarinho;
+  padding: 80px 30px;
+  background-color: $surface-0;
 
   .portfolio-content-container {
     @include md {
@@ -15,9 +15,13 @@
     .portfolio-project-list {
       display: flex;
       flex-direction: column;
-      row-gap: 20px;
+      row-gap: 40px;
 
       padding-top: 20px;
+
+      @include lg {
+        row-gap: 48px;
+      }
     }
   }
 }

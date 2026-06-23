@@ -1,13 +1,38 @@
 import './styles.scss';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 
 import { sendEmail } from '~/components/utils/emailjs';
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 import { Title } from '~layout/title';
+
+const SOCIAL_LINKS = [
+  {
+    label: 'WhatsApp',
+    value: '+55 47 98844-7503',
+    href: 'https://wa.me/5547988447503',
+  },
+  {
+    label: 'Email',
+    value: 'viperluan@gmail.com',
+    href: 'mailto:viperluan@gmail.com',
+  },
+  {
+    label: 'Github',
+    value: '@viperluan',
+    href: 'https://www.github.com/viperluan',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'Luan Conte Soares',
+    href: 'https://www.linkedin.com/in/luan-conte-soares',
+  },
+];
 
 const Contact = () => {
   const form = useRef() as React.MutableRefObject<HTMLFormElement>;
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleToastMessage = (status: 'Erro' | 'Sucesso', text: string) => {
     const type = status == 'Sucesso' ? 'success' : 'error';
@@ -34,12 +59,18 @@ const Contact = () => {
     const elementsNotFilled = preventSubmitEmptyInputs(form);
 
     if (elementsNotFilled.length > 0) {
+      handleToastMessage('Erro', 'Preencha todos os campos antes de enviar sua mensagem.');
       return;
     }
 
-    const { status, text } = await sendEmail(event, form);
+    setIsSubmitting(true);
 
-    handleToastMessage(status, text);
+    try {
+      const { status, text } = await sendEmail(event, form);
+      handleToastMessage(status, text);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -47,78 +78,80 @@ const Contact = () => {
       <div className="contact-content-container">
         <Title text="Contato" />
 
-        <div className="social-media-container">
-          <a className="contact-link" href="https://wa.me/5547988447503" target="_blank">
-            <p>
-              <span>WhatsApp: </span>
-              +55 47988447503
-            </p>
-          </a>
+        <ScrollReveal delay={100}>
+          <div className="social-media-container">
+            {SOCIAL_LINKS.map(({ label, value, href }) => (
+              <a
+                key={label}
+                className="contact-link"
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <span>{label}: </span>
+                  {value}
+                </p>
+              </a>
+            ))}
+          </div>
+        </ScrollReveal>
 
-          <a className="contact-link" href="mailto:viperluan@gmail.com" target="_blank">
-            <p>
-              <span>Email: </span>
-              viperluan@gmail.com
-            </p>
-          </a>
-
-          <a className="contact-link" href="https://www.github.com/viperluan" target="_blank">
-            <p>
-              <span>Github: </span>
-              https://www.github.com/viperluan
-            </p>
-          </a>
-
-          <a
-            className="contact-link"
-            href="https://www.linkedin.com/in/luan-conte-soares"
-            target="_blank"
+        <ScrollReveal delay={200}>
+          <form
+            ref={form}
+            className="contact-user-container"
+            onSubmit={(event) => handleSendEmail(event, form)}
           >
-            <p>
-              <span>LinkedIn: </span>
-              https://www.linkedin.com/in/luan-conte-soares
-            </p>
-          </a>
-        </div>
+            <div className="input-field">
+              <label htmlFor="name">Seu nome</label>
+              <div className="input-container">
+                <input
+                  type="text"
+                  name="from_name"
+                  id="name"
+                  placeholder="Como devemos te chamar?"
+                  maxLength={100}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+            </div>
 
-        <form
-          ref={form}
-          className="contact-user-container"
-          onSubmit={(event) => handleSendEmail(event, form)}
-        >
-          <div className="input-container">
-            <input
-              type="text"
-              name="from_name"
-              id="name"
-              placeholder="Seu nome"
-              maxLength={100}
-              required
-            />
-          </div>
-          <div className="input-container">
-            <input
-              type="email"
-              name="from_email"
-              id="email"
-              placeholder="Seu email"
-              maxLength={100}
-              required
-            />
-          </div>
-          <div className="text-area-container">
-            <textarea
-              name="message"
-              id="text-area"
-              placeholder="Sinta-se a vontade para tirar dúvidas, será um prazer ajudar para juntos encontrarmos uma solução que impulsione seu empreendimento"
-              maxLength={800}
-              required
-            />
-          </div>
-          <button type="submit" className="send-message-button">
-            Enviar mensagem
-          </button>
-        </form>
+            <div className="input-field">
+              <label htmlFor="email">Seu email</label>
+              <div className="input-container">
+                <input
+                  type="email"
+                  name="from_email"
+                  id="email"
+                  placeholder="seu@email.com"
+                  maxLength={100}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+            </div>
+
+            <div className="input-field">
+              <label htmlFor="text-area">Sua mensagem</label>
+              <div className="text-area-container">
+                <textarea
+                  name="message"
+                  id="text-area"
+                  placeholder="Sinta-se à vontade para tirar dúvidas. Será um prazer ajudar a encontrarmos uma solução para o seu empreendimento."
+                  maxLength={800}
+                  required
+                  disabled={isSubmitting}
+                />
+              </div>
+            </div>
+
+            <button type="submit" className="send-message-button" disabled={isSubmitting}>
+              {isSubmitting ? 'Enviando...' : 'Enviar mensagem'}
+            </button>
+          </form>
+        </ScrollReveal>
       </div>
     </section>
   );

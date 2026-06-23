@@ -1,105 +1,156 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
 
 .resume-card-container {
-  padding: 20px;
-  background-color: rgba($color: $azulCeleste, $alpha: 0.5);
-  border: 1px solid beige;
-  border-radius: 16px;
-  height: 350px;
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 32px;
 
-  &:hover {
-    background-color: rgba($color: $azulCeleste, $alpha: 1);
+  &.is-last {
+    padding-bottom: 0;
   }
 
-  @include lg {
-    max-height: 300px;
-
-    flex-basis: 40%;
-    flex-grow: 1;
+  .resume-card-marker {
     flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin-top: 22px;
+    border-radius: 50%;
+    background-color: $accent;
+    border: 2px solid $surface-2;
+    z-index: 1;
   }
 
-  .resume-card-info-container {
+  &.is-current .resume-card-marker {
+    background-color: $accent-warm;
+    border-color: $accent-warm;
+    box-shadow: 0 0 0 4px $accent-warm-ring;
+  }
+
+  .resume-card-content {
+    flex: 1;
+    padding: 20px;
+    border-radius: 14px;
+    transition:
+      border-color 0.25s ease-in-out,
+      transform 0.25s ease-in-out,
+      box-shadow 0.25s ease-in-out,
+      background-color 0.25s ease-in-out;
+    @include glass-surface;
+    background: $resume-card-bg;
+
+    &:hover {
+      @include glass-surface-hover;
+      background: $resume-card-hover-bg;
+    }
+  }
+
+  .resume-card-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 16px;
 
-    @include sm {
-      margin-bottom: 40px;
-    }
-
-    @include lg {
+    @include md {
       flex-direction: row;
       justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
     }
+  }
 
-    .resume-card-title {
-      margin-bottom: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      color: $verdeEsmeralda;
+  .resume-card-title-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
 
-      @include md {
-        font-size: 32px;
-        margin-bottom: 0;
-      }
+  .resume-card-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: $tracking-tight;
+    color: $text-primary;
+    line-height: 150%;
+
+    @include md {
+      font-size: 28px;
     }
+  }
 
-    .resume-card-role {
-      margin-bottom: 10px;
-      font-size: 12px;
+  .resume-card-badge {
+    font-family: $font-mono;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background-color: $accent-warm;
+    color: $text-on-accent;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: $tracking-wide;
 
-      @include md {
-        font-size: 14px;
-      }
-
-      & span {
-        color: $verdeEsmeralda;
-      }
-    }
-
-    .resume-card-period {
+    @include md {
       font-size: 11px;
-      color: $verdeEsmeralda;
+    }
+  }
 
-      @include md {
-        font-size: 14px;
-      }
+  .resume-card-role {
+    font-size: 14px;
+    line-height: 150%;
+    color: $text-secondary;
+
+    @include md {
+      font-size: 15px;
     }
 
-    .resume-card-title,
-    .resume-card-role,
-    .resume-card-period {
-      text-align: center;
-      line-height: 150%;
-
-      @include md {
-        text-align: left;
-      }
+    span {
+      color: $accent;
     }
+  }
 
-    .resume-card-period {
-      @include lg {
-        width: 40%;
-        text-align: right;
-      }
+  .resume-card-period {
+    font-family: $font-mono;
+    font-size: 12px;
+    color: $accent;
+    font-weight: 500;
+    line-height: 150%;
+    white-space: nowrap;
+
+    @include md {
+      font-size: 13px;
+      text-align: right;
     }
   }
 
   .resume-card-description {
     font-size: 14px;
-    line-height: 120%;
+    line-height: 160%;
+    color: $text-secondary;
 
     @include md {
       font-size: 16px;
     }
+  }
 
-    @include xl {
-      line-height: 150%;
+  .resume-card-toggle {
+    appearance: none;
+    margin-top: 14px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: $accent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: $text-primary;
     }
   }
 }

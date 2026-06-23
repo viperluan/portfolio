@@ -1,27 +1,31 @@
 import { useEffect, useState } from 'react';
 
-import './styles.scss';
-import { scrollToIdOnClick } from '~/components/utils/smoothScroll';
+import { ThemeToggle } from '~/components/layout/themeToggle';
+import { scrollToIdOnClick, scrollToTop } from '~/components/utils/smoothScroll';
+import { NAV_SECTIONS } from '~/constants/navigation';
 
-const Header = () => {
+import './styles.scss';
+
+interface HeaderProps {
+  activeSection: string;
+}
+
+const Header = ({ activeSection }: HeaderProps) => {
   const [scrollActive, setScrollActive] = useState(false);
 
   const handleScrollY = () => {
-    if (window.scrollY > 80) {
-      setScrollActive(true);
-    } else {
-      setScrollActive(false);
-    }
+    setScrollActive(window.scrollY > 80);
   };
 
   const handleClickMenu = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    event.preventDefault();
-    const document = window.document;
-
-    scrollToIdOnClick(event, document);
+    scrollToIdOnClick(event, window.document);
   };
 
-  // useEffect for listener scroll
+  const handleLogoClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    event.preventDefault();
+    scrollToTop();
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', handleScrollY);
 
@@ -33,34 +37,30 @@ const Header = () => {
   return (
     <header className={`header-container ${scrollActive ? 'active' : ''}`}>
       <div className="header-content-container">
-        <a href="/" className="header-logo">
+        <a href="#main-content" className="header-logo" onClick={handleLogoClick}>
           LCS
         </a>
 
-        <nav className="header-navigation-container">
-          <ul className="header-navigation-list-container">
-            <li className="header-navigation-item">
-              <a href="#portfolio" onClick={handleClickMenu}>
-                Portfólio
-              </a>
-            </li>
-            <li className="header-navigation-item">
-              <a href="#resume" onClick={handleClickMenu}>
-                Resumo
-              </a>
-            </li>
-            <li className="header-navigation-item">
-              <a href="#about" onClick={handleClickMenu}>
-                Sobre
-              </a>
-            </li>
-            <li className="header-navigation-item">
-              <a href="#contact" onClick={handleClickMenu}>
-                Contato
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div className="header-actions">
+          <nav className="header-navigation-container" aria-label="Navegação principal">
+            <ul className="header-navigation-list-container">
+              {NAV_SECTIONS.map(({ id, label, href }) => (
+                <li key={id} className="header-navigation-item">
+                  <a
+                    href={href}
+                    className={activeSection === id ? 'active' : ''}
+                    onClick={handleClickMenu}
+                    aria-current={activeSection === id ? 'page' : undefined}
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

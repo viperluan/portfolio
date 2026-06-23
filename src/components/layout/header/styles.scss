@@ -1,24 +1,40 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables";
+@import "~/styles/mixins.scss";
 
 .header-container {
   display: none;
   height: 60px;
-  z-index: 1;
+  z-index: 9;
+  background-color: transparent;
+  transition:
+    background-color 0.25s ease-in-out,
+    backdrop-filter 0.25s ease-in-out;
 
   &.active {
-    background-color: $verdeEsmeralda;
+    @include glass-bar;
+    border-bottom: 1px solid $border-subtle;
 
     .header-content-container {
       .header-logo:hover {
-        color: $azulMarinho;
+        background: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
 
       .header-navigation-container {
         .header-navigation-list-container {
-          .header-navigation-item a:hover {
-            color: $azulMarinho;
+          .header-navigation-item a {
+            &:hover,
+            &.active {
+              color: $accent;
+
+              &::after {
+                background-color: $accent;
+                transform: scaleX(1);
+              }
+            }
           }
         }
       }
@@ -28,12 +44,12 @@
   @include lg {
     display: flex;
     align-items: center;
+    width: 100%;
 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
   }
 
   .header-content-container {
@@ -41,13 +57,12 @@
     align-items: center;
     justify-content: space-between;
 
+    flex: 1;
     height: 100%;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 20px;
-
-    border-bottom: 2px solid $verdeEsmeralda;
 
     @include rwd(1320) {
       padding: 0;
@@ -55,13 +70,26 @@
 
     .header-logo {
       text-decoration: none;
-      color: $brancoPuro;
-      font-size: 40px;
-      font-weight: bold;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: $tracking-tight;
+      background: linear-gradient(135deg, $text-primary 30%, $accent 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      transition: background 0.25s ease-in-out;
 
       &:hover {
-        color: $verdeEsmeralda;
+        background: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
       }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
 
     .header-navigation-container {
@@ -70,13 +98,35 @@
         flex-direction: row;
 
         .header-navigation-item a {
+          position: relative;
           text-decoration: none;
           margin-left: 50px;
-          font-size: 24px;
-          color: $brancoPuro;
+          font-size: 16px;
+          font-weight: 500;
+          color: $text-primary;
+          padding-bottom: 6px;
+          transition: color 0.25s ease-in-out;
 
-          &:hover {
-            color: $verdeEsmeralda;
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $accent;
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.3s ease-in-out;
+          }
+
+          &:hover,
+          &.active {
+            color: $accent;
+
+            &::after {
+              transform: scaleX(1);
+            }
           }
         }
       }

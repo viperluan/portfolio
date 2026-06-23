@@ -1,0 +1,18 @@
+@import "~/styles/variables.scss";
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: $accent;
+  color: $text-on-accent;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:focus-visible {
+    top: 16px;
+  }
+}

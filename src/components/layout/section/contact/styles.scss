@@ -1,10 +1,12 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables.scss";
+@import "~/styles/mixins.scss";
 
 .contact-container {
-  background-color: $azulMarinho;
-  padding: 60px 30px;
+  position: relative;
+  background-color: $surface-0;
+  padding: 80px 30px;
 
   .contact-content-container {
     @include lg {
@@ -27,14 +29,14 @@
         width: fit-content;
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
 
         p {
-          color: $brancoPuro;
+          color: $text-secondary;
 
           span {
-            color: $verdeEsmeralda;
+            color: $accent;
           }
         }
       }
@@ -47,29 +49,60 @@
         margin-top: 50px;
       }
 
-      .input-container {
+      .input-field {
         margin-bottom: 20px;
-        background-color: $azulCeleste;
-        border: 1px solid $cinzaClaro;
-        border-radius: 16px;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          color: $accent;
+          font-size: 14px;
+          font-weight: 500;
+
+          @include lg {
+            font-size: 18px;
+          }
+        }
+      }
+
+      .input-container {
+        border-radius: 14px;
         height: 60px;
         padding: 18px 20px;
+        transition:
+          border-color 0.25s ease-in-out,
+          box-shadow 0.25s ease-in-out,
+          transform 0.25s ease-in-out;
+        @include glass-surface;
+
+        &:focus-within {
+          border-color: $accent;
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px $input-focus-shadow;
+        }
 
         input:-webkit-autofill,
         input:-webkit-autofill:hover,
         input:-webkit-autofill:focus,
         input:-webkit-autofill:active {
           transition: background-color 100000s ease-in-out 0s;
-          -webkit-text-fill-color: $brancoPuro !important;
+          -webkit-text-fill-color: $text-primary !important;
         }
       }
 
       .text-area-container {
-        background-color: $azulCeleste;
-        border: 1px solid $cinzaClaro;
-        border-radius: 16px;
+        border-radius: 14px;
         padding: 20px 0px 20px 20px;
         height: 300px;
+        transition:
+          border-color 0.25s ease-in-out,
+          box-shadow 0.25s ease-in-out,
+          transform 0.25s ease-in-out;
+        @include glass-surface;
+
+        &:focus-within {
+          border-color: $accent;
+          box-shadow: 0 0 0 3px $accent-glow, 0 4px 24px $input-focus-shadow;
+        }
 
         textarea {
           resize: none;
@@ -90,29 +123,30 @@
         }
 
         textarea::-webkit-scrollbar-thumb {
-          background: $cinzaClaro;
+          background: $surface-3;
         }
       }
 
       .input-container input,
       .text-area-container textarea {
         font-size: 16px;
+        font-weight: 400;
         outline: none;
         border-style: none;
         background-color: transparent;
         border: none;
         width: 100%;
         height: 100%;
-        color: $brancoPuro;
+        color: $text-primary;
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
       }
 
       .send-message-button {
-        color: $brancoPuro;
-        background-color: $azulCiano;
+        color: $text-on-accent;
+        background-color: $accent;
         border: transparent;
         border-radius: 16px;
         padding: 18px 0;
@@ -121,16 +155,24 @@
         margin-top: 20px;
         cursor: pointer;
         font-size: 16px;
-        font-weight: bold;
-        text-transform: uppercase;
-        transition: transform ease-in-out 0.2s;
+        font-weight: 600;
+        transition:
+          transform ease-in-out 0.2s,
+          opacity ease-in-out 0.2s,
+          box-shadow ease-in-out 0.2s;
 
-        &:hover {
-          transform: scale(1.05);
+        &:hover:not(:disabled) {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px $accent-shadow;
+        }
+
+        &:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
         }
 
         @include lg {
-          font-size: 24px;
+          font-size: 18px;
         }
       }
     }

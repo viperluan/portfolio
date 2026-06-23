@@ -1,6 +1,57 @@
-$azulMarinho: #0b132b;
-$azulCeleste: #3a506b;
-$azulCiano: #4cc9f0;
-$cinzaClaro: #d8e3e7;
-$verdeEsmeralda: #2e8b57;
-$brancoPuro: #ffffff;
+// Aliases SCSS → CSS custom properties (definidas em themes.scss)
+$surface-0: var(--surface-0);
+$surface-1: var(--surface-1);
+$surface-2: var(--surface-2);
+$surface-3: var(--surface-3);
+
+$text-primary: var(--text-primary);
+$text-secondary: var(--text-secondary);
+$text-muted: var(--text-muted);
+
+$accent: var(--accent);
+$accent-deep: var(--accent-deep);
+$accent-glow: var(--accent-glow);
+$accent-warm: var(--accent-warm);
+$text-on-accent: var(--text-on-accent);
+
+$border-subtle: var(--border-subtle);
+$border-active: var(--border-active);
+
+$hero-gradient-start: var(--hero-gradient-start);
+$hero-gradient-end: var(--hero-gradient-end);
+$grid-dot: var(--grid-dot);
+$grid-opacity: var(--grid-opacity);
+
+$glass-surface-bg: var(--glass-surface-bg);
+$glass-bar-bg: var(--glass-bar-bg);
+$glass-shadow: var(--glass-shadow);
+$glass-shadow-hover: var(--glass-shadow-hover);
+$shadow-medium: var(--shadow-medium);
+$toast-shadow: var(--toast-shadow);
+
+$overlay-image: var(--overlay-image);
+$social-link-bg: var(--social-link-bg);
+$tag-bg: var(--tag-bg);
+$menu-overlay-bg: var(--menu-overlay-bg);
+$toast-bg: var(--toast-bg);
+$reading-progress-track: var(--reading-progress-track);
+$resume-card-bg: var(--resume-card-bg);
+$resume-card-hover-bg: var(--resume-card-hover-bg);
+$accent-warm-ring: var(--accent-warm-ring);
+$timeline-fade: var(--timeline-fade);
+$divider-glow: var(--divider-glow);
+$accent-shadow-soft: var(--accent-shadow-soft);
+$accent-shadow: var(--accent-shadow);
+$accent-shadow-strong: var(--accent-shadow-strong);
+$input-focus-shadow: var(--input-focus-shadow);
+$grain-opacity: var(--grain-opacity);
+
+// Marca externa (fixa)
+$whatsapp-brand: #25d366;
+
+// Tipografia
+$font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+
+$tracking-tight: -0.02em;
+$tracking-wide: 0.04em;

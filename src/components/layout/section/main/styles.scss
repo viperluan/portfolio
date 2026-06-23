@@ -3,159 +3,287 @@
 @import "~/styles/variables.scss";
 
 main {
-  padding: 200px 30px;
+  padding: 200px 30px 120px;
   text-align: center;
   position: relative;
+  background-color: $surface-0;
+  overflow: hidden;
 
-  &::before {
-    content: "";
-    background-image: url("/background-images/smoke-vertical.webp");
-    background-color: $azulMarinho;
-    background-position: center;
-    background-size: contain;
-    background-blend-mode: luminosity;
-    background-repeat: no-repeat;
+  .main-hero-bg {
     position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, $hero-gradient-start 0%, transparent 55%),
+      radial-gradient(ellipse 50% 40% at 80% 60%, $hero-gradient-end 0%, transparent 50%),
+      $surface-0;
 
-    @include md {
-      background-image: url("/background-images/smoke-horizontal.webp");
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient($grid-dot 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: var(--grid-opacity);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 85%);
     }
   }
 
   .main-content-container {
+    position: relative;
+    z-index: 1;
+
     @include md {
       max-width: 1280px;
       margin: 0 auto;
     }
 
     .main-tag {
-      user-select: none;
-      color: $verdeEsmeralda;
-      width: 100%;
-      max-width: 380px;
-      padding: 13px 0;
-      margin: 0 auto 50px;
+      font-family: $font-mono;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: $tracking-wide;
+      color: $accent;
+      width: fit-content;
+      max-width: 100%;
+      padding: 10px 16px;
+      margin: 0 auto 40px;
 
-      border: 1px solid $cinzaClaro;
-      border-radius: 16px;
+      border: 1px solid $border-active;
+      border-radius: 999px;
+      background-color: $accent-glow;
 
       @include md {
-        font-size: 24px;
+        font-size: 15px;
+        margin-bottom: 48px;
       }
     }
 
     .main-title {
-      font-size: 24px;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: $tracking-tight;
+      margin-bottom: 24px;
 
       @include md {
-        font-size: 48px;
+        font-size: 56px;
+        margin-bottom: 32px;
       }
 
-      span {
-        color: $azulCiano;
-        font-weight: bold;
+      .main-title-highlight {
+        font-weight: 700;
+        background: linear-gradient(135deg, $accent 0%, $accent-deep 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
       }
     }
 
     .main-text {
-      @include md {
-        font-size: 32px;
-      }
-    }
+      color: $text-secondary;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 40px;
 
-    .main-text,
-    .main-title {
-      margin-bottom: 50px;
-      user-select: none;
+      @include md {
+        font-size: 20px;
+        margin-bottom: 48px;
+      }
     }
 
     .main-buttons-container {
       display: flex;
       flex-direction: column;
-      margin-bottom: 100px;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
 
       @include md {
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        column-gap: 20px;
+        gap: 16px;
+        margin-bottom: 40px;
+      }
+    }
+
+    .main-button-portfolio,
+    .main-button-contact {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition:
+        transform 0.2s ease-in-out,
+        box-shadow 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        color 0.2s ease-in-out;
+
+      @include md {
+        min-width: 180px;
       }
 
-      .main-button-curriculum,
-      .main-button-contact {
-        border: 2px solid $azulCiano;
-        padding: 10px 0;
-        border-radius: 16px;
-        transition: transform 0.2s ease-in-out;
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
 
-        &:hover {
-          transform: scale(1.05);
-        }
+    .main-button-portfolio {
+      color: $text-on-accent;
+      background-color: $accent;
+      border: 2px solid $accent;
 
-        @include md {
-          width: 100%;
-          max-width: 280px;
-        }
+      &:hover {
+        box-shadow: 0 8px 24px $accent-shadow-strong;
+      }
+    }
 
-        button {
-          font-weight: bold;
-          text-transform: uppercase;
-          font-size: 20px;
-          color: $brancoPuro;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
+    .main-button-contact {
+      color: $accent;
+      background-color: transparent;
+      border: 2px solid $border-active;
+
+      &:hover {
+        border-color: $accent;
+        background-color: $accent-glow;
+      }
+    }
+
+    .main-button-curriculum {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      margin-top: 4px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      color: $text-secondary;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $accent;
+
+        .main-button-curriculum-icon {
+          transform: translateY(2px);
         }
       }
 
-      .main-button-curriculum {
-        background-color: $azulCiano;
-        margin-bottom: 20px;
-
-        @include md {
-          margin-bottom: 0;
-        }
+      @include md {
+        margin-top: 0;
+        flex-basis: 100%;
       }
+    }
 
-      .main-button-contact button {
-        color: $azulCiano;
+    .main-button-curriculum-icon {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .main-social-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 64px;
+
+      @include md {
+        margin-bottom: 80px;
       }
+    }
+
+    .main-social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid $border-subtle;
+      background-color: $social-link-bg;
+      color: $text-secondary;
+      text-decoration: none;
+      transition:
+        color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out,
+        background-color 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+
+      &:hover {
+        color: $accent;
+        border-color: $border-active;
+        background-color: $accent-glow;
+        transform: translateY(-2px);
+      }
+    }
+
+    .main-social-icon {
+      width: 20px;
+      height: 20px;
     }
 
     .scroll-down-container {
       display: flex;
       align-items: center;
-      width: 100%;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      margin: 0 auto;
+      text-decoration: none;
+      color: $text-muted;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
 
-      font-size: 40px;
-      font-weight: bold;
-      writing-mode: vertical-rl;
-      color: $verdeEsmeralda;
-      user-select: none;
+      &:hover {
+        color: $accent;
 
-      .first-scroll-down {
-        animation: scroll-animation 0.6s ease-in-out alternate infinite;
-      }
-
-      .second-scroll-down {
-        animation: scroll-animation 0.6s ease-in-out alternate 0.2s infinite;
-      }
-
-      .third-scroll-down {
-        animation: scroll-animation 0.6s ease-in-out alternate 0.4s infinite;
+        .scroll-down-chevron {
+          animation-play-state: paused;
+        }
       }
     }
 
-    @keyframes scroll-animation {
+    .scroll-down-chevron {
+      width: 28px;
+      height: 28px;
+      animation: scroll-bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes scroll-bounce {
+      0%,
       100% {
-        color: $brancoPuro;
-        transform: scale(1.5);
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translateY(6px);
+        opacity: 1;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main .main-content-container .scroll-down-chevron {
+    animation: none;
+    opacity: 0.7;
   }
 }

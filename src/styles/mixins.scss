@@ -1,0 +1,39 @@
+@import "~/styles/variables.scss";
+
+@mixin glass-surface {
+  background: $glass-surface-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid $border-subtle;
+  box-shadow: 0 4px 24px $glass-shadow;
+}
+
+@mixin glass-surface-hover {
+  border-color: $border-active;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px $glass-shadow-hover;
+}
+
+@mixin glass-bar {
+  background: $glass-bar-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@mixin section-divider {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $divider-glow 50%,
+      transparent 100%
+    );
+    pointer-events: none;
+  }
+}

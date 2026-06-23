@@ -1,3 +1,4 @@
+import { ScrollReveal } from '~/components/utils/ScrollReveal';
 import { Title } from '~layout/title';
 
 import { ProjectCard } from './project-card';
@@ -9,6 +10,10 @@ interface IProjectCard {
   name: string;
   link: string;
   description: string;
+  tags: string[];
+  imageWidth: number;
+  imageHeight: number;
+  githubLink?: string;
 }
 
 const projects: IProjectCard[] = [
@@ -16,25 +21,32 @@ const projects: IProjectCard[] = [
     image: '/portfolio-images/econext.webp',
     name: 'Econext',
     link: 'www.econext.com.br',
-    description: `Desenvolvido em Next.js, 
-      o portal visa promover a inovação e sustentabilidade entre pessoas e organizações.
-      Foi utilizado typescript e padrão funcional na aplicação. Tecnologias: Zustand, React Query,
-      MUI, Axios etc.`,
+    imageWidth: 1902,
+    imageHeight: 938,
+    tags: ['Next.js', 'TypeScript', 'Zustand', 'React Query', 'MUI'],
+    description:
+      'Portal que promove inovação e sustentabilidade entre pessoas e organizações. Desenvolvido com padrão funcional, foco em performance e experiência consistente entre áreas do produto.',
   },
   {
     image: '/portfolio-images/reppos.webp',
     name: 'Reppos',
     link: 'www.reppos.com.br',
-    description: `Desenvolvido em PHP, este ecommerce foi desenvolvido com um monolito e aprimorado
-      com uma API em Laravel utilizando arquitetura hexagonal. Atuei em todas fases dessa loja, 
-      antes e depois do lançamento.`,
+    imageWidth: 1912,
+    imageHeight: 938,
+    tags: ['PHP', 'Laravel', 'E-commerce', 'API Hexagonal'],
+    description:
+      'E-commerce desenvolvido com monolito PHP e API em Laravel com arquitetura hexagonal. Atuação em todas as fases do projeto, antes e depois do lançamento.',
   },
   {
     image: '/portfolio-images/luancs.webp',
     name: 'Luan Conte Soares',
     link: 'www.luancs.com.br',
-    description: `Desenvolvido em React.js, utiliza-se da componentização em diversas áreas do site.
-      Tecnologias: React.js, SCSS, Typescript etc.`,
+    imageWidth: 1912,
+    imageHeight: 938,
+    tags: ['React', 'TypeScript', 'SCSS', 'Vite'],
+    description:
+      'Site pessoal com componentização em diversas áreas, tipagem com TypeScript e estilização modular em SCSS.',
+    githubLink: 'https://www.github.com/viperluan/portfolio',
   },
 ];
 
@@ -45,13 +57,30 @@ const Portfolio = () => {
         <Title text="Portfólio" />
 
         <ul className="portfolio-project-list">
-          {projects.map(({ image, name, link, description }) => {
-            return (
-              <li key={name}>
-                <ProjectCard image={image} name={name} link={link} description={description} />
-              </li>
-            );
-          })}
+          {projects.map(
+            (
+              { image, name, link, description, tags, imageWidth, imageHeight, githubLink },
+              index
+            ) => {
+              return (
+                <li key={name}>
+                  <ScrollReveal delay={index * 120}>
+                    <ProjectCard
+                      image={image}
+                      name={name}
+                      link={link}
+                      description={description}
+                      tags={tags}
+                      imageWidth={imageWidth}
+                      imageHeight={imageHeight}
+                      githubLink={githubLink}
+                      reversed={index % 2 === 1}
+                    />
+                  </ScrollReveal>
+                </li>
+              );
+            }
+          )}
         </ul>
       </div>
     </section>

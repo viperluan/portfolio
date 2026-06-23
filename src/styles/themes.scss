@@ -1,0 +1,136 @@
+// Tema escuro (padrão) — tech minimal azul ciano
+// Tema claro — slate, via prefers-color-scheme: light ou data-theme="light"
+
+@mixin theme-dark {
+  color-scheme: dark;
+
+  // Surfaces
+  --surface-0: #070b14;
+  --surface-1: #0f1629;
+  --surface-2: #161f35;
+  --surface-3: #1e2a45;
+
+  // Texto
+  --text-primary: #f0f4f8;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  // Acentos
+  --accent: #38bdf8;
+  --accent-deep: #818cf8;
+  --accent-warm: #34d399;
+  --accent-glow: rgba(56, 189, 248, 0.15);
+  --text-on-accent: #070b14;
+
+  // Bordas
+  --border-subtle: rgba(148, 163, 184, 0.12);
+  --border-active: rgba(56, 189, 248, 0.4);
+
+  // Hero
+  --hero-gradient-start: rgba(56, 189, 248, 0.1);
+  --hero-gradient-end: rgba(129, 140, 248, 0.06);
+  --grid-dot: rgba(148, 163, 184, 0.14);
+  --grid-opacity: 0.35;
+
+  // Glass e sombras
+  --glass-surface-bg: rgba(22, 31, 53, 0.55);
+  --glass-bar-bg: rgba(15, 22, 41, 0.8);
+  --glass-shadow: rgba(0, 0, 0, 0.2);
+  --glass-shadow-hover: rgba(0, 0, 0, 0.28);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --toast-shadow: rgba(0, 0, 0, 0.35);
+
+  // Componentes
+  --overlay-image: rgba(7, 11, 20, 0.55);
+  --social-link-bg: rgba(22, 31, 53, 0.6);
+  --tag-bg: rgba(30, 42, 69, 0.7);
+  --menu-overlay-bg: rgba(7, 11, 20, 0.85);
+  --toast-bg: rgba(22, 31, 53, 0.95);
+  --reading-progress-track: rgba(7, 11, 20, 0.6);
+  --resume-card-bg: rgba(22, 31, 53, 0.7);
+  --resume-card-hover-bg: rgba(22, 31, 53, 0.9);
+  --accent-warm-ring: rgba(52, 211, 153, 0.25);
+  --timeline-fade: rgba(100, 116, 139, 0.4);
+  --divider-glow: rgba(56, 189, 248, 0.25);
+  --accent-shadow-soft: rgba(56, 189, 248, 0.15);
+  --accent-shadow: rgba(56, 189, 248, 0.25);
+  --accent-shadow-strong: rgba(56, 189, 248, 0.3);
+  --input-focus-shadow: rgba(0, 0, 0, 0.2);
+  --grain-opacity: 0.02;
+}
+
+@mixin theme-light {
+  color-scheme: light;
+
+  // Surfaces
+  --surface-0: #f8fafc;
+  --surface-1: #f1f5f9;
+  --surface-2: #ffffff;
+  --surface-3: #e2e8f0;
+
+  // Texto
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  // Acentos
+  --accent: #0ea5e9;
+  --accent-deep: #0284c7;
+  --accent-warm: #10b981;
+  --accent-glow: rgba(14, 165, 233, 0.1);
+  --text-on-accent: #ffffff;
+
+  // Bordas
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-active: rgba(14, 165, 233, 0.35);
+
+  // Hero
+  --hero-gradient-start: rgba(14, 165, 233, 0.08);
+  --hero-gradient-end: rgba(99, 102, 241, 0.05);
+  --grid-dot: rgba(15, 23, 42, 0.06);
+  --grid-opacity: 0.6;
+
+  // Glass e sombras
+  --glass-surface-bg: rgba(255, 255, 255, 0.88);
+  --glass-bar-bg: rgba(248, 250, 252, 0.88);
+  --glass-shadow: rgba(15, 23, 42, 0.06);
+  --glass-shadow-hover: rgba(15, 23, 42, 0.1);
+  --shadow-medium: rgba(15, 23, 42, 0.1);
+  --toast-shadow: rgba(15, 23, 42, 0.1);
+
+  // Componentes
+  --overlay-image: rgba(15, 23, 42, 0.65);
+  --social-link-bg: rgba(255, 255, 255, 0.6);
+  --tag-bg: rgba(241, 245, 249, 0.9);
+  --menu-overlay-bg: rgba(248, 250, 252, 0.85);
+  --toast-bg: rgba(255, 255, 255, 0.96);
+  --reading-progress-track: rgba(241, 245, 249, 0.85);
+  --resume-card-bg: rgba(255, 255, 255, 0.92);
+  --resume-card-hover-bg: rgba(255, 255, 255, 0.98);
+  --accent-warm-ring: rgba(16, 185, 129, 0.25);
+  --timeline-fade: rgba(148, 163, 184, 0.4);
+  --divider-glow: rgba(14, 165, 233, 0.15);
+  --accent-shadow-soft: rgba(14, 165, 233, 0.12);
+  --accent-shadow: rgba(14, 165, 233, 0.2);
+  --accent-shadow-strong: rgba(14, 165, 233, 0.28);
+  --input-focus-shadow: rgba(15, 23, 42, 0.06);
+  --grain-opacity: 0.012;
+}
+
+:root {
+  @include theme-dark;
+}
+
+:root[data-theme="dark"] {
+  @include theme-dark;
+}
+
+:root[data-theme="light"] {
+  @include theme-light;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    @include theme-light;
+  }
+}

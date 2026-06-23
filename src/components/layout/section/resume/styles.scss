@@ -1,51 +1,43 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "~/styles/variables.scss";
+@import "~/styles/mixins.scss";
 
 .resume-container {
   position: relative;
-  padding: 60px 30px;
+  padding: 80px 30px;
   width: 100%;
-  user-select: none;
-
-  &::before {
-    content: "";
-    background-image: url("/background-images/lines-vertical.webp");
-    background-color: $azulMarinho;
-    background-position: center;
-    background-size: cover;
-    background-blend-mode: luminosity;
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    @include md {
-      background-image: url("/background-images/lines-horizontal.webp");
-    }
-  }
+  background-color: $surface-1;
+  @include section-divider;
 
   .resume-content-container {
     max-width: 1280px;
     width: 100%;
     margin: 0 auto;
+  }
 
-    .resume-cards-container {
-      padding-top: 20px;
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 1fr;
+  .resume-timeline {
+    position: relative;
+    padding-top: 20px;
+    padding-left: 8px;
 
-      @include lg {
-        grid-template-columns: 1fr 1fr;
+    .scroll-reveal {
+      width: 100%;
+    }
 
-        > :first-child {
-          grid-column: span 2;
-        }
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 28px;
+      bottom: 40px;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        $accent 0%,
+        $accent-warm 50%,
+        $timeline-fade 100%
+      );
     }
   }
 }

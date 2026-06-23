@@ -1,6 +1,7 @@
 @use "~/styles/breakpoints.scss" as *;
 
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .menu-mobile-bg {
   position: fixed;
@@ -8,15 +9,18 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 1;
+  z-index: 9;
+  background-color: transparent;
+  transition:
+    background-color 0.25s ease-in-out,
+    backdrop-filter 0.25s ease-in-out;
 
   @include lg {
     display: none;
   }
 
   &.scroll-active {
-    background-color: rgba(0, 0, 0, 0.9);
+    @include glass-bar;
   }
 
   .menu-mobile-logo {
@@ -25,21 +29,51 @@
     left: 30px;
     transform: translateY(-50%);
 
-    font-size: 32px;
-    font-weight: bold;
-    color: $verdeEsmeralda;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: $tracking-tight;
+    background: linear-gradient(135deg, $text-primary 30%, $accent 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
     text-decoration: none;
-    z-index: 2;
+    z-index: 4;
+  }
+
+  .menu-mobile-actions {
+    position: fixed;
+    right: 30px;
+    top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 4;
   }
 
   .menu-mobile-container {
-    border-top: 3px solid $verdeEsmeralda;
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    background: transparent;
+    border: none;
+    border-top: 3px solid $accent;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
 
-    position: fixed;
-    right: 30px;
-    top: 20px;
+    position: relative;
+    right: auto;
+    top: auto;
     cursor: pointer;
-    z-index: 2;
+    z-index: 4;
+
+    &:focus-visible {
+      outline: 2px solid $accent;
+      outline-offset: 4px;
+    }
 
     &::after,
     &::before {
@@ -48,7 +82,7 @@
       width: 40px;
       height: 3px;
       margin-top: 6px;
-      background-color: $verdeEsmeralda;
+      background-color: $accent;
       position: relative;
       transition: all 0.3s;
     }
@@ -58,27 +92,29 @@
 
       &::before {
         transform: rotate(135deg);
-        background-color: $verdeEsmeralda;
+        background-color: $accent;
       }
 
       &::after {
         transform: rotate(-135deg);
         top: -9.3px;
-        background-color: $verdeEsmeralda;
+        background-color: $accent;
       }
     }
   }
 
   .menu-mobile-content {
     display: none;
-    background: rgba(0, 0, 0, 0.95);
+    background: $menu-overlay-bg;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1;
+    z-index: 3;
 
     &.active {
       display: block;
@@ -92,21 +128,30 @@
       transform: translateX(-50%);
 
       li {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
       }
 
       li a {
         display: block;
         text-decoration: none;
-        color: $brancoPuro;
-        font-size: 44px;
-        transition: all ease-in-out 0.2s;
+        color: $text-primary;
+        font-size: 32px;
+        font-weight: 600;
+        transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
 
-        &:hover {
-          color: $verdeEsmeralda;
-          transform: scale(1.05);
+        &:hover,
+        &.active {
+          color: $accent;
+          transform: translateY(-2px);
         }
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-mobile-content .menu-list-content li a:hover,
+  .menu-mobile-content .menu-list-content li a.active {
+    transform: none;
   }
 }
